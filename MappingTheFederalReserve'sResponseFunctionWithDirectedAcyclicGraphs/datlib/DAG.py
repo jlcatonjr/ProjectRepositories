@@ -22,7 +22,6 @@ def graph_DAG(edges,
                 control_edges = [ctrl_edge for ctrl_edge in edges if control == ctrl_edge[0] ]
                 if (control, edge[1]) in control_edges:
                     keep_controls.append(control)                
-#             print(edge, keep_controls)
             pcorr = df.partial_corr(x = edge[0], y = edge[1], covar=keep_controls,
                                   method = "pearson")
             label = str(round(pcorr["r"][0],2))
@@ -59,7 +58,6 @@ def graph_DAG(edges,
                      ax = ax)
     
     plt.title(title, fontsize = 30)
-#     print(edge_labels)
     edge_labels2 = []
     for u, v, d in graph.edges(data=True):
         if pos[u][0] > pos[v][0]:  
@@ -79,11 +77,12 @@ def graph_DAG(edges,
     plt.show()
     plt.close()
 
-def DAG(dag_data, variant, ci_test, sig):
+def DAG(dag_data, variant, ci_test, sig, return_type = "dag"):
     c = PC(dag_data)
 #     edges = c.skeleton_to_pdag(*c.build_skeleton())
     max_cond_vars = len(dag_data.keys()) - 2
-    model = c.estimate(return_type = "pdag",variant= variant, 
+    model = c.estimate(return_type = return_type,
+                       variant= variant, 
                        significance_level = sig, 
                        max_cond_vars = max_cond_vars, 
                        ci_test = ci_test)
@@ -124,7 +123,9 @@ def simultaneous_SUR(reg_data, sink_source, model_type = "DAG", constant = False
     model = SUR.from_formula(formulas, reg_data)
     results = model.fit(cov_type="unadjusted")
     #save regression results
-    pd.DataFrame([results.params, results.pvalues]).to_excel("SUR" + str(list(reg_data.index)[0])[:10]+"-"+str(list(reg_data.index)[-1])[:10]+".xlsx")
+    SUR_results = pd.DataFrame([results.params, results.pvalues])
+    SUR_results.to_excel("SUR" + str(list(reg_data.index)[0])[:10]+"-"+str(list(reg_data.index)[-1])[:10]+".xlsx")
+    print("SUR (formatted endog_exog)", SUR_results, sep = "\n")
     for ix in results.params.keys():
         
         source, sink = ix.split("_")
@@ -137,17 +138,17 @@ def simultaneous_SUR(reg_data, sink_source, model_type = "DAG", constant = False
     
     return edge_weights
 
-def DAG_OLS(ols_data, sink_source, filename, pp, diff, dates, constant = False):
+def DAG_OLS(ols_data, sink_source, filename, pp, diff, dates, constant = False, return_type=""):
     keys = list(ols_data.keys())
-    edge_weights = simultaneous_SUR(ols_data, sink_source)
+    edge_weights = simultaneous_SUR(ols_data, sink_source, constant = constant)
     if constant: keys = keys + ["Constant"]
     graph_DAG(edges = list(edge_weights.keys()), 
               df = None,
               edge_labels = edge_weights,
              pp = pp,
-             title = "SUR Estimates\n"+diff.replace(" ", "") + "\n" + dates)
+             title = "SUR Estimates\n"+diff.replace(" ", "") + "\n" + return_type.upper() +" " + dates)
     
-def DAG_VAR(var_data, sink_source, filename, pp, diff, dates, sig_vals = [0.05, 0.01, 0.001]):
+def DAG_VAR(var_data, sink_source, filename, pp, diff, dates, sig_vals = [0.05, 0.01, 0.001], constant = False, return_type=""):
     reg_dict={}
     edges_weights = {}
     
@@ -165,7 +166,7 @@ def DAG_VAR(var_data, sink_source, filename, pp, diff, dates, sig_vals = [0.05, 
         exog_keys = [key for key in variables if "Lag" in key]
         endog = select_data[endog_keys]
         exog = select_data[exog_keys]
-        reg_dict[sink] = VAR(endog, exog, sig_vals, constant = False)
+        reg_dict[sink] = VAR(endog, exog, sig_vals, constant = constant)
         pd.DataFrame(reg_dict[sink])
         for sce in source:
             edges_weights[(sce, sink)] = reg_dict[sink][sink][sce+ " Lag"]
@@ -173,9 +174,9 @@ def DAG_VAR(var_data, sink_source, filename, pp, diff, dates, sig_vals = [0.05, 
               df = select_data,
               edge_labels = edges_weights,
              pp = pp,
-             title = "VAR Estimates\n"+diff.replace(" ", "") + "\n" + dates)
+             title = "VAR Estimates\n"+diff.replace(" ", "") + "\n" + return_type.upper() +" " + dates)
     for sink, dct in reg_dict.items():
-        print(sink, pd.DataFrame(dct), "", sep = "\n")
+        print("VAR: estimated endog = " + sink, pd.DataFrame(dct), "", sep = "\n")
         
         lag_keys = [key + " Lag" for key in dct] 
         if "Constant" in dct: lag_keys = lag_keys + ["Constant"]
