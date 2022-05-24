@@ -3,6 +3,7 @@ from pgmpy.estimators import PC
 import matplotlib.pyplot as plt
 from matplotlib.patches import ArrowStyle
 import networkx as nx
+from networkx.drawing.nx_agraph import graphviz_layout
 import pingouin
 from linearmodels.system import SUR
 
@@ -46,7 +47,7 @@ def graph_DAG(edges,
     fig, ax = plt.subplots(figsize = (20,20))
     graph.nodes()
     plt.tight_layout()
-    pos = nx.spring_layout(graph)#, k = 5/(len(sig_corr.keys())**.5))
+    pos = graphviz_layout(graph)
 
     nx.draw_networkx(graph, pos, node_color=color_map, node_size = 2500,
                      with_labels=True,  arrows=True,
