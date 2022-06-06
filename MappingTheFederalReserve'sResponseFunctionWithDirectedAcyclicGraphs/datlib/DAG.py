@@ -7,12 +7,15 @@ from networkx.drawing.nx_agraph import graphviz_layout
 import pingouin
 from linearmodels.system import SUR
 
+
 def graph_DAG(edges, 
-              df, 
-              pp, 
-              edge_labels = False, 
-              sig_vals = [.05,.01,.001],
-              title = ""):
+              data_reg, 
+              title = "", 
+              fig = False, 
+              ax = False, 
+              edge_labels = False,
+              sig_vals = [0.05, 0.01, 0.001]):
+    graph = nx.DiGraph()
     def build_edge_labels(edges, df, sig_vals):
         edge_labels = {}
         for edge in edges:
@@ -23,6 +26,7 @@ def graph_DAG(edges,
                 control_edges = [ctrl_edge for ctrl_edge in edges if control == ctrl_edge[0] ]
                 if (control, edge[1]) in control_edges:
                     keep_controls.append(control)                
+#             print(edge, keep_controls)
             pcorr = df.partial_corr(x = edge[0], y = edge[1], covar=keep_controls,
                                   method = "pearson")
             label = str(round(pcorr["r"][0],2))
@@ -36,29 +40,19 @@ def graph_DAG(edges,
             
             edge_labels[edge] = label
         return edge_labels
-    graph = nx.DiGraph()
+    
     if edge_labels == False:
         edge_labels = build_edge_labels(edges, 
-                                        df, 
+                                        data_reg, 
                                         sig_vals=sig_vals) 
     graph.add_edges_from(edges)
-    color_map = ["C0" for g in graph]
+    color_map = ["grey" for g in graph]
 
-    fig, ax = plt.subplots(figsize = (20,20))
+    if fig == False and ax == False: fig, ax = plt.subplots(figsize = (20,12))
     graph.nodes()
     plt.tight_layout()
     pos = graphviz_layout(graph)
 
-    nx.draw_networkx(graph, pos, node_color=color_map, node_size = 2500,
-                     with_labels=True,  arrows=True,
-                     font_color = "white",
-                     font_size = 26, alpha = 1,
-                     width = 1, edge_color = "C1",
-                     arrowstyle=ArrowStyle("Fancy, head_length=3, head_width=1.5, tail_width=.1"),
-                     connectionstyle='arc3, rad = 0.05',
-                     ax = ax)
-    
-    plt.title(title, fontsize = 30)
     edge_labels2 = []
     for u, v, d in graph.edges(data=True):
         if pos[u][0] > pos[v][0]:  
@@ -68,15 +62,92 @@ def graph_DAG(edges,
             edge_labels2.append(((u,v,), f'{edge_labels[(u,v)]}'))
     edge_labels = dict(edge_labels2)
 
-    nx.draw_networkx_edge_labels(graph, pos, edge_labels=edge_labels, font_color='C2')
-    
-    nx.draw_networkx_edge_labels(graph,pos,
+    nx.draw_networkx(graph, pos, node_color=color_map, node_size = 500,
+                     with_labels=True,  arrows=True,
+                     font_color = "black",
+                     font_size = 16, alpha = 1,
+                     width = 1, edge_color = "C1",
+                     arrowstyle=ArrowStyle("Fancy, head_length=3, head_width=1.5, tail_width=.1"),
+                     connectionstyle='arc3, rad = 0.05',
+                     ax = ax)
+    nx.draw_networkx_edge_labels(graph,
+                                 pos,
                                  edge_labels=edge_labels,
                                  font_color='green',
-                                 font_size=20)
-    pp.savefig(fig, bbox_inches = "tight")  
-    plt.show()
-    plt.close()
+                                 font_size=14,
+                                 ax = ax)
+# def graph_DAG(edges, 
+#               df, 
+#               pp, 
+#               edge_labels = False, 
+#               sig_vals = [.05,.01,.001],
+#               title = ""):
+#     def build_edge_labels(edges, df, sig_vals):
+#         edge_labels = {}
+#         for edge in edges:
+#             controls = [key for key in df.keys() if key not in edge]
+#             controls = list(set(controls))
+#             keep_controls = []
+#             for control in controls:
+#                 control_edges = [ctrl_edge for ctrl_edge in edges if control == ctrl_edge[0] ]
+#                 if (control, edge[1]) in control_edges:
+#                     keep_controls.append(control)                
+#             pcorr = df.partial_corr(x = edge[0], y = edge[1], covar=keep_controls,
+#                                   method = "pearson")
+#             label = str(round(pcorr["r"][0],2))
+#             pvalue = pcorr["p-val"][0]
+# #             pcorr = df[[edge[0], edge[1]]+keep_controls].pcorr()
+# #             label = pcorr[edge[0]].loc[edge[1]]
+
+#             for sig_val in sig_vals:
+#                 if pvalue < sig_val: 
+#                     label = label + "*"   
+            
+#             edge_labels[edge] = label
+#         return edge_labels
+#     graph = nx.DiGraph()
+#     if edge_labels == False:
+#         edge_labels = build_edge_labels(edges, 
+#                                         df, 
+#                                         sig_vals=sig_vals) 
+#     graph.add_edges_from(edges)
+#     color_map = ["C0" for g in graph]
+
+#     fig, ax = plt.subplots(figsize = (20,20))
+#     graph.nodes()
+#     plt.tight_layout()
+#     pos = graphviz_layout(graph)
+
+#     nx.draw_networkx(graph, pos, node_color=color_map, node_size = 2500,
+#                      with_labels=True,  arrows=True,
+#                      font_color = "white",
+#                      font_size = 26, alpha = 1,
+#                      width = 1, edge_color = "C1",
+#                      arrowstyle=ArrowStyle("Fancy, head_length=3, head_width=1.5, tail_width=.1"),
+#                      connectionstyle='arc3, rad = 0.05',
+#                      ax = ax)
+    
+#     plt.title(title, fontsize = 30)
+#     edge_labels2 = []
+#     for u, v, d in graph.edges(data=True):
+#         if pos[u][0] > pos[v][0]:  
+#             if (v,u) in edge_labels.keys():
+#                 edge_labels2.append(((u, v,), f'{edge_labels[u,v]}\n\n\n{edge_labels[(v,u)]}'))  
+#         if (v,u) not in edge_labels.keys():
+#             edge_labels2.append(((u,v,), f'{edge_labels[(u,v)]}'))
+#     edge_labels = dict(edge_labels2)
+
+#     nx.draw_networkx_edge_labels(graph, pos, edge_labels=edge_labels, font_color='C2')
+    
+#     nx.draw_networkx_edge_labels(graph,pos,
+#                                  edge_labels=edge_labels,
+#                                  font_color='green',
+#                                  font_size=20)
+#     pp.savefig(fig, bbox_inches = "tight")  
+#     plt.show()
+#     plt.close()
+    
+    
 
 def DAG(dag_data, variant, ci_test, sig, return_type = "dag"):
     c = PC(dag_data)
@@ -126,7 +197,7 @@ def simultaneous_SUR(reg_data, sink_source, model_type = "DAG", constant = False
     #save regression results
     SUR_results = pd.DataFrame([results.params, results.pvalues])
     SUR_results.to_excel("SUR" + str(list(reg_data.index)[0])[:10]+"-"+str(list(reg_data.index)[-1])[:10]+".xlsx")
-    print("SUR (formatted endog_exog)", SUR_results, sep = "\n")
+    # print("SUR (formatted endog_exog)", SUR_results, sep = "\n")
     for ix in results.params.keys():
         
         source, sink = ix.split("_")
@@ -139,17 +210,17 @@ def simultaneous_SUR(reg_data, sink_source, model_type = "DAG", constant = False
     
     return edge_weights
 
-def DAG_OLS(ols_data, sink_source, filename, pp, diff, dates, constant = False, return_type=""):
+def DAG_OLS(ols_data, sink_source, filename, ax, diff, dates, constant = False, return_type=""):
     keys = list(ols_data.keys())
     edge_weights = simultaneous_SUR(ols_data, sink_source, constant = constant)
     if constant: keys = keys + ["Constant"]
     graph_DAG(edges = list(edge_weights.keys()), 
-              df = None,
+              data_reg = ols_data,
               edge_labels = edge_weights,
-             pp = pp,
-             title = "SUR Estimates\n"+diff.replace(" ", "") + "\n" + return_type.upper() +" " + dates)
+             title = "",
+             ax = ax)
     
-def DAG_VAR(var_data, sink_source, filename, pp, diff, dates, sig_vals = [0.05, 0.01, 0.001], constant = False, return_type=""):
+def DAG_VAR(var_data, sink_source, filename, ax, diff, dates, sig_vals = [0.05, 0.01, 0.001], constant = False, return_type=""):
     reg_dict={}
     edges_weights = {}
     
@@ -172,12 +243,12 @@ def DAG_VAR(var_data, sink_source, filename, pp, diff, dates, sig_vals = [0.05, 
         for sce in source:
             edges_weights[(sce, sink)] = reg_dict[sink][sink][sce+ " Lag"]
     graph_DAG(edges = list(edges_weights.keys()), 
-              df = select_data,
+              data_reg = select_data,
               edge_labels = edges_weights,
-             pp = pp,
-             title = "VAR Estimates\n"+diff.replace(" ", "") + "\n" + return_type.upper() +" " + dates)
+             ax= ax,
+             title = "") 
     for sink, dct in reg_dict.items():
-        print("VAR: estimated endog = " + sink, pd.DataFrame(dct), "", sep = "\n")
+        # print("VAR: estimated endog = " + sink, pd.DataFrame(dct), "", sep = "\n")
         
         lag_keys = [key + " Lag" for key in dct] 
         if "Constant" in dct: lag_keys = lag_keys + ["Constant"]
