@@ -2,6 +2,7 @@ import pandas as pd
 from pgmpy.estimators import PC
 import matplotlib.pyplot as plt
 from matplotlib.patches import ArrowStyle
+import numpy as np
 import networkx as nx
 from networkx.drawing.nx_agraph import graphviz_layout
 import pingouin
@@ -45,13 +46,17 @@ def graph_DAG(edges,
         edge_labels = build_edge_labels(edges, 
                                         data_reg, 
                                         sig_vals=sig_vals) 
+#     for i in range(len(edges)):
+#         edges[i]
+        
     graph.add_edges_from(edges)
     color_map = ["grey" for g in graph]
 
     if fig == False and ax == False: fig, ax = plt.subplots(figsize = (20,12))
     graph.nodes()
     plt.tight_layout()
-    pos = graphviz_layout(graph)
+    args = "-Gmode='KK'"#-Gsep=2"    
+    pos = graphviz_layout(graph, "neato", None)#,  args)
 
     edge_labels2 = []
     for u, v, d in graph.edges(data=True):
@@ -61,20 +66,36 @@ def graph_DAG(edges,
         if (v,u) not in edge_labels.keys():
             edge_labels2.append(((u,v,), f'{edge_labels[(u,v)]}'))
     edge_labels = dict(edge_labels2)
-
-    nx.draw_networkx(graph, pos, node_color=color_map, node_size = 500,
-                     with_labels=True,  arrows=True,
-                     font_color = "black",
-                     font_size = 16, alpha = 1,
-                     width = 1, edge_color = "C1",
-                     arrowstyle=ArrowStyle("Fancy, head_length=3, head_width=1.5, tail_width=.1"),
-                     connectionstyle='arc3, rad = 0.05',
-                     ax = ax)
+    curved_edges = [edge for edge in graph.edges() if reversed(edge) in graph.edges()]
+    straight_edges = list(set(graph.edges()) - set(curved_edges))
+    nx.draw_networkx_edges(graph, pos, ax=ax, edgelist=straight_edges,  
+                           width = 1, edge_color = "C1",
+                           
+                           arrowstyle=ArrowStyle("Fancy, head_length=2, head_width=1, tail_width=.1"),
+                          )
+    arc_rad = 0.31
+    nx.draw_networkx(graph, pos, node_color=color_map, node_size = 750,
+                       with_labels=True,  arrows=True,
+                       font_color = "black",
+                       font_size = 20, alpha = 1,
+                       width = 1, edge_color = "C1",
+                       ax=ax, edgelist=curved_edges, connectionstyle=f'arc3, rad = {arc_rad}',
+                       arrowstyle=ArrowStyle("Fancy, head_length=1, head_width=1, tail_width=.1"),
+                      )
+#     nx.draw_networkx(graph, pos, node_color=color_map, node_size = 500,
+#                      with_labels=True,  arrows=True,
+#                      font_color = "black",
+#                      font_size = 16, alpha = 1,
+#                      width = 1, edge_color = "C1",
+#                      arrowstyle=ArrowStyle("Fancy, head_length=3, head_width=1.5, tail_width=.1"),
+#                      connectionstyle='arc3, rad = 0.5',
+#                      ax = ax)
     nx.draw_networkx_edge_labels(graph,
                                  pos,
                                  edge_labels=edge_labels,
                                  font_color='green',
-                                 font_size=14,
+                                 font_size=15,
+                                 alpha = 1,
                                  ax = ax)
 # def graph_DAG(edges, 
 #               df, 
@@ -273,7 +294,7 @@ def VAR(endog, exog, sig_vals = [0.05, 0.01, 0.001], constant = True):
     df["tstats"]=results.tstats.values
     df["pvalues"]=results.pvalues.values
     results =df.pivot(columns = "Sink", index = "Source")
-    results = results.round(3)
+    results = results.round(2)
     keys1 = list(results["Coef"].keys())
     params = results["Coef"].astype(str)
     for endog in keys1:

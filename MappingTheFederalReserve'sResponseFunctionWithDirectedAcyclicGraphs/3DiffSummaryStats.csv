@@ -1,0 +1,13 @@
+,mean,min,max,SD
+Total Assets,-0.041,-2.709,2.814,1.031
+Total Liabilities,-0.042,-2.8,2.901,1.062
+Core PCE,-inf,-inf,0.047,
+Currency in Circulation,-0.009,-0.313,0.278,0.11
+Effective Federal Funds Rate (%),-0.018,-3.95,7.17,2.019
+Unemployment Rate,-0.3,-31.3,26.1,5.361
+Currency in Circulation / Total Assets,-0.0,-5.094,5.037,0.561
+Inflation Loss,-inf,-inf,0.047,
+Unemployment Loss,-0.3,-31.3,26.1,5.361
+Inflation Loss Sq,-inf,-inf,0.187,
+Unemployment Loss Sq,-0.468,-312.05,305.37,45.025
+Loss Function,-inf,-inf,312.182,

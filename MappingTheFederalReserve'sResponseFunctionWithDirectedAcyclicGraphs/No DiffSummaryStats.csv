@@ -1,0 +1,15 @@
+,mean,min,max,SD
+Total Base,0.09,-0.17,0.755,0.131
+PCEPI,0.023,0.006,0.053,0.009
+Currency in Circulation,0.068,-0.022,0.156,0.023
+Reserves at Fed,0.13,-1.085,4.572,0.742
+Effective Federal Funds Rate (%),3.533,0.049,11.637,2.791
+Unemployment Rate,5.932,3.5,14.7,1.645
+$U_N$,5.146,4.432,6.076,0.436
+$\pi_{1e}$,2.664,-0.481,5.692,1.01
+Currency in Circulation / Total Base,0.001,-0.029,0.043,0.003
+Inflation Loss,-1.977,-1.994,-1.947,0.009
+Unemployment Loss,0.787,-1.415,10.199,1.685
+Inflation Loss Sq,-3.91,-3.975,-3.792,0.036
+Unemployment Loss Sq,2.987,-2.001,104.011,8.808
+Loss Function,-6.919,-107.975,-1.931,8.818
