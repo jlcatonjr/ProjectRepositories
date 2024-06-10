@@ -177,3 +177,65 @@ def plot_r2(r2_df, r2s, key, variant):
         ax.axhline(0, color = "k", ls = "-", linewidth = 2)
         # ax.set_xticklabels(ax.get_xticklabels(), rotation = 90)
     return fig, axs
+
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+
+def dict_of_figs_to_dropdown_fig(figs, show_fig = True):
+    keys = figs.keys()
+    num_figs = len(keys)
+    num_traces = {key: len(fig.data) for key, fig in figs.items()}
+    show_traces = {key: [False for t in range(sum(num_traces.values()))] for key in keys}
+    start_trace_index = {key: sum(list(num_traces.values())[:i]) for i, key in enumerate(keys)}
+    end_trace_index = {key: sum(list(num_traces.values())[:i]) for i, key in enumerate(keys)}
+    for key in keys:
+        show_traces[key][start_trace_index[key]:end_trace_index[key] + 1] = [True for t in range(num_traces[key])]
+    # Initialize the combined figure
+    num_rows = max([int(fig.data[-1].xaxis.replace("x", "")) for name, fig in figs.items()])
+    print(num_rows)
+    combined_fig = make_subplots(rows=num_rows, cols=1, shared_xaxes=True)
+    for key, fig in figs.items():
+        for trace in fig.data:
+            combined_fig.add_trace(trace)
+
+    # Define buttons for the dropdown menu
+    dropdown_buttons = [
+        {
+            "label": key,
+            "method": "update",
+            "args": [
+                {
+                    "visible": show_traces[key],   
+                },
+                {
+                    "title": key,
+                }
+            ]
+        } for key in keys
+        
+            ]
+    
+
+    # Add dropdown menu to the figure layout
+    combined_fig.update_layout(
+            updatemenus=[
+                {
+                    "buttons": dropdown_buttons,
+                    "direction": "down",
+                    "showactive": True,
+                    "x": 0.5,  # Center the dropdown menu horizontally
+                    "xanchor": "center",  # Set the anchor to the center
+                    "y": 1.15,  # Position above the plot area
+                    "yanchor": "top"  # Set the anchor to the top
+                }
+            ]
+        )
+
+    combined_fig.update_traces(visible=False)
+    for i, trace in enumerate(combined_fig.data):
+        trace.visible = show_traces[list(keys)[0]][i]
+    # Show combined figure
+    if show_fig == True:
+        combined_fig.show()
+        
+    return combined_fig
