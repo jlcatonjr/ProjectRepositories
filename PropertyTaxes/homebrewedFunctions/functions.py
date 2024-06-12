@@ -191,7 +191,8 @@ def dict_of_figs_to_dropdown_fig(figs, show_fig = True):
     for key in keys:
         show_traces[key][start_trace_index[key]:end_trace_index[key] + 1] = [True for t in range(num_traces[key])]
     # Initialize the combined figure
-    num_rows = max([int(fig.data[-1].xaxis.replace("x", "")) for name, fig in figs.items()])
+    # num_rows = max([int(fig.data[-1].xaxis.replace("x", "")) for name, fig in figs.items()])
+    num_rows = max([len([i for i in fig.select_yaxes()]) for k, fig in figs.items()])
     print(num_rows)
     combined_fig = make_subplots(rows=num_rows, cols=1, shared_xaxes=True)
     for key, fig in figs.items():
@@ -247,5 +248,3 @@ def dict_of_figs_to_dropdown_fig(figs, show_fig = True):
         combined_fig.show()
         
     return combined_fig
-
-
