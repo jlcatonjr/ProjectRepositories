@@ -201,7 +201,6 @@ def dict_of_figs_to_dropdown_fig(figs, show_fig = True):
         # Link the layout from the figure to the combined fig
         # combined_fig.update_layout(fig.layout, overwrite=False)
 
-        layout_json = fig.layout.to_plotly_json()   
         # # Remove layout settings for rows that do not exist in the current figure
         current_num_rows = len(fig.data)
         # reset_layout = {}
@@ -224,7 +223,7 @@ def dict_of_figs_to_dropdown_fig(figs, show_fig = True):
             ]
         } for key in keys
     ]
-    combined_fig.layout = {**figs[list(figs.keys())[0]].layout.to_plotly_json()}
+    # combined_fig.layout = {**figs[list(figs.keys())[0]].layout.to_plotly_json()}
     # Add dropdown menu to the figure layout
     combined_fig.update_layout(
             updatemenus=[
@@ -248,3 +247,67 @@ def dict_of_figs_to_dropdown_fig(figs, show_fig = True):
         combined_fig.show()
         
     return combined_fig
+
+# import plotly.graph_objects as go
+# from plotly.subplots import make_subplots
+
+# def dict_of_figs_to_dropdown_fig(figs, show_fig=True):
+#     keys = figs.keys()
+#     num_figs = len(keys)
+#     num_traces = {key: len(fig.data) for key, fig in figs.items()}
+#     show_traces = {key: [False for t in range(sum(num_traces.values()))] for key in keys}
+#     start_trace_index = {key: sum(list(num_traces.values())[:i]) for i, key in enumerate(keys)}
+#     end_trace_index = {key: sum(list(num_traces.values())[:i]) for i, key in enumerate(keys)}
+    
+#     for key in keys:
+#         show_traces[key][start_trace_index[key]:end_trace_index[key] + 1] = [True for t in range(num_traces[key])]
+
+#     num_rows = max([len([i for i in fig.select_yaxes()]) for k, fig in figs.items()])
+#     combined_fig = make_subplots(rows=num_rows, cols=1, shared_xaxes=True)
+
+#     for key, fig in figs.items():
+#         for trace in fig.data:
+#             combined_fig.add_trace(trace)
+
+#     dropdown_buttons_keys = [
+#         {
+#             "label": key,
+#             "method": "update",
+#             "args": [
+#                 {"visible": show_traces[key]},
+#                 {**figs[key].layout.to_plotly_json()}
+#             ]
+#         } for key in keys
+#     ]
+
+#     combined_fig.update_layout(
+#         updatemenus=[
+#             {
+#                 "buttons": dropdown_buttons_keys,
+#                 "direction": "down",
+#                 "showactive": True,
+#                 "x": 0.5,
+#                 "xanchor": "center",
+#                 "y": 1.15,
+#                 "yanchor": "top"
+#             }
+#         ]
+#     )
+#     # combined_fig.layout = {**figs[list(figs.keys())[0]].layout.to_plotly_json()}
+
+#     combined_fig.update_traces(visible=False)
+#     for i, trace in enumerate(combined_fig.data):
+#         trace.visible = show_traces[list(keys)[0]][i]
+
+#     if show_fig:
+#         combined_fig.show()
+
+#     # Add the original menus from each figure to the combined figure
+#     # for fig in figs.values():
+#     #     if 'updatemenus' in fig.layout:
+#     #         for menu in fig.layout.updatemenus:
+#     #             combined_fig.update_layout(
+#     #                 updatemenus=[*combined_fig.layout.updatemenus, menu]
+#     #             )
+
+#     return combined_fig
