@@ -223,7 +223,7 @@ def dict_of_figs_to_dropdown_fig(figs, show_fig = True):
             ]
         } for key in keys
     ]
-    # combined_fig.layout = {**figs[list(figs.keys())[0]].layout.to_plotly_json()}
+    combined_fig.layout = {**figs[list(figs.keys())[0]].layout.to_plotly_json()}
     # Add dropdown menu to the figure layout
     combined_fig.update_layout(
             updatemenus=[
