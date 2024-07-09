@@ -7,6 +7,9 @@ import matplotlib.pyplot as plt
 import datetime
 from linearmodels import PanelOLS
 from linearmodels.panel import compare
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
+
 
 class info_criterion():
     ## Thank you Abi Idowu
@@ -178,9 +181,6 @@ def plot_r2(r2_df, r2s, key, variant):
         # ax.set_xticklabels(ax.get_xticklabels(), rotation = 90)
     return fig, axs
 
-from plotly.subplots import make_subplots
-import plotly.graph_objects as go
-
 def dict_of_figs_to_dropdown_fig(figs, show_fig = True):
     keys = figs.keys()
     num_figs = len(keys)
@@ -247,6 +247,80 @@ def dict_of_figs_to_dropdown_fig(figs, show_fig = True):
         combined_fig.show()
         
     return combined_fig
+
+
+def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_fig=False):
+    # Create a subplot with 1 row and 1 column
+    fig = make_subplots(rows=1, cols=1)
+    scatter = go.Scatter(
+        x=df[df.columns[0]],
+        y=df[df.columns[0]],
+        mode='markers',
+        marker=dict(color=df[df.columns[0]]))
+    fig.add_trace(scatter, row=1, col=1)
+    # Update layout with dropdown menus
+    fig.update_layout(
+        updatemenus=[
+            dict(
+                buttons=list([
+                    dict(
+                        args=[{"x": [df[col]]},
+                               {"xaxis.title.text": col}],
+                        label=col,
+                        method="update"
+                    ) for col in df.columns
+                ]),
+                direction="down",
+                showactive=True,
+                x=0.17,
+                xanchor="left",
+                y=1.15,
+                yanchor="top"
+            ),
+            dict(
+                buttons=list([
+                    dict(
+                        args=[{"y": [df[col]]},
+                               {"yaxis.title.text": col}],
+                        label=col,
+                        method="update"
+                    ) for col in df.columns
+                ]),
+                direction="down",
+                showactive=True,
+                x=0.32,
+                xanchor="left",
+                y=1.15,
+                yanchor="top"
+            ),
+            dict(
+                buttons=list([
+                    dict(
+                        args=[{"marker.color": [df[col]]}],
+                        label=col,
+                        method="update"
+                    ) for col in df.columns
+                ]),
+                direction="down",
+                showactive=True,
+                x=0.47,
+                xanchor="left",
+                y=1.15,
+                yanchor="top"
+            )
+        ],
+        annotations=[
+            dict(text="X-axis", x=0.17, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
+            dict(text="Y-axis", x=0.32, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
+            dict(text="Color", x=0.47, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False)
+        ]
+    )
+    fig.update_layout(xaxis_title=df.columns[0], yaxis_title=df.columns[0])
+
+    if show_fig: 
+        fig.show()
+    # Save the figure as an HTML file
+    fig.write_html(filename)
 
 # import plotly.graph_objects as go
 # from plotly.subplots import make_subplots
