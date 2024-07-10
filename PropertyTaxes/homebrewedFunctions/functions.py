@@ -249,6 +249,7 @@ def dict_of_figs_to_dropdown_fig(figs, show_fig = True):
     return combined_fig
 
 
+
 def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_fig=False):
     # Create a subplot with 1 row and 1 column
     fig = make_subplots(rows=1, cols=1)
@@ -257,58 +258,62 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
         y=df[df.columns[0]],
         mode='markers',
         marker=dict(color=df[df.columns[0]],
-                      colorscale='Viridis', size=14, colorbar=dict(thickness=20))
+                    colorscale='Viridis', size=14, colorbar=dict(thickness=20, title=dict(text=df.columns[0])))
     )
 
     fig.add_trace(scatter, row=1, col=1)
-    fig.update_layout(xaxis_title=df.columns[0], yaxis_title=df.columns[0])
+    fig.update_layout(
+        xaxis_title=df.columns[0],
+        yaxis_title=df.columns[0],
+    )
 
-    fig.update_traces(hovertemplate="%{xaxis.title.text}: %{x}<br>%{yaxis.title.text}: %{y}<br>Color Value: %{marker.color}")
+    initial_hovertemplate = f"%{{xaxis.title.text}}: %{{x}}<br>%{{yaxis.title.text}}: %{{y}}<br>{df.columns[0]}: %{{marker.color}}"
+    fig.update_traces(hovertemplate=initial_hovertemplate)
 
-    # Update layout with dropdown menus
+    # Dropdown menus
+    x_buttons = [dict(args=[{"x": [df[col]]}, {"xaxis.title.text": col}], label=col, method="update") for col in df.columns]
+    y_buttons = [dict(args=[{"y": [df[col]]}, {"yaxis.title.text": col}], label=col, method="update") for col in df.columns]
+    color_buttons = [dict(args=[{"marker.color": [df[col]], 
+                                 "marker.colorbar.title.text": col,
+                                "hovertemplate":f"%{{xaxis.title.text}}: %{{x}}<br>%{{yaxis.title.text}}: %{{y}}<br>{col}: %{{marker.color}}" }], label=col, method="update") for col in df.columns]
+
     fig.update_layout(
         updatemenus=[
-            dict(
-                buttons=list([
-                    dict(
-                        args=[{"x": [df[col]]},
-                               {"xaxis.title.text": col}], label=col, method="update"
-                    ) for col in df.columns
-                ]),
-                direction="down", showactive=True, x=0.17, xanchor="left", y=1.15, yanchor="top"
-            ),
-            dict(
-                buttons=list([
-                    dict(
-                        args=[{"y": [df[col]]},
-                               {"yaxis.title.text": col}], label=col, method="update"
-                    ) for col in df.columns
-                ]),
-                direction="down", showactive=True, x=0.32, xanchor="left", y=1.15, yanchor="top"
-            ),
-            dict(
-                buttons=list([
-                    dict(
-                        args=[{"marker.color": [df[col]]}],                        
-                        label=col, method="update"
-                    ) for col in df.columns
-                ]),
-                direction="down", showactive=True, x=0.47, xanchor="left", y=1.15, yanchor="top"
-            )
+            dict(buttons=x_buttons, direction="down", showactive=True, x=0.17, xanchor="left", y=1.15, yanchor="top"),
+            dict(buttons=y_buttons, direction="down", showactive=True, x=0.32, xanchor="left", y=1.15, yanchor="top"),
+            dict(buttons=color_buttons, direction="down", showactive=True, x=0.47, xanchor="left", y=1.15, yanchor="top")
         ],
-        
         annotations=[
             dict(text="X-axis", x=0.17, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
             dict(text="Y-axis", x=0.32, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
             dict(text="Color", x=0.47, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False)
         ]
     )
-    
 
-    if show_fig: 
+    # Custom JavaScript to handle colorbar title
+    custom_js = '''
+    <script>
+        const colorMenu = document.querySelectorAll('[data-title="Color"]')[0];
+        colorMenu.addEventListener('click', function(event) {
+            const target = event.target;
+            if (target.tagName === 'g' || target.tagName === 'text') {
+                const newTitle = target.textContent;
+                Plotly.relayout('plot', {'marker.colorbar.title.text': newTitle});
+            }
+        });
+    </script>
+    '''
+
+
+
+    # Add the custom JS to the HTML output
+    with open(filename, 'w') as f:
+        f.write(fig.to_html(full_html=False, include_plotlyjs='cdn'))
+        f.write(custom_js)
+
+    if show_fig:
         fig.show()
-    # Save the figure as an HTML file
-    fig.write_html(filename)
+
 
 # import plotly.graph_objects as go
 # from plotly.subplots import make_subplots
