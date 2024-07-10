@@ -256,8 +256,15 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
         x=df[df.columns[0]],
         y=df[df.columns[0]],
         mode='markers',
-        marker=dict(color=df[df.columns[0]]))
+        marker=dict(color=df[df.columns[0]],
+                      colorscale='Viridis', size=14, colorbar=dict(thickness=20))
+    )
+
     fig.add_trace(scatter, row=1, col=1)
+    fig.update_layout(xaxis_title=df.columns[0], yaxis_title=df.columns[0])
+
+    fig.update_traces(hovertemplate="%{xaxis.title.text}: %{x}<br>%{yaxis.title.text}: %{y}<br>Color Value: %{marker.color}")
+
     # Update layout with dropdown menus
     fig.update_layout(
         updatemenus=[
@@ -265,57 +272,38 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
                 buttons=list([
                     dict(
                         args=[{"x": [df[col]]},
-                               {"xaxis.title.text": col}],
-                        label=col,
-                        method="update"
+                               {"xaxis.title.text": col}], label=col, method="update"
                     ) for col in df.columns
                 ]),
-                direction="down",
-                showactive=True,
-                x=0.17,
-                xanchor="left",
-                y=1.15,
-                yanchor="top"
+                direction="down", showactive=True, x=0.17, xanchor="left", y=1.15, yanchor="top"
             ),
             dict(
                 buttons=list([
                     dict(
                         args=[{"y": [df[col]]},
-                               {"yaxis.title.text": col}],
-                        label=col,
-                        method="update"
+                               {"yaxis.title.text": col}], label=col, method="update"
                     ) for col in df.columns
                 ]),
-                direction="down",
-                showactive=True,
-                x=0.32,
-                xanchor="left",
-                y=1.15,
-                yanchor="top"
+                direction="down", showactive=True, x=0.32, xanchor="left", y=1.15, yanchor="top"
             ),
             dict(
                 buttons=list([
                     dict(
-                        args=[{"marker.color": [df[col]]}],
-                        label=col,
-                        method="update"
+                        args=[{"marker.color": [df[col]]}],                        
+                        label=col, method="update"
                     ) for col in df.columns
                 ]),
-                direction="down",
-                showactive=True,
-                x=0.47,
-                xanchor="left",
-                y=1.15,
-                yanchor="top"
+                direction="down", showactive=True, x=0.47, xanchor="left", y=1.15, yanchor="top"
             )
         ],
+        
         annotations=[
             dict(text="X-axis", x=0.17, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
             dict(text="Y-axis", x=0.32, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
             dict(text="Color", x=0.47, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False)
         ]
     )
-    fig.update_layout(xaxis_title=df.columns[0], yaxis_title=df.columns[0])
+    
 
     if show_fig: 
         fig.show()
