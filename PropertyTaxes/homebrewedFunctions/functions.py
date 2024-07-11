@@ -308,11 +308,13 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
 
     # Add the custom JS to the HTML output
     with open(filename, 'w') as f:
-        f.write(fig.to_html(full_html=False, include_plotlyjs='cdn'))
+        f.write(fig.to_html(full_html=True, include_plotlyjs='cdn'))
         f.write(custom_js)
 
     if show_fig:
         fig.show()
+
+    fig.write_html(filename)
 
 
 # import plotly.graph_objects as go
