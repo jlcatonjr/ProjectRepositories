@@ -308,10 +308,10 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
                                  "marker.size": [update_opacity_and_size(selected_state=state)[1]]
                                  }], 
                           label=state, method="update") for state in states]
-    year_buttons = [dict(args=[{"marker.opacity": [update_opacity_and_size(selected_year=year)[0]],
-                                 "marker.size": [update_opacity_and_size(selected_year=year)[1]]
-                                 }], 
-                         label=str(year), method="update") for year in years]
+    # year_buttons = [dict(args=[{"marker.opacity": [update_opacity_and_size(selected_year=year)[0]],
+    #                              "marker.size": [update_opacity_and_size(selected_year=year)[1]]
+    #                              }], 
+    #                      label=str(year), method="update") for year in years]
 
     sliders = [{
                 "active": 0,
@@ -321,7 +321,7 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
                     {"label": str(size), "method": "restyle", "args": ["marker.size", [size]]}
                     for size in range(1, 31)
                 ],
-                "x": 0, "len": .5, "xanchor": "left", "y": 0
+                "x": 0, "len": .5, "xanchor": "left", "y": -0.15
             },
             {
                 "active": 7,
@@ -331,8 +331,20 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
                     {"label": str(opacity), "method": "restyle", "args": ["marker.opacity", [opacity]]}
                     for opacity in [round(x * 0.01, 2) for x in range(1, 101)]
                 ],
-                "x": 0.5, "len": .5, "xanchor": "left", "y": 0
-            }
+                "x": 0.5, "len": .5, "xanchor": "left", "y": -0.15
+            },
+        {
+            "active": 0,
+            "currentvalue": {"prefix": "Year: "},
+            "pad": {"t": 50},
+            "steps": [
+                {"label": str(year), "method": "update", "args": [{"marker.opacity": [update_opacity_and_size(selected_year=year)[0]],
+                                                                  "marker.size": [update_opacity_and_size(selected_year=year)[1]]}]}
+                for year in years
+            ],
+            "x": 0, "len": 1.0, "xanchor": "left", "y": 0
+        }
+
         ]
 
     fig.update_layout(
@@ -342,7 +354,7 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
             dict(buttons=color_buttons, direction="down", showactive=True, x=0.47, xanchor="left", y=1.15, yanchor="top"),
             dict(buttons=colorscale_buttons, direction="down", showactive=True, x=0.62, xanchor="left", y=1.15, yanchor="top"),
             dict(buttons=state_buttons, direction="down", showactive=True, x=0.77, xanchor="left", y=1.15, yanchor="top"),
-            dict(buttons=year_buttons, direction="down", showactive=True, x=0.92, xanchor="left", y=1.15, yanchor="top")
+            # dict(buttons=year_buttons, direction="down", showactive=True, x=0.92, xanchor="left", y=1.15, yanchor="top")
         ],
         sliders=sliders,
         annotations=[
@@ -351,7 +363,7 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
             dict(text="Color", x=0.47, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
             dict(text="Colorscale", x=0.62, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
             dict(text="State", x=0.77, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
-            dict(text="Year", x=0.92, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False)
+            # dict(text="Year", x=0.92, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False)
         ]
     )
 
