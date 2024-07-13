@@ -9,7 +9,8 @@ from linearmodels import PanelOLS
 from linearmodels.panel import compare
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
-
+import plotly.express as px
+import plotly.colors as colors
 
 class info_criterion():
     ## Thank you Abi Idowu
@@ -276,17 +277,42 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
     color_buttons = [dict(args=[{"marker.color": [df[col]], 
                                  "marker.colorbar.title.text": col,
                                 "hovertemplate":f"%{{xaxis.title.text}}: %{{x}}<br>%{{yaxis.title.text}}: %{{y}}<br>{col}: %{{marker.color}}" }], label=col, method="update") for col in df.columns]
-
+    color_scales = colors.PLOTLY_SCALES.keys()
+    colorscale_buttons = [dict(args=[{"marker.colorscale": scale}], label=scale, method="update") for scale in color_scales]
+    sliders=[{
+                "active": 0,
+                "currentvalue": {"prefix": "Marker Size: "},
+                "pad": {"t": 50},
+                "steps": [
+                    {"label": str(size), "method": "restyle", "args": ["marker.size", [size]]}
+                    for size in range(1, 31)
+                ],
+                "x": 0, "len": .5, "xanchor": "left", "y": 0
+            },
+            {
+                "active": 7,
+                "currentvalue": {"prefix": "Marker Opacity: "},
+                "pad": {"t": 50},
+                "steps": [
+                    {"label": str(opacity), "method": "restyle", "args": ["marker.opacity", [opacity]]}
+                    for opacity in [round(x * 0.01, 2) for x in range(1, 101)]
+                ],
+                "x": 0.5, "len": .5, "xanchor": "left", "y": 0
+            }
+        ]
     fig.update_layout(
         updatemenus=[
             dict(buttons=x_buttons, direction="down", showactive=True, x=0.17, xanchor="left", y=1.15, yanchor="top"),
             dict(buttons=y_buttons, direction="down", showactive=True, x=0.32, xanchor="left", y=1.15, yanchor="top"),
-            dict(buttons=color_buttons, direction="down", showactive=True, x=0.47, xanchor="left", y=1.15, yanchor="top")
-        ],
+            dict(buttons=color_buttons, direction="down", showactive=True, x=0.47, xanchor="left", y=1.15, yanchor="top"),
+            dict(buttons=colorscale_buttons, direction="down", showactive=True, x=0.62, xanchor="left", y=1.15, yanchor="top")
+],
+        sliders=sliders,
         annotations=[
             dict(text="X-axis", x=0.17, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
             dict(text="Y-axis", x=0.32, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
-            dict(text="Color", x=0.47, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False)
+            dict(text="Color", x=0.47, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
+            dict(text="Colorscale", x=0.62, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False)
         ]
     )
 
@@ -308,13 +334,13 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
 
     # Add the custom JS to the HTML output
     with open(filename, 'w') as f:
-        f.write(fig.to_html(full_html=True, include_plotlyjs='cdn'))
+        f.write(fig.to_html(full_html=False, include_plotlyjs='cdn'))
         f.write(custom_js)
 
     if show_fig:
         fig.show()
 
-    fig.write_html(filename)
+    # fig.write_html(filename)
 
 
 # import plotly.graph_objects as go
