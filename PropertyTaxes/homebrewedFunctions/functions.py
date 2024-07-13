@@ -251,6 +251,10 @@ def dict_of_figs_to_dropdown_fig(figs, show_fig = True):
 
 
 
+import plotly.graph_objs as go
+from plotly.subplots import make_subplots
+import plotly.colors as colors
+
 def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_fig=False):
     # Create a subplot with 1 row and 1 column
     fig = make_subplots(rows=1, cols=1)
@@ -259,7 +263,7 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
         y=df[df.columns[0]],
         mode='markers',
         marker=dict(color=df[df.columns[0]],
-                    colorscale='Viridis', size=14, colorbar=dict(thickness=20, title=dict(text=df.columns[0])))
+                    colorscale='Viridis', size=14, opacity=0.3, colorbar=dict(thickness=20, title=dict(text=df.columns[0])))
     )
 
     fig.add_trace(scatter, row=1, col=1)
@@ -271,7 +275,26 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
     initial_hovertemplate = f"%{{xaxis.title.text}}: %{{x}}<br>%{{yaxis.title.text}}: %{{y}}<br>{df.columns[0]}: %{{marker.color}}"
     fig.update_traces(hovertemplate=initial_hovertemplate)
 
-    # Dropdown menus
+    # Extract unique states and years from the DataFrame
+    states = df.index.get_level_values("State").unique()
+    years = df.index.get_level_values("Year").unique()
+
+    # Function to update marker opacity based on state, year, and slider value
+    def update_opacity_and_size(selected_state=None, selected_year=None, opacity_slider_value=0.1, size_slider_value=10):
+        opacities = [opacity_slider_value] * len(df)
+        sizes = [size_slider_value] * len(df)
+        if selected_state:
+            state_mask = df.index.get_level_values("State") == selected_state
+            opacities = [1 if mask else opacity for mask, opacity in zip(state_mask, opacities)]
+            sizes = [size + 7 if mask else size for mask, size in zip(state_mask, sizes)]
+
+        if selected_year:
+            year_mask = df.index.get_level_values("Year") == str(selected_year)
+            opacities = [1 if mask else opacity for mask, opacity in zip(year_mask, opacities)]
+            sizes = [size + 5 if mask else size for mask, size in zip(year_mask, sizes)]
+        return opacities, sizes
+
+    # Create dropdown menus for x, y, color, and colorscale
     x_buttons = [dict(args=[{"x": [df[col]]}, {"xaxis.title.text": col}], label=col, method="update") for col in df.columns]
     y_buttons = [dict(args=[{"y": [df[col]]}, {"yaxis.title.text": col}], label=col, method="update") for col in df.columns]
     color_buttons = [dict(args=[{"marker.color": [df[col]], 
@@ -279,7 +302,18 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
                                 "hovertemplate":f"%{{xaxis.title.text}}: %{{x}}<br>%{{yaxis.title.text}}: %{{y}}<br>{col}: %{{marker.color}}" }], label=col, method="update") for col in df.columns]
     color_scales = colors.PLOTLY_SCALES.keys()
     colorscale_buttons = [dict(args=[{"marker.colorscale": scale}], label=scale, method="update") for scale in color_scales]
-    sliders=[{
+
+    # Create dropdown menus for state and year selection
+    state_buttons = [dict(args=[{"marker.opacity": [update_opacity_and_size(selected_state=state)[0]],
+                                 "marker.size": [update_opacity_and_size(selected_state=state)[1]]
+                                 }], 
+                          label=state, method="update") for state in states]
+    year_buttons = [dict(args=[{"marker.opacity": [update_opacity_and_size(selected_year=year)[0]],
+                                 "marker.size": [update_opacity_and_size(selected_year=year)[1]]
+                                 }], 
+                         label=str(year), method="update") for year in years]
+
+    sliders = [{
                 "active": 0,
                 "currentvalue": {"prefix": "Marker Size: "},
                 "pad": {"t": 50},
@@ -300,19 +334,24 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
                 "x": 0.5, "len": .5, "xanchor": "left", "y": 0
             }
         ]
+
     fig.update_layout(
         updatemenus=[
             dict(buttons=x_buttons, direction="down", showactive=True, x=0.17, xanchor="left", y=1.15, yanchor="top"),
             dict(buttons=y_buttons, direction="down", showactive=True, x=0.32, xanchor="left", y=1.15, yanchor="top"),
             dict(buttons=color_buttons, direction="down", showactive=True, x=0.47, xanchor="left", y=1.15, yanchor="top"),
-            dict(buttons=colorscale_buttons, direction="down", showactive=True, x=0.62, xanchor="left", y=1.15, yanchor="top")
-],
+            dict(buttons=colorscale_buttons, direction="down", showactive=True, x=0.62, xanchor="left", y=1.15, yanchor="top"),
+            dict(buttons=state_buttons, direction="down", showactive=True, x=0.77, xanchor="left", y=1.15, yanchor="top"),
+            dict(buttons=year_buttons, direction="down", showactive=True, x=0.92, xanchor="left", y=1.15, yanchor="top")
+        ],
         sliders=sliders,
         annotations=[
             dict(text="X-axis", x=0.17, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
             dict(text="Y-axis", x=0.32, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
             dict(text="Color", x=0.47, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
-            dict(text="Colorscale", x=0.62, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False)
+            dict(text="Colorscale", x=0.62, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
+            dict(text="State", x=0.77, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
+            dict(text="Year", x=0.92, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False)
         ]
     )
 
@@ -330,8 +369,6 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
     </script>
     '''
 
-
-
     # Add the custom JS to the HTML output
     with open(filename, 'w') as f:
         f.write(fig.to_html(full_html=False, include_plotlyjs='cdn'))
@@ -339,6 +376,9 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
 
     if show_fig:
         fig.show()
+
+        
+
 
     # fig.write_html(filename)
 
