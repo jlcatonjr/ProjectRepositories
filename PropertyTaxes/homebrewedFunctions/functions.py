@@ -255,7 +255,8 @@ import plotly.graph_objs as go
 from plotly.subplots import make_subplots
 import plotly.colors as colors
 
-def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_fig=False):
+def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", 
+                            entity = "State", time = "Year", show_fig=False):
     # Create a subplot with 1 row and 1 column
     fig = make_subplots(rows=1, cols=1)
     scatter = go.Scatter(
@@ -263,7 +264,8 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
         y=df[df.columns[0]],
         mode='markers',
         marker=dict(color=df[df.columns[0]],
-                    colorscale='Viridis', size=14, opacity=0.3, colorbar=dict(thickness=20, title=dict(text=df.columns[0])))
+                    colorscale='Viridis', size=14, opacity=0.3, colorbar=dict(thickness=20, title=dict(text=df.columns[0]))),
+        text = df.index.get_level_values(entity) + ": " + df.index.get_level_values(time),
     )
 
     fig.add_trace(scatter, row=1, col=1)
@@ -272,24 +274,25 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
         yaxis_title=df.columns[0],
     )
 
-    initial_hovertemplate = f"%{{xaxis.title.text}}: %{{x}}<br>%{{yaxis.title.text}}: %{{y}}<br>{df.columns[0]}: %{{marker.color}}"
+    initial_hovertemplate = f"%{{text}}<br>%{{xaxis.title.text}}: %{{x}}<br>%{{yaxis.title.text}}: %{{y}}<br>{df.columns[0]}: %{{marker.color}}"
     fig.update_traces(hovertemplate=initial_hovertemplate)
 
     # Extract unique states and years from the DataFrame
-    states = df.index.get_level_values("State").unique()
-    years = df.index.get_level_values("Year").unique()
+    controls = {c: df.index.get_level_values(c).unique() for c in [entity, time]}
+
 
     # Function to update marker opacity based on state, year, and slider value
-    def update_opacity_and_size(selected_state=None, selected_year=None, opacity_slider_value=0.1, size_slider_value=10):
+    def update_opacity_and_size(selected_state=None, selected_year=None, opacity_slider_value=0.1,
+                                 size_slider_value=10):
         opacities = [opacity_slider_value] * len(df)
         sizes = [size_slider_value] * len(df)
         if selected_state:
-            state_mask = df.index.get_level_values("State") == selected_state
+            state_mask = df.index.get_level_values(entity) == selected_state
             opacities = [1 if mask else opacity for mask, opacity in zip(state_mask, opacities)]
             sizes = [size + 7 if mask else size for mask, size in zip(state_mask, sizes)]
 
         if selected_year:
-            year_mask = df.index.get_level_values("Year") == str(selected_year)
+            year_mask = df.index.get_level_values(time) == str(selected_year)
             opacities = [1 if mask else opacity for mask, opacity in zip(year_mask, opacities)]
             sizes = [size + 5 if mask else size for mask, size in zip(year_mask, sizes)]
         return opacities, sizes
@@ -299,7 +302,7 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
     y_buttons = [dict(args=[{"y": [df[col]]}, {"yaxis.title.text": col}], label=col, method="update") for col in df.columns]
     color_buttons = [dict(args=[{"marker.color": [df[col]], 
                                  "marker.colorbar.title.text": col,
-                                "hovertemplate":f"%{{xaxis.title.text}}: %{{x}}<br>%{{yaxis.title.text}}: %{{y}}<br>{col}: %{{marker.color}}" }], label=col, method="update") for col in df.columns]
+                                "hovertemplate":f"%{{text}}<br>%{{xaxis.title.text}}: %{{x}}<br>%{{yaxis.title.text}}: %{{y}}<br>{col}: %{{marker.color}}" }], label=col, method="update") for col in df.columns]
     color_scales = colors.PLOTLY_SCALES.keys()
     colorscale_buttons = [dict(args=[{"marker.colorscale": scale}], label=scale, method="update") for scale in color_scales]
 
@@ -307,7 +310,7 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
     state_buttons = [dict(args=[{"marker.opacity": [update_opacity_and_size(selected_state=state)[0]],
                                  "marker.size": [update_opacity_and_size(selected_state=state)[1]]
                                  }], 
-                          label=state, method="update") for state in states]
+                          label=state, method="update") for state in controls[entity]]
     # year_buttons = [dict(args=[{"marker.opacity": [update_opacity_and_size(selected_year=year)[0]],
     #                              "marker.size": [update_opacity_and_size(selected_year=year)[1]]
     #                              }], 
@@ -321,7 +324,7 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
                     {"label": str(size), "method": "restyle", "args": ["marker.size", [size]]}
                     for size in range(1, 31)
                 ],
-                "x": 0, "len": .5, "xanchor": "left", "y": -0.15
+                "x": 0, "len": .5, "xanchor": "left", "y": -0.3
             },
             {
                 "active": 7,
@@ -331,7 +334,7 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
                     {"label": str(opacity), "method": "restyle", "args": ["marker.opacity", [opacity]]}
                     for opacity in [round(x * 0.01, 2) for x in range(1, 101)]
                 ],
-                "x": 0.5, "len": .5, "xanchor": "left", "y": -0.15
+                "x": 0.5, "len": .5, "xanchor": "left", "y": -0.3
             },
         {
             "active": 0,
@@ -340,10 +343,33 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
             "steps": [
                 {"label": str(year), "method": "update", "args": [{"marker.opacity": [update_opacity_and_size(selected_year=year)[0]],
                                                                   "marker.size": [update_opacity_and_size(selected_year=year)[1]]}]}
-                for year in years
+                for year in controls[time]
             ],
             "x": 0, "len": 1.0, "xanchor": "left", "y": 0
+        },
+        {
+            "active": 0,
+            "currentvalue": {"prefix": "Year: "},
+            "pad": {"t": 50},
+            "steps": [
+                {"label": str(year), "method": "update", "args": [{"marker.opacity": [update_opacity_and_size(selected_year=year)[0]],
+                                                                  "marker.size": [update_opacity_and_size(selected_year=year)[1]]}]}
+                for year in controls[time]
+            ],
+            "x": 0, "len": 1.0, "xanchor": "left", "y": 0
+        },
+        {
+            "active": 0,
+            "currentvalue": {"prefix": "State: "},
+            "pad": {"t": 50},
+            "steps": [
+                {"label": str(ent), "method": "update", "args": [{"marker.opacity": [update_opacity_and_size(selected_state=ent)[0]],
+                                                                  "marker.size": [update_opacity_and_size(selected_state=ent)[1]]}]}
+                for ent in controls[entity]
+            ],
+            "x": 0, "len": 1.0, "xanchor": "left", "y": -0.15
         }
+
 
         ]
 
@@ -353,7 +379,7 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
             dict(buttons=y_buttons, direction="down", showactive=True, x=0.32, xanchor="left", y=1.15, yanchor="top"),
             dict(buttons=color_buttons, direction="down", showactive=True, x=0.47, xanchor="left", y=1.15, yanchor="top"),
             dict(buttons=colorscale_buttons, direction="down", showactive=True, x=0.62, xanchor="left", y=1.15, yanchor="top"),
-            dict(buttons=state_buttons, direction="down", showactive=True, x=0.77, xanchor="left", y=1.15, yanchor="top"),
+            # dict(buttons=state_buttons, direction="down", showactive=True, x=0.77, xanchor="left", y=1.15, yanchor="top"),
             # dict(buttons=year_buttons, direction="down", showactive=True, x=0.92, xanchor="left", y=1.15, yanchor="top")
         ],
         sliders=sliders,
@@ -362,7 +388,7 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
             dict(text="Y-axis", x=0.32, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
             dict(text="Color", x=0.47, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
             dict(text="Colorscale", x=0.62, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
-            dict(text="State", x=0.77, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
+            # dict(text="State", x=0.77, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
             # dict(text="Year", x=0.92, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False)
         ]
     )
@@ -395,66 +421,171 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", show_f
     # fig.write_html(filename)
 
 
-# import plotly.graph_objects as go
-# from plotly.subplots import make_subplots
+import plotly.express as px
+import pandas as pd
 
-# def dict_of_figs_to_dropdown_fig(figs, show_fig=True):
-#     keys = figs.keys()
-#     num_figs = len(keys)
-#     num_traces = {key: len(fig.data) for key, fig in figs.items()}
-#     show_traces = {key: [False for t in range(sum(num_traces.values()))] for key in keys}
-#     start_trace_index = {key: sum(list(num_traces.values())[:i]) for i, key in enumerate(keys)}
-#     end_trace_index = {key: sum(list(num_traces.values())[:i]) for i, key in enumerate(keys)}
+def create_map(df, name, stable_cbar = True):
+    plot_df = df[['State', 'DATE', name]].dropna()
+    dates = sorted([str(d)[:4] for d in plot_df["DATE"].unique()])
+    plot_df["DATE"] = plot_df["DATE"].astype(str).str[:4]
+    plot_df = plot_df.reset_index().pivot(index=['State'], columns='DATE', values=name).reset_index()
+
+    init_var = dates[-1]
+
+    # Calculate the overall min and max values across all years
+    if stable_cbar:
+        min_val = plot_df.drop(columns='State').min().min()
+        max_val = plot_df.drop(columns='State').max().max()
+    else:
+        min_val = None
+        max_val = None
+    # Create the initial plot
+    fig = px.choropleth(plot_df,
+                        locations='State',
+                        color=init_var,  # Initial variable
+                        color_continuous_scale='spectral_r',
+                        locationmode='USA-states',
+                        scope='usa')
+    # Update the coloraxis to match the overall min and max
+    fig.update_traces(hovertemplate="%{location}: %{z}<extra></extra>", 
+                    selector=dict(type='choropleth'))
+    fig.update_layout(
+        coloraxis_colorbar=dict(title=''),
+        coloraxis=dict(cmin=min_val, cmax=max_val, colorscale='spectral_r')
+        )
+    # Update layout with slider
+    sliders = [dict(
+        active=len(dates)-1,
+        currentvalue={"prefix": "Year: "},
+        pad={"t": 50},
+        steps=[
+            dict(
+                label=date,
+                method="update",
+                args=[
+                    {"z": [plot_df[date]]},
+                    {"hovertemplate": "%{location}: " + plot_df[date].astype(str) + "<extra></extra>"},
+                    {"title": f"{name}: {date}"}
+                ]
+            ) for date in dates
+        ]
+    )]
+    fig.update_layout(
+        sliders=sliders,
+        title_text=name, title_x=0.5,
+        coloraxis_colorbar=dict(title=''),
+        coloraxis=dict(cmin=min_val, cmax=max_val, colorscale='spectral_r')
+        )
+
+    return fig
+
+def combine_map_figs(figs):
+    # Combine all figures into one figure with a menu to select between them
+    combined_fig = make_subplots(rows=1, cols=1)
+    names = list(figs.keys())
+    for name, fig in figs.items():
+        for trace in fig.data:
+            combined_fig.add_trace(trace)
+    # Create dropdown menu to switch between figures
+    dropdown_buttons = [
+        dict(
+            label=name,
+            method="update",
+            args=[{"visible": [True if name == selected_name else False for selected_name in names]},
+                {**figs[name].layout.to_plotly_json()},
+                {"title": name}]
+        ) for name in names
+    ]
+    combined_fig.layout = {**figs[list(figs.keys())[0]].layout.to_plotly_json()}
+    combined_fig.update_layout(
+        updatemenus=[dict(buttons=dropdown_buttons, direction="down", showactive=True)],
+        title_text=names[0], title_x=0.5
+    )
+
+    # Set visibility for initial state
+    combined_fig.for_each_trace(lambda trace: trace.update(visible=False))
+    combined_fig.data[0].update(visible=True)
+    return combined_fig
+
+
+
+def dict_of_figs_to_dropdown_fig(figs, show_fig=True, use_sliders = False):
+    keys = figs.keys()
+    num_figs = len(keys)
+    num_traces = {key: len(fig.data) for key, fig in figs.items()}
+    show_traces = {key: [False for t in range(sum(num_traces.values()))] for key in keys}
+    start_trace_index = {key: sum(list(num_traces.values())[:i]) for i, key in enumerate(keys)}
+    end_trace_index = {key: sum(list(num_traces.values())[:i]) for i, key in enumerate(keys)}
     
-#     for key in keys:
-#         show_traces[key][start_trace_index[key]:end_trace_index[key] + 1] = [True for t in range(num_traces[key])]
+    for key in keys:
+        show_traces[key][start_trace_index[key]:end_trace_index[key] + 1] = [True for t in range(num_traces[key])]
 
-#     num_rows = max([len([i for i in fig.select_yaxes()]) for k, fig in figs.items()])
-#     combined_fig = make_subplots(rows=num_rows, cols=1, shared_xaxes=True)
+    num_rows = max([len([i for i in fig.select_yaxes()]) for k, fig in figs.items()])
+    combined_fig = make_subplots(rows=num_rows, cols=1, shared_xaxes=True)
 
-#     for key, fig in figs.items():
-#         for trace in fig.data:
-#             combined_fig.add_trace(trace)
+    for key, fig in figs.items():
+        for trace in fig.data:
+            combined_fig.add_trace(trace)
 
-#     dropdown_buttons_keys = [
-#         {
-#             "label": key,
-#             "method": "update",
-#             "args": [
-#                 {"visible": show_traces[key]},
-#                 {**figs[key].layout.to_plotly_json()}
-#             ]
-#         } for key in keys
-#     ]
+    if use_sliders == True:
+        sliders = [dict(
+            active=len(keys),
+            # currentvalue={"prefix": "Year: "},
+            pad={"t": 50},
+            steps=[
+                dict(
+                    label=key,
+                    method="update",
+                    args=[
+                    {"visible": show_traces[key]},
+                    {**figs[key].layout.to_plotly_json()}
+                ]
+                )  for key in keys
+            ]
+        )]
+        combined_fig.update_layout(
+            sliders=sliders
+        )
+    else:
+        dropdown_buttons_keys = [
+            {
+                "label": key,
+                "method": "update",
+                "args": [
+                    {"visible": show_traces[key]},
+                    {**figs[key].layout.to_plotly_json()}
+                ]
+            } for key in keys
+        ]
+        
 
-#     combined_fig.update_layout(
-#         updatemenus=[
-#             {
-#                 "buttons": dropdown_buttons_keys,
-#                 "direction": "down",
-#                 "showactive": True,
-#                 "x": 0.5,
-#                 "xanchor": "center",
-#                 "y": 1.15,
-#                 "yanchor": "top"
-#             }
-#         ]
-#     )
-#     # combined_fig.layout = {**figs[list(figs.keys())[0]].layout.to_plotly_json()}
+        combined_fig.update_layout(
+            updatemenus=[
+                {
+                    "buttons": dropdown_buttons_keys,
+                    "direction": "down",
+                    "showactive": False,
+                    "x": 0.5,
+                    "xanchor": "center",
+                    "y": 1.15,
+                    "yanchor": "top"
+                }
+            ]
+        )
 
-#     combined_fig.update_traces(visible=False)
-#     for i, trace in enumerate(combined_fig.data):
-#         trace.visible = show_traces[list(keys)[0]][i]
+    combined_fig.update_traces(visible=False)
+    for i, trace in enumerate(combined_fig.data):
+        trace.visible = show_traces[list(keys)[0]][i]
 
-#     if show_fig:
-#         combined_fig.show()
+    if show_fig:
+        combined_fig.show()
 
-#     # Add the original menus from each figure to the combined figure
-#     # for fig in figs.values():
-#     #     if 'updatemenus' in fig.layout:
-#     #         for menu in fig.layout.updatemenus:
-#     #             combined_fig.update_layout(
-#     #                 updatemenus=[*combined_fig.layout.updatemenus, menu]
-#     #             )
+    # Add the original menus from each figure to the combined figure
+    # for fig in figs.values():
+    #     if 'updatemenus' in fig.layout:
+    #         for menu in fig.layout.updatemenus:
+    #             combined_fig.update_layout(
+    #                 updatemenus=[*combined_fig.layout.updatemenus, menu]
+    #             )
 
-#     return combined_fig
+    return combined_fig
