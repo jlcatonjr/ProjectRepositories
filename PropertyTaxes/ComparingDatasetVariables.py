@@ -51,10 +51,11 @@ StateGovFinancesTo2008 = StateGovFinancesTo2008[
 
 # In[]
 
-import pandas as pd
-
 # Merging the datasets on 'State' and 'Year'
 merged_data = pd.merge(StateGovFinances1998to2021, StateGovFinancesTo2008, on=['State', 'Year'], how='inner')
+
+
+# In[]
 
 # Set pandas option to display all info columns
 pd.set_option('display.max_info_columns', 500)  # Set to a large enough number to display all columns
