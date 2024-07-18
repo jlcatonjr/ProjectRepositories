@@ -254,6 +254,59 @@ def dict_of_figs_to_dropdown_fig(figs, show_fig = True):
 import plotly.graph_objs as go
 from plotly.subplots import make_subplots
 import plotly.colors as colors
+from pandas.api.types import is_numeric_dtype
+
+def line_dropdown(df):
+    plot_df = df.reset_index()
+    fig = px.line(plot_df, x="Year", y="General Revenue", color="State")
+                        #   text = df.index.get_level_values(0) + ": " + df.index.get_level_values(1))
+    initial_hovertemplate = f"%{{x}}<br>%{{yaxis.title.text}}: %{{y}}"
+    fig.update_traces(hovertemplate=initial_hovertemplate)
+
+    y_buttons = []
+    for col in df.columns:
+        if is_numeric_dtype(df[col]):
+            y_buttons.append(
+                dict(
+                    args=[
+                        {"y": [df.loc[state][col] for state in plot_df['State'].unique()]},
+                        {"yaxis.title.text": col}
+                    ],
+                    label=col,
+                    method="update"
+                )
+            )
+
+    fig.update_layout(
+        updatemenus=[
+            dict(
+                buttons=y_buttons,
+                direction="down",
+                showactive=True,
+                x=0.17,
+                xanchor="left",
+                y=1.15,
+                yanchor="top"
+            ),
+            dict(
+                type="buttons",
+                direction="left",
+                buttons=list([
+                    dict(
+                        args=[{"yaxis.type": "linear"}],
+                        label="Linear Y",
+                        method="relayout"
+                    ),
+                    dict(
+                        args=[{"yaxis.type": "log"}],
+                        label="Log Y",
+                        method="relayout"
+                )
+            ]))
+        ],
+    )
+
+    return fig
 
 def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", 
                             entity = "State", time = "Year", show_fig=False):
@@ -307,10 +360,10 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html",
     colorscale_buttons = [dict(args=[{"marker.colorscale": scale}], label=scale, method="update") for scale in color_scales]
 
     # Create dropdown menus for state and year selection
-    state_buttons = [dict(args=[{"marker.opacity": [update_opacity_and_size(selected_state=state)[0]],
-                                 "marker.size": [update_opacity_and_size(selected_state=state)[1]]
-                                 }], 
-                          label=state, method="update") for state in controls[entity]]
+    # state_buttons = [dict(args=[{"marker.opacity": [update_opacity_and_size(selected_state=state)[0]],
+    #                              "marker.size": [update_opacity_and_size(selected_state=state)[1]]
+    #                              }], 
+    #                       label=state, method="update") for state in controls[entity]]
     # year_buttons = [dict(args=[{"marker.opacity": [update_opacity_and_size(selected_year=year)[0]],
     #                              "marker.size": [update_opacity_and_size(selected_year=year)[1]]
     #                              }], 
