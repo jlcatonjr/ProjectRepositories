@@ -477,24 +477,24 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html",
 import plotly.express as px
 import pandas as pd
 
-def create_map(df, name, stable_cbar = True):
-    plot_df = df[['State', 'DATE', name]].dropna()
-    dates = sorted([str(d)[:4] for d in plot_df["DATE"].unique()])
-    plot_df["DATE"] = plot_df["DATE"].astype(str).str[:4]
-    plot_df = plot_df.reset_index().pivot(index=['State'], columns='DATE', values=name).reset_index()
+def create_map(df, name, stable_cbar = True, entity_name = "State", time_name = "DATE"):
+    plot_df = df[[entity_name, time_name, name]].dropna()
+    dates = sorted([str(d)[:4] for d in plot_df[time_name].unique()])
+    plot_df[time_name] = plot_df[time_name].astype(str).str[:4]
+    plot_df = plot_df.reset_index().pivot(index=[entity_name], columns=time_name, values=name).reset_index()
 
     init_var = dates[-1]
 
     # Calculate the overall min and max values across all years
     if stable_cbar:
-        min_val = plot_df.drop(columns='State').min().min()
-        max_val = plot_df.drop(columns='State').max().max()
+        min_val = plot_df.drop(columns=entity_name).min().min()
+        max_val = plot_df.drop(columns=entity_name).max().max()
     else:
         min_val = None
         max_val = None
     # Create the initial plot
     fig = px.choropleth(plot_df,
-                        locations='State',
+                        locations=entity_name,
                         color=init_var,  # Initial variable
                         color_continuous_scale='spectral_r',
                         locationmode='USA-states',
