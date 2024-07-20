@@ -250,16 +250,13 @@ def dict_of_figs_to_dropdown_fig(figs, show_fig = True):
     return combined_fig
 
 
-
+import plotly.express as px
 import plotly.graph_objs as go
-from plotly.subplots import make_subplots
-import plotly.colors as colors
 from pandas.api.types import is_numeric_dtype
 
-def line_dropdown(df):
+def line_dropdown(df, regions_df):
     plot_df = df.reset_index()
     fig = px.line(plot_df, x="Year", y="General Revenue", color="State")
-                        #   text = df.index.get_level_values(0) + ": " + df.index.get_level_values(1))
     initial_hovertemplate = f"%{{x}}<br>%{{yaxis.title.text}}: %{{y}}"
     fig.update_traces(hovertemplate=initial_hovertemplate)
 
@@ -276,7 +273,22 @@ def line_dropdown(df):
                     method="update"
                 )
             )
-
+    regdiv_buttons = {"Region":[],
+                      "Division":[]}
+    for regdiv_key in regdiv_buttons:
+        
+        regions = regions_df[regdiv_key].unique()
+        for region in regions:
+            states_in_region = regions_df[regions_df[regdiv_key] == region]['State Abbrev'].values
+            visible_states = df.index.get_level_values("State").unique().isin(states_in_region)
+            regdiv_buttons[regdiv_key].append(
+                dict(
+                    args=[{"visible": visible_states}],
+                    label=region,
+                    method="restyle"
+                )
+            )
+        
     fig.update_layout(
         updatemenus=[
             dict(
@@ -291,7 +303,7 @@ def line_dropdown(df):
             dict(
                 type="buttons",
                 direction="left",
-                buttons=list([
+                buttons=[
                     dict(
                         args=[{"yaxis.type": "linear"}],
                         label="Linear Y",
@@ -301,12 +313,38 @@ def line_dropdown(df):
                         args=[{"yaxis.type": "log"}],
                         label="Log Y",
                         method="relayout"
-                )
-            ]))
+                    )
+                ],
+                x=0.02,
+                xanchor="left",
+                y=1.15,
+                yanchor="top"
+            ),
+            dict(
+                type="buttons",
+                direction="left",
+                buttons=regdiv_buttons["Region"],
+                x=0.38,
+                xanchor="left",
+                y=1.15,
+                yanchor="top"
+            ),
+            dict(
+                type="buttons",
+                direction="left",
+                buttons=regdiv_buttons["Division"],
+                x=0.38,
+                xanchor="left",
+                y=1.05,
+                yanchor="top"
+            )
         ],
     )
 
     return fig
+
+
+
 
 def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", 
                             entity = "State", time = "Year", show_fig=False):
@@ -562,43 +600,40 @@ def combine_map_figs(figs):
 
 
 
-def dict_of_figs_to_dropdown_fig(figs, show_fig=True, use_sliders = False):
-    keys = figs.keys()
+def dict_of_figs_to_dropdown_fig(figs, show_fig=True, use_sliders=False):
+    keys = list(figs.keys())
     num_figs = len(keys)
     num_traces = {key: len(fig.data) for key, fig in figs.items()}
-    show_traces = {key: [False for t in range(sum(num_traces.values()))] for key in keys}
     start_trace_index = {key: sum(list(num_traces.values())[:i]) for i, key in enumerate(keys)}
-    end_trace_index = {key: sum(list(num_traces.values())[:i]) for i, key in enumerate(keys)}
     
+    show_traces = {key: [False] * sum(num_traces.values()) for key in keys}
     for key in keys:
-        show_traces[key][start_trace_index[key]:end_trace_index[key] + 1] = [True for t in range(num_traces[key])]
+        start_index = start_trace_index[key]
+        end_index = start_index + num_traces[key]
+        show_traces[key][start_index:end_index] = [True] * num_traces[key]
 
-    num_rows = max([len([i for i in fig.select_yaxes()]) for k, fig in figs.items()])
-    combined_fig = make_subplots(rows=num_rows, cols=1, shared_xaxes=True)
+    combined_fig = make_subplots(rows=1, cols=1, shared_xaxes=True)
 
-    for key, fig in figs.items():
+    for fig in figs.values():
         for trace in fig.data:
             combined_fig.add_trace(trace)
 
-    if use_sliders == True:
+    if use_sliders:
         sliders = [dict(
-            active=len(keys),
-            # currentvalue={"prefix": "Year: "},
+            active=0,
             pad={"t": 50},
             steps=[
                 dict(
                     label=key,
                     method="update",
                     args=[
-                    {"visible": show_traces[key]},
-                    {**figs[key].layout.to_plotly_json()}
-                ]
-                )  for key in keys
+                        {"visible": show_traces[key]},
+                        {**figs[key].layout.to_plotly_json()}
+                    ]
+                ) for key in keys
             ]
         )]
-        combined_fig.update_layout(
-            sliders=sliders
-        )
+        combined_fig.update_layout(sliders=sliders)
     else:
         dropdown_buttons_keys = [
             {
@@ -610,7 +645,6 @@ def dict_of_figs_to_dropdown_fig(figs, show_fig=True, use_sliders = False):
                 ]
             } for key in keys
         ]
-        
 
         combined_fig.update_layout(
             updatemenus=[
@@ -628,17 +662,81 @@ def dict_of_figs_to_dropdown_fig(figs, show_fig=True, use_sliders = False):
 
     combined_fig.update_traces(visible=False)
     for i, trace in enumerate(combined_fig.data):
-        trace.visible = show_traces[list(keys)[0]][i]
+        trace.visible = show_traces[keys[0]][i]
 
     if show_fig:
         combined_fig.show()
 
-    # Add the original menus from each figure to the combined figure
-    # for fig in figs.values():
-    #     if 'updatemenus' in fig.layout:
-    #         for menu in fig.layout.updatemenus:
-    #             combined_fig.update_layout(
-    #                 updatemenus=[*combined_fig.layout.updatemenus, menu]
-    #             )
+    return combined_fig
+
+# solution broke area plots combinations, so separate creating separate function
+def dict_of_figs_line_figs_to_dropdown_fig(figs, show_fig=True, use_sliders=False):
+    keys = list(figs.keys())
+    combined_fig = make_subplots(rows=1, cols=1, shared_xaxes=True)
+    # trace mapping required to avoid duplicating legend entries for plots linked to buttons
+    trace_mapping = {}
+    for key in keys:
+        for trace in figs[key].data:
+            if trace.name not in trace_mapping:
+                trace_mapping[trace.name] = len(combined_fig.data)
+                combined_fig.add_trace(trace)
+            else:
+                continue
+                # combined_fig.add_trace(go.Scatter(visible=False))
+
+    visibility = {key: [False] * len(combined_fig.data) for key in keys}
+    for key in keys:
+        for trace_name in [trace.name for trace in figs[key].data]:
+            visibility[key][trace_mapping[trace_name]] = True
+
+    if use_sliders:
+        sliders = [dict(
+            active=0,
+            pad={"t": 50},
+            steps=[
+                dict(
+                    label=key,
+                    method="update",
+                    args=[
+                        {"visible": visibility[key]},
+                        {**figs[key].layout.to_plotly_json()}
+                    ]
+                ) for key in keys
+            ]
+        )]
+        combined_fig.update_layout(sliders=sliders)
+    else:
+        dropdown_buttons_keys = [
+            {
+                "label": key,
+                "method": "update",
+                "args": [
+                    {"visible": visibility[key]},
+                    {**figs[key].layout.to_plotly_json()}
+                ]
+            } for key in keys
+        ]
+
+        combined_fig.update_layout(
+            updatemenus=[
+                {
+                    "buttons": dropdown_buttons_keys,
+                    "direction": "down",
+                    "showactive": False,
+                    "x": 0.5,
+                    "xanchor": "center",
+                    "y": 1.15,
+                    "yanchor": "top"
+                }
+            ]
+        )
+
+    combined_fig.update_traces(visible=False)
+    for i, trace in enumerate(combined_fig.data):
+        trace.visible = visibility[keys[0]][i]
+
+    if show_fig:
+        combined_fig.show()
 
     return combined_fig
+
