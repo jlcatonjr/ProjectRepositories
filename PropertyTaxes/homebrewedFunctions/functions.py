@@ -273,6 +273,7 @@ def line_dropdown(df, regions_df):
                     method="update"
                 )
             )
+
     regdiv_buttons = {"Region":[],
                       "Division":[]}
     for regdiv_key in regdiv_buttons:
@@ -346,7 +347,8 @@ def line_dropdown(df, regions_df):
 
 
 
-def create_scatter_dropdown(df, filename="interactive_scatter_plot.html", 
+def create_scatter_dropdown(df, regions_df,
+                            filename="interactive_scatter_plot.html", 
                             entity = "State", time = "Year", show_fig=False):
     # Create a subplot with 1 row and 1 column
     fig = make_subplots(rows=1, cols=1)
@@ -373,16 +375,17 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html",
 
 
     # Function to update marker opacity based on state, year, and slider value
-    def update_opacity_and_size(selected_state=None, selected_year=None, opacity_slider_value=0.1,
+    def update_opacity_and_size(selected_states=None, selected_year=None, opacity_slider_value=0.1,
                                  size_slider_value=10):
         opacities = [opacity_slider_value] * len(df)
         sizes = [size_slider_value] * len(df)
-        if selected_state:
-            state_mask = df.index.get_level_values(entity) == selected_state
+        print(selected_states)
+        if selected_states is not None:
+            state_mask = df.index.get_level_values(entity).isin(selected_states)
             opacities = [1 if mask else opacity for mask, opacity in zip(state_mask, opacities)]
             sizes = [size + 7 if mask else size for mask, size in zip(state_mask, sizes)]
 
-        if selected_year:
+        if selected_year != None:
             year_mask = df.index.get_level_values(time) == str(selected_year)
             opacities = [1 if mask else opacity for mask, opacity in zip(year_mask, opacities)]
             sizes = [size + 5 if mask else size for mask, size in zip(year_mask, sizes)]
@@ -396,7 +399,21 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html",
                                 "hovertemplate":f"%{{text}}<br>%{{xaxis.title.text}}: %{{x}}<br>%{{yaxis.title.text}}: %{{y}}<br>{col}: %{{marker.color}}" }], label=col, method="update") for col in df.columns]
     color_scales = colors.PLOTLY_SCALES.keys()
     colorscale_buttons = [dict(args=[{"marker.colorscale": scale}], label=scale, method="update") for scale in color_scales]
-
+    
+    ## Create Region Buttons
+    regdiv_buttons = {"Region":[],
+                       "Division":[]}
+    for i, regdiv_key in enumerate(regdiv_buttons):
+        regions = regions_df[regdiv_key].unique()
+        for region in regions:
+            regdiv_buttons[regdiv_key].append(
+                {"label": str(region), 
+                 "method": "update", 
+                 "args": [{
+                    "marker.opacity": [update_opacity_and_size(selected_states=regions_df[regions_df[regdiv_key] == region]['State Abbrev'].values)[0]],
+                    "marker.size": [update_opacity_and_size(selected_states=regions_df[regions_df[regdiv_key] == region]['State Abbrev'].values)[1]]}
+                    ]}
+            )
     # Create dropdown menus for state and year selection
     # state_buttons = [dict(args=[{"marker.opacity": [update_opacity_and_size(selected_state=state)[0]],
     #                              "marker.size": [update_opacity_and_size(selected_state=state)[1]]
@@ -406,79 +423,81 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html",
     #                              "marker.size": [update_opacity_and_size(selected_year=year)[1]]
     #                              }], 
     #                      label=str(year), method="update") for year in years]
+    # regdiv_buttons = {"Region":[],
+    #                     "Division":[]}
+    # for regdiv_key in regdiv_buttons:
+        
+    #     regions = regions_df[regdiv_key].unique()
+    #     for region in regions:
+    #         states_in_region = regions_df[regions_df[regdiv_key] == region]['State Abbrev'].values
+    #         visible_states = df.index.get_level_values("State").unique().isin(states_in_region)
+    #         regdiv_buttons[regdiv_key].append(
+    #             dict(
+    #                 args=[{"visible": visible_states}],
+    #                 label=region,
+    #                 method="restyle"
+    #             )
+        #         )
 
-    sliders = [{
-                "active": 0,
-                "currentvalue": {"prefix": "Marker Size: "},
-                "pad": {"t": 50},
+    size_slider = {
+                    "active": 0, "currentvalue": {"prefix": "Marker Size: "}, "pad": {"t": 50},
+                    "steps": [
+                        {"label": str(size), "method": "restyle", "args": ["marker.size", [size]]}
+                        for size in range(1, 31)
+                    ],
+                    "x": 0, "len": .5, "xanchor": "left", "y": -0.3
+                }
+    opacity_slider = {
+                    "active": 7, "currentvalue": {"prefix": "Marker Opacity: "}, "pad": {"t": 50},
+                    "steps": [
+                        {"label": str(opacity), "method": "restyle", "args": ["marker.opacity", [opacity]]}
+                        for opacity in [round(x * 0.01, 2) for x in range(1, 101)]
+                    ],
+                    "x": 0.5, "len": .5, "xanchor": "left", "y": -0.3
+                }
+    year_slider = {
+                "active": 0, "currentvalue": {"prefix": "Year: "}, "pad": {"t": 50},
                 "steps": [
-                    {"label": str(size), "method": "restyle", "args": ["marker.size", [size]]}
-                    for size in range(1, 31)
+                    {"label": str(year), "method": "update", "args": [{"marker.opacity": [update_opacity_and_size(selected_year=year)[0]],
+                                                                    "marker.size": [update_opacity_and_size(selected_year=year)[1]]}]}
+                    for year in controls[time]
                 ],
-                "x": 0, "len": .5, "xanchor": "left", "y": -0.3
-            },
-            {
-                "active": 7,
-                "currentvalue": {"prefix": "Marker Opacity: "},
-                "pad": {"t": 50},
+                "x": 0, "len": 1.0, "xanchor": "left", "y": 0
+            }
+    state_slider = {
+                "active": 0, "currentvalue": {"prefix": "State: "}, "pad": {"t": 50},
                 "steps": [
-                    {"label": str(opacity), "method": "restyle", "args": ["marker.opacity", [opacity]]}
-                    for opacity in [round(x * 0.01, 2) for x in range(1, 101)]
+                    {"label": str(ent), "method": "update", "args": [{"marker.opacity": [update_opacity_and_size(selected_states=[ent])[0]],
+                                                                    "marker.size": [update_opacity_and_size(selected_states=[ent])[1]]}]}
+                    for ent in controls[entity]
                 ],
-                "x": 0.5, "len": .5, "xanchor": "left", "y": -0.3
-            },
-        {
-            "active": 0,
-            "currentvalue": {"prefix": "Year: "},
-            "pad": {"t": 50},
-            "steps": [
-                {"label": str(year), "method": "update", "args": [{"marker.opacity": [update_opacity_and_size(selected_year=year)[0]],
-                                                                  "marker.size": [update_opacity_and_size(selected_year=year)[1]]}]}
-                for year in controls[time]
-            ],
-            "x": 0, "len": 1.0, "xanchor": "left", "y": 0
-        },
-        {
-            "active": 0,
-            "currentvalue": {"prefix": "Year: "},
-            "pad": {"t": 50},
-            "steps": [
-                {"label": str(year), "method": "update", "args": [{"marker.opacity": [update_opacity_and_size(selected_year=year)[0]],
-                                                                  "marker.size": [update_opacity_and_size(selected_year=year)[1]]}]}
-                for year in controls[time]
-            ],
-            "x": 0, "len": 1.0, "xanchor": "left", "y": 0
-        },
-        {
-            "active": 0,
-            "currentvalue": {"prefix": "State: "},
-            "pad": {"t": 50},
-            "steps": [
-                {"label": str(ent), "method": "update", "args": [{"marker.opacity": [update_opacity_and_size(selected_state=ent)[0]],
-                                                                  "marker.size": [update_opacity_and_size(selected_state=ent)[1]]}]}
-                for ent in controls[entity]
-            ],
-            "x": 0, "len": 1.0, "xanchor": "left", "y": -0.15
-        }
+                "x": 0, "len": 1.0, "xanchor": "left", "y": -0.15
+            }
 
 
-        ]
 
+
+    sliders = [size_slider, opacity_slider, year_slider, state_slider]
+    annotation_y = 1.115
     fig.update_layout(
         updatemenus=[
-            dict(buttons=x_buttons, direction="down", showactive=True, x=0.17, xanchor="left", y=1.15, yanchor="top"),
-            dict(buttons=y_buttons, direction="down", showactive=True, x=0.32, xanchor="left", y=1.15, yanchor="top"),
-            dict(buttons=color_buttons, direction="down", showactive=True, x=0.47, xanchor="left", y=1.15, yanchor="top"),
-            dict(buttons=colorscale_buttons, direction="down", showactive=True, x=0.62, xanchor="left", y=1.15, yanchor="top"),
+            dict(buttons=x_buttons, direction="down", showactive=True, x=0.17, xanchor="left", y=1.075, yanchor="top"),
+            dict(buttons=y_buttons, direction="down", showactive=True, x=0.32, xanchor="left", y=1.075, yanchor="top"),
+            dict(buttons=color_buttons, direction="down", showactive=True, x=0.47, xanchor="left", y=1.075, yanchor="top"),
+            dict(buttons=colorscale_buttons, direction="down", showactive=True, x=0.62, xanchor="left", y=1.075, yanchor="top"),
+            dict(type="buttons", direction="left", buttons=regdiv_buttons["Region"], x=0.38, xanchor="left", y=1.3, yanchor="top"),         
+            dict(type="buttons", direction="left", buttons=regdiv_buttons["Division"], x=0.38, xanchor="left", y=1.225, yanchor="top")            
             # dict(buttons=state_buttons, direction="down", showactive=True, x=0.77, xanchor="left", y=1.15, yanchor="top"),
-            # dict(buttons=year_buttons, direction="down", showactive=True, x=0.92, xanchor="left", y=1.15, yanchor="top")
+            # dict(buttons=year_buttons, direction="down", showactive=True, x=0.92, xanchor="left", y=1.15, yanchor="top"),
+            # dict(type="buttons", direction="left", buttons=regdiv_buttons["Region"], x=0.38, xanchor="left", y=1.15, yanchor="top"),
+            # dict(type="buttons", direction="left", buttons=regdiv_buttons["Division"], x=0.38, xanchor="left", y=1.05, yanchor="top")
         ],
         sliders=sliders,
         annotations=[
-            dict(text="X-axis", x=0.17, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
-            dict(text="Y-axis", x=0.32, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
-            dict(text="Color", x=0.47, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
-            dict(text="Colorscale", x=0.62, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
+            dict(text="X-axis", x=0.17, xref="paper", y=annotation_y, yref="paper", xanchor="left", showarrow=False),
+            dict(text="Y-axis", x=0.32, xref="paper", y=annotation_y, yref="paper", xanchor="left", showarrow=False),
+            dict(text="Color", x=0.47, xref="paper", y=annotation_y, yref="paper", xanchor="left", showarrow=False),
+            dict(text="Colorscale", x=0.62, xref="paper", y=annotation_y, yref="paper", xanchor="left", showarrow=False),
             # dict(text="State", x=0.77, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
             # dict(text="Year", x=0.92, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False)
         ]
@@ -507,7 +526,7 @@ def create_scatter_dropdown(df, filename="interactive_scatter_plot.html",
         fig.show()
 
         
-
+    # return fig
 
     # fig.write_html(filename)
 
