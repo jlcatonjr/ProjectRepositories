@@ -85,7 +85,20 @@ for year in range(1998, 2008 + 1):
         print(f"Correlation matrix for {year}:")
         print(corr_matrix)
         print("\n")
-        
+
+# In[]
+
+# Calculating individual years to see correlations
+for year in range(2008):
+    yearly_data = merged_data[merged_data['Year'] == year]
+    if not yearly_data.empty:
+        # Select numeric columns for the correlation matrix calculation
+        numeric_data = yearly_data.select_dtypes(include=[np.number])
+        corr_matrix = numeric_data.corr()
+        print(f"Correlation matrix for {year}:")
+        print(corr_matrix)
+        print("\n")
+
 # In[]
 
 # Find pairs where correlation coefficient is exactly 1
