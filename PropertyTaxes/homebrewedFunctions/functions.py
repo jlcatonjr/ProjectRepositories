@@ -318,23 +318,23 @@ def line_dropdown(df, regions_df):
                 ],
                 x=0.02,
                 xanchor="left",
-                y=1.15,
+                y=1.2,
                 yanchor="top"
             ),
             dict(
                 type="buttons",
                 direction="left",
                 buttons=regdiv_buttons["Region"],
-                x=0.38,
+                x=-0.15,
                 xanchor="left",
-                y=1.15,
+                y=1.1,
                 yanchor="top"
             ),
             dict(
                 type="buttons",
                 direction="left",
                 buttons=regdiv_buttons["Division"],
-                x=0.38,
+                x=-0.15,
                 xanchor="left",
                 y=1.05,
                 yanchor="top"
@@ -414,30 +414,6 @@ def create_scatter_dropdown(df, regions_df,
                     "marker.size": [update_opacity_and_size(selected_states=regions_df[regions_df[regdiv_key] == region]['State Abbrev'].values)[1]]}
                     ]}
             )
-    # Create dropdown menus for state and year selection
-    # state_buttons = [dict(args=[{"marker.opacity": [update_opacity_and_size(selected_state=state)[0]],
-    #                              "marker.size": [update_opacity_and_size(selected_state=state)[1]]
-    #                              }], 
-    #                       label=state, method="update") for state in controls[entity]]
-    # year_buttons = [dict(args=[{"marker.opacity": [update_opacity_and_size(selected_year=year)[0]],
-    #                              "marker.size": [update_opacity_and_size(selected_year=year)[1]]
-    #                              }], 
-    #                      label=str(year), method="update") for year in years]
-    # regdiv_buttons = {"Region":[],
-    #                     "Division":[]}
-    # for regdiv_key in regdiv_buttons:
-        
-    #     regions = regions_df[regdiv_key].unique()
-    #     for region in regions:
-    #         states_in_region = regions_df[regions_df[regdiv_key] == region]['State Abbrev'].values
-    #         visible_states = df.index.get_level_values("State").unique().isin(states_in_region)
-    #         regdiv_buttons[regdiv_key].append(
-    #             dict(
-    #                 args=[{"visible": visible_states}],
-    #                 label=region,
-    #                 method="restyle"
-    #             )
-        #         )
 
     size_slider = {
                     "active": 0, "currentvalue": {"prefix": "Marker Size: "}, "pad": {"t": 50},
@@ -478,15 +454,15 @@ def create_scatter_dropdown(df, regions_df,
 
 
     sliders = [size_slider, opacity_slider, year_slider, state_slider]
-    annotation_y = 1.115
+    annotation_y = 1.135
     fig.update_layout(
         updatemenus=[
-            dict(buttons=x_buttons, direction="down", showactive=True, x=0.17, xanchor="left", y=1.075, yanchor="top"),
-            dict(buttons=y_buttons, direction="down", showactive=True, x=0.32, xanchor="left", y=1.075, yanchor="top"),
-            dict(buttons=color_buttons, direction="down", showactive=True, x=0.47, xanchor="left", y=1.075, yanchor="top"),
-            dict(buttons=colorscale_buttons, direction="down", showactive=True, x=0.62, xanchor="left", y=1.075, yanchor="top"),
-            dict(type="buttons", direction="left", buttons=regdiv_buttons["Region"], x=0.38, xanchor="left", y=1.3, yanchor="top"),         
-            dict(type="buttons", direction="left", buttons=regdiv_buttons["Division"], x=0.38, xanchor="left", y=1.225, yanchor="top")            
+            dict(buttons=x_buttons, direction="down", showactive=True, x=-0.1, xanchor="left", y=1.095, yanchor="top"),
+            dict(buttons=y_buttons, direction="down", showactive=True, x=0.2, xanchor="left", y=1.095, yanchor="top"),
+            dict(buttons=color_buttons, direction="down", showactive=True, x=0.5, xanchor="left", y=1.095, yanchor="top"),
+            dict(buttons=colorscale_buttons, direction="down", showactive=True, x=0.8, xanchor="left", y=1.095, yanchor="top"),
+            dict(type="buttons", direction="left", buttons=regdiv_buttons["Region"], x=-0.1, xanchor="left", y=1.3, yanchor="top"),         
+            dict(type="buttons", direction="left", buttons=regdiv_buttons["Division"], x=-0.1, xanchor="left", y=1.2, yanchor="top")            
             # dict(buttons=state_buttons, direction="down", showactive=True, x=0.77, xanchor="left", y=1.15, yanchor="top"),
             # dict(buttons=year_buttons, direction="down", showactive=True, x=0.92, xanchor="left", y=1.15, yanchor="top"),
             # dict(type="buttons", direction="left", buttons=regdiv_buttons["Region"], x=0.38, xanchor="left", y=1.15, yanchor="top"),
@@ -494,12 +470,12 @@ def create_scatter_dropdown(df, regions_df,
         ],
         sliders=sliders,
         annotations=[
-            dict(text="X-axis", x=0.17, xref="paper", y=annotation_y, yref="paper", xanchor="left", showarrow=False),
-            dict(text="Y-axis", x=0.32, xref="paper", y=annotation_y, yref="paper", xanchor="left", showarrow=False),
-            dict(text="Color", x=0.47, xref="paper", y=annotation_y, yref="paper", xanchor="left", showarrow=False),
-            dict(text="Colorscale", x=0.62, xref="paper", y=annotation_y, yref="paper", xanchor="left", showarrow=False),
-            dict(text="Region", x=0.35, xref="paper", y=1.285, yref="paper", xanchor="left", showarrow=False),
-            dict(text="Division", x=0.35, xref="paper", y=1.21, yref="paper", xanchor="left", showarrow=False),
+            dict(text="X-axis", x=-0.1, xref="paper", y=annotation_y, yref="paper", xanchor="left", showarrow=False),
+            dict(text="Y-axis", x=0.2, xref="paper", y=annotation_y, yref="paper", xanchor="left", showarrow=False),
+            dict(text="Color", x=0.5, xref="paper", y=annotation_y, yref="paper", xanchor="left", showarrow=False),
+            dict(text="Colorscale", x=0.8, xref="paper", y=annotation_y, yref="paper", xanchor="left", showarrow=False),
+            dict(text="Region", x=-0.1, xref="paper", y=1.3, yref="paper", xanchor="left", showarrow=False),
+            dict(text="Division", x=-0.1, xref="paper", y=1.2, yref="paper", xanchor="left", showarrow=False),
             # dict(text="State", x=0.77, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
             # dict(text="Year", x=0.92, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False)
         ]
@@ -520,9 +496,12 @@ def create_scatter_dropdown(df, regions_df,
     '''
 
     # Add the custom JS to the HTML output
+
+    # enhance_plotly_figure_for_mobile(fig, output_path=filename)
     with open(filename, 'w') as f:
         f.write(fig.to_html(full_html=False, include_plotlyjs='cdn'))
         f.write(custom_js)
+        
 
     if show_fig:
         fig.show()
