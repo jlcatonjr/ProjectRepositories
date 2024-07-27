@@ -286,7 +286,7 @@ def line_dropdown(df, regions_df):
                 dict(
                     args=[{"visible": visible_states}],
                     label=region,
-                    method="restyle"
+                    method="update"
                 )
             )
         
@@ -299,7 +299,7 @@ def line_dropdown(df, regions_df):
                 x=0,
                 xanchor="left",
                 y=1.3,
-                yanchor="top"
+                yanchor="top",
             ),
             dict(
                 type="buttons",
@@ -328,26 +328,26 @@ def line_dropdown(df, regions_df):
                 x=0,
                 xanchor="left",
                 y=1.18,
-                yanchor="top"
+                yanchor="top",
             ),
           
                 dict(
                 type="buttons",
                 direction="left",
-                buttons=regdiv_buttons["Division"][:len(regdiv_buttons["Division"])//2],
+                buttons=regdiv_buttons["Division"][:len(regdiv_buttons["Division"])//2+1],
                 x=0,
                 xanchor="left",
                 y=1.12,
-                yanchor="top"
+                yanchor="top",
             ),
             dict(
                 type="buttons",
                 direction="left",
-                buttons=regdiv_buttons["Division"][len(regdiv_buttons["Division"])//2:],
+                buttons=regdiv_buttons["Division"][len(regdiv_buttons["Division"])//2+1:],
                 x=0,
                 xanchor="left",
                 y=1.06,
-                yanchor="top"
+                yanchor="top",
             )
         ],
     )
@@ -464,28 +464,31 @@ def create_scatter_dropdown(df, regions_df,
 
 
     sliders = [size_slider, opacity_slider, year_slider, state_slider]
-    annotation_y = 1.135
+    annotation_y = 1.125
     fig.update_layout(
         updatemenus=[
-            dict(buttons=x_buttons, direction="down", showactive=True, x=-0.1, xanchor="left", y=1.095, yanchor="top"),
-            dict(buttons=y_buttons, direction="down", showactive=True, x=0.2, xanchor="left", y=1.095, yanchor="top"),
-            dict(buttons=color_buttons, direction="down", showactive=True, x=0.5, xanchor="left", y=1.095, yanchor="top"),
-            dict(buttons=colorscale_buttons, direction="down", showactive=True, x=0.8, xanchor="left", y=1.095, yanchor="top"),
-            dict(type="buttons", direction="left", buttons=regdiv_buttons["Region"], x=-0.1, xanchor="left", y=1.3, yanchor="top"),         
-            dict(type="buttons", direction="left", buttons=regdiv_buttons["Division"], x=-0.1, xanchor="left", y=1.2, yanchor="top")            
-            # dict(buttons=state_buttons, direction="down", showactive=True, x=0.77, xanchor="left", y=1.15, yanchor="top"),
+            dict(buttons=x_buttons, direction="down", showactive=True, x=0, xanchor="left", y=1.085, yanchor="top"),
+            dict(buttons=y_buttons, direction="down", showactive=True, x=0.25, xanchor="left", y=1.085, yanchor="top"),
+            dict(buttons=color_buttons, direction="down", showactive=True, x=0.5, xanchor="left", y=1.085, yanchor="top"),
+            dict(buttons=colorscale_buttons, direction="down", showactive=True, x=0.75, xanchor="left", y=1.085, yanchor="top"),
+            dict(type="buttons", direction="left", buttons=regdiv_buttons["Region"], x=0, xanchor="left", y=1.37, yanchor="top"),         
+            dict(type="buttons", direction="left", buttons=regdiv_buttons["Division"][:len(regdiv_buttons["Division"])//2+1],
+               x=0, xanchor="left", y=1.27, yanchor="top"),
+            dict(type="buttons", direction="left", buttons=regdiv_buttons["Division"][len(regdiv_buttons["Division"])//2+1:],
+                x=0, xanchor="left", y=1.2, yanchor="top"
+            )            # dict(buttons=state_buttons, direction="down", showactive=True, x=0.77, xanchor="left", y=1.15, yanchor="top"),
             # dict(buttons=year_buttons, direction="down", showactive=True, x=0.92, xanchor="left", y=1.15, yanchor="top"),
             # dict(type="buttons", direction="left", buttons=regdiv_buttons["Region"], x=0.38, xanchor="left", y=1.15, yanchor="top"),
             # dict(type="buttons", direction="left", buttons=regdiv_buttons["Division"], x=0.38, xanchor="left", y=1.05, yanchor="top")
         ],
         sliders=sliders,
         annotations=[
-            dict(text="X-axis", x=-0.1, xref="paper", y=annotation_y, yref="paper", xanchor="left", showarrow=False),
-            dict(text="Y-axis", x=0.2, xref="paper", y=annotation_y, yref="paper", xanchor="left", showarrow=False),
+            dict(text="X-axis", x=0, xref="paper", y=annotation_y, yref="paper", xanchor="left", showarrow=False),
+            dict(text="Y-axis", x=0.25, xref="paper", y=annotation_y, yref="paper", xanchor="left", showarrow=False),
             dict(text="Color", x=0.5, xref="paper", y=annotation_y, yref="paper", xanchor="left", showarrow=False),
-            dict(text="Colorscale", x=0.8, xref="paper", y=annotation_y, yref="paper", xanchor="left", showarrow=False),
-            dict(text="Region", x=-0.1, xref="paper", y=1.3, yref="paper", xanchor="left", showarrow=False),
-            dict(text="Division", x=-0.1, xref="paper", y=1.2, yref="paper", xanchor="left", showarrow=False),
+            dict(text="Colorscale", x=0.75, xref="paper", y=annotation_y, yref="paper", xanchor="left", showarrow=False),
+            dict(text="Region", x=-0.005, xref="paper", y=1.35, yref="paper", xanchor="right", showarrow=False),
+            dict(text="Division", x=-0.005, xref="paper", y=1.22, yref="paper", xanchor="right", showarrow=False),
             # dict(text="State", x=0.77, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False),
             # dict(text="Year", x=0.92, xref="paper", y=1.25, yref="paper", xanchor="left", showarrow=False)
         ]
@@ -700,6 +703,7 @@ def dict_of_figs_line_figs_to_dropdown_fig(figs, show_fig=True, use_sliders=Fals
     for key in keys:
         for trace_name in [trace.name for trace in figs[key].data]:
             visibility[key][trace_mapping[trace_name]] = True
+    combined_fig.update_layout(**figs[keys[0]].layout.to_plotly_json())
 
     if use_sliders:
         sliders = [dict(
@@ -716,9 +720,11 @@ def dict_of_figs_line_figs_to_dropdown_fig(figs, show_fig=True, use_sliders=Fals
                 ) for key in keys
             ],
             # x = 0, len = 1.0, xanchor = "left", y = 0, yanchor = "top"
-
         )]
+
         combined_fig.update_layout(sliders=sliders)
+        # combined_fig.update_layout(**figs[keys[0]].layout.to_plotly_json())
+
     else:
         dropdown_buttons_keys = [
             {
@@ -744,6 +750,7 @@ def dict_of_figs_line_figs_to_dropdown_fig(figs, show_fig=True, use_sliders=Fals
                 }
             ]
         )
+
 
     combined_fig.update_traces(visible=False)
     for i, trace in enumerate(combined_fig.data):
