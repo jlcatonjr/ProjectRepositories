@@ -540,7 +540,8 @@ def create_map(df, name, stable_cbar = True, entity_name = "State", time_name = 
     plot_df = df[[entity_name, time_name, name]].dropna()
     dates = sorted([str(d)[:4] for d in plot_df[time_name].unique()])
     plot_df[time_name] = plot_df[time_name].astype(str).str[:4]
-    plot_df = plot_df.reset_index().pivot(index=[entity_name], columns=time_name, values=name).reset_index()
+    plot_df = plot_df.reset_index().pivot(index=[entity_name], columns=time_name, values=name)
+    plot_df = plot_df.loc[plot_df.index != "US"].reset_index()
 
     init_var = dates[-1]
 
