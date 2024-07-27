@@ -296,9 +296,9 @@ def line_dropdown(df, regions_df):
                 buttons=y_buttons,
                 direction="down",
                 showactive=True,
-                x=0.17,
+                x=0,
                 xanchor="left",
-                y=1.15,
+                y=1.3,
                 yanchor="top"
             ),
             dict(
@@ -316,27 +316,37 @@ def line_dropdown(df, regions_df):
                         method="relayout"
                     )
                 ],
-                x=0.02,
+                x=0,
                 xanchor="left",
-                y=1.2,
+                y=1.24,
                 yanchor="top"
             ),
             dict(
                 type="buttons",
                 direction="left",
                 buttons=regdiv_buttons["Region"],
-                x=-0.15,
+                x=0,
                 xanchor="left",
-                y=1.1,
+                y=1.18,
+                yanchor="top"
+            ),
+          
+                dict(
+                type="buttons",
+                direction="left",
+                buttons=regdiv_buttons["Division"][:len(regdiv_buttons["Division"])//2],
+                x=0,
+                xanchor="left",
+                y=1.12,
                 yanchor="top"
             ),
             dict(
                 type="buttons",
                 direction="left",
-                buttons=regdiv_buttons["Division"],
-                x=-0.15,
+                buttons=regdiv_buttons["Division"][len(regdiv_buttons["Division"])//2:],
+                x=0,
                 xanchor="left",
-                y=1.05,
+                y=1.06,
                 yanchor="top"
             )
         ],
@@ -590,7 +600,7 @@ def combine_map_figs(figs):
     ]
     combined_fig.layout = {**figs[list(figs.keys())[0]].layout.to_plotly_json()}
     combined_fig.update_layout(
-        updatemenus=[dict(buttons=dropdown_buttons, direction="down", showactive=True)],
+        updatemenus=[dict(buttons=dropdown_buttons, direction="down", showactive=True, x =0.1, xanchor = "left")],
         title_text=names[0], title_x=0.5
     )
 
@@ -632,7 +642,8 @@ def dict_of_figs_to_dropdown_fig(figs, show_fig=True, use_sliders=False):
                         {**figs[key].layout.to_plotly_json()}
                     ]
                 ) for key in keys
-            ]
+            ],
+            x = 0, len = 1.0, xanchor = "left", y = 0, yanchor = "bottom"
         )]
         combined_fig.update_layout(sliders=sliders)
     else:
@@ -703,7 +714,9 @@ def dict_of_figs_line_figs_to_dropdown_fig(figs, show_fig=True, use_sliders=Fals
                         {**figs[key].layout.to_plotly_json()}
                     ]
                 ) for key in keys
-            ]
+            ],
+            # x = 0, len = 1.0, xanchor = "left", y = 0, yanchor = "top"
+
         )]
         combined_fig.update_layout(sliders=sliders)
     else:
@@ -735,7 +748,7 @@ def dict_of_figs_line_figs_to_dropdown_fig(figs, show_fig=True, use_sliders=Fals
     combined_fig.update_traces(visible=False)
     for i, trace in enumerate(combined_fig.data):
         trace.visible = visibility[keys[0]][i]
-    combined_fig.update_layout(**figs[keys[0]].layout.to_plotly_json())
+    # combined_fig.update_layout(**figs[keys[0]].layout.to_plotly_json())
 
     if show_fig:
         combined_fig.show()
