@@ -515,7 +515,7 @@ def create_scatter_dropdown(df, regions_df,
         f.write(fig.to_html(full_html=False, include_plotlyjs='cdn'))
         f.write(custom_js)
         
-
+    enhance_plotly_html_for_mobile(filename, output_path=filename)
     if show_fig:
         fig.show()
 
@@ -723,7 +723,6 @@ def dict_of_figs_line_figs_to_dropdown_fig(figs, show_fig=True, use_sliders=Fals
         )]
 
         combined_fig.update_layout(sliders=sliders)
-        # combined_fig.update_layout(**figs[keys[0]].layout.to_plotly_json())
 
     else:
         dropdown_buttons_keys = [
@@ -761,6 +760,54 @@ def dict_of_figs_line_figs_to_dropdown_fig(figs, show_fig=True, use_sliders=Fals
         combined_fig.show()
 
     return combined_fig
+
+def enhance_plotly_html_for_mobile(html_path, output_path=None):
+    import re
+    
+    # Read the content of the HTML file
+    with open(html_path, 'r') as file:
+        html_content = file.read()
+    
+    # Meta tag and CSS to insert
+    meta_and_css = """
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        .plotly-graph-div {
+            width: 100% !important;
+            height: 100vh !important;  /* Use viewport height */
+        }
+        .plotly .modebar-group {
+            display: flex;
+            justify-content: center;
+        }
+        .plotly .modebar-btn, .plotly .dropdown-menu {
+            width: auto !important;
+        }
+        @media (max-width: 600px) {
+            .plotly-graph-div {
+                height: calc(100vh - 100px) !important;  /* Adjust height for mobile view */
+            }
+        }
+    </style>
+    """
+    
+    # Find the position to insert the meta tag and CSS
+    head_end = html_content.find("</head>")
+    
+    if head_end != -1:
+        # Insert the meta tag and CSS
+        enhanced_html_content = html_content[:head_end] + meta_and_css + html_content[head_end:]
+    else:
+        # If </head> not found, just append meta tag and CSS at the beginning
+        enhanced_html_content = meta_and_css + html_content
+    
+    # If output path is not provided, overwrite the original file
+    if not output_path:
+        output_path = html_path
+    
+    # Save the enhanced HTML content to the output file
+    with open(output_path, 'w') as file:
+        file.write(enhanced_html_content)
 
 
 
