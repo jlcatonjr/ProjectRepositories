@@ -515,7 +515,7 @@ def create_scatter_dropdown(df, regions_df,
         f.write(fig.to_html(full_html=False, include_plotlyjs='cdn'))
         f.write(custom_js)
         
-    enhance_plotly_html_for_mobile(filename, output_path=filename)
+    # enhance_plotly_html_for_mobile(filename, output_path=filename)
     if show_fig:
         fig.show()
 
