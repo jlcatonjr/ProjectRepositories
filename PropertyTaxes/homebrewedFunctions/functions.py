@@ -722,7 +722,8 @@ def line_dropdown(dfs, regions_df):
                 )
 
         # Create buttons for Region and Division
-        regdiv_buttons = {"Region": [], "Division": []}
+        regdiv_buttons = {"Region": [], 
+                    "Division": []}
         for regdiv_key in regdiv_buttons:
             regions = regions_df[regdiv_key].unique()
             for region in regions:
@@ -735,6 +736,12 @@ def line_dropdown(dfs, regions_df):
                         method="update"
                     )
                 )
+        regdiv_buttons["Region"].append(
+            dict(
+                args=[{"visible": [True] * len(plot_df['State'].unique())}],
+                label="All",
+                method="update"
+                ))
         
         menus = [
             dict(
