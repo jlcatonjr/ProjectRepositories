@@ -4,7 +4,7 @@ Created on Wed Jul 17 16:02:49 2024
 
 @author: richard.feir
 """
-# In[]
+# In[1]
 
 import pandas as pd
 import numpy as np
@@ -75,16 +75,18 @@ merged_data = convert_to_float_with_null(merged_data, object_columns)
 
 # In[]
 
-# Calculating correlation matrices for each year in the range 1998 to 2008
-for year in range(1998, 2008 + 1):
-    yearly_data = merged_data[merged_data['Year'] == year]
-    if not yearly_data.empty:
-        # Select numeric columns for the correlation matrix calculation
-        numeric_data = yearly_data.select_dtypes(include=[np.number])
-        corr_matrix = numeric_data.corr()
-        print(f"Correlation matrix for {year}:")
-        print(corr_matrix)
-        print("\n")
+# Variables were calculated using individual years to find any correlation of 1 for any years and manually checked.
+
+# # Calculating correlation matrices for each year in the range 1998 to 2008
+# for year in range(1998, 2008 + 1):
+#     yearly_data = merged_data[merged_data['Year'] == year]
+#     if not yearly_data.empty:
+#         # Select numeric columns for the correlation matrix calculation
+#         numeric_data = yearly_data.select_dtypes(include=[np.number])
+#         corr_matrix = numeric_data.corr()
+#         print(f"Correlation matrix for {year}:")
+#         print(corr_matrix)
+#         print("\n")
 
 # In[]
 
@@ -114,3 +116,47 @@ for i in range(len(cols)):
 print("Highly correlated pairs with correlation coefficient of 1:")
 for pair in correlation_pairs:
     print(pair)
+
+
+# In[]
+
+# Variables were calculated using individual years to find any correlation of 1 for any years and manually checked.
+
+# print(list(correlation_pairs))
+
+# import csv
+
+# # Open a file in write mode
+# with open('correlation_pairs.csv', 'w', newline='') as file:
+#     writer = csv.writer(file)
+    
+#     # Write the list of tuples to the CSV file
+#     writer.writerows(correlation_pairs)
+
+# print("CSV file has been written successfully.")
+
+# In[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
