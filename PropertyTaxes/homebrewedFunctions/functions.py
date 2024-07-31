@@ -693,6 +693,10 @@ def dict_of_figs_to_dropdown_fig(figs, show_fig=True, use_sliders=False):
 #     return combined_fig
 
 
+import plotly.express as px
+from plotly.subplots import make_subplots
+from pandas.api.types import is_numeric_dtype
+
 def line_dropdown(dfs, regions_df):
     fig = make_subplots(rows=1, cols=1)
     
@@ -724,6 +728,12 @@ def line_dropdown(dfs, regions_df):
         # Create buttons for Region and Division
         regdiv_buttons = {"Region": [], 
                     "Division": []}
+        # button to show all states
+        regdiv_buttons["Region"].append(dict(
+                    args=[{"visible": df.index.get_level_values("State").unique().isin(df.index.get_level_values("State").unique())}],
+                    label="All",
+                    method="update"
+                    ))
         for regdiv_key in regdiv_buttons:
             regions = regions_df[regdiv_key].unique()
             for region in regions:
@@ -736,12 +746,6 @@ def line_dropdown(dfs, regions_df):
                         method="update"
                     )
                 )
-        regdiv_buttons["Region"].append(
-            dict(
-                args=[{"visible": [True] * len(plot_df['State'].unique())}],
-                label="All",
-                method="update"
-                ))
         
         menus = [
             dict(
@@ -799,7 +803,7 @@ def line_dropdown(dfs, regions_df):
                 xanchor="left",
                 y=1.06,
                 yanchor="top",
-            )
+            ),
         ]
         return menus
 
@@ -809,7 +813,7 @@ def line_dropdown(dfs, regions_df):
             active=True,
             currentvalue={"prefix": ""},
             pad={"t": 50},
-            y = 0, x=0, xanchor="left", yanchor="top",
+            y = -0.1, x=0, xanchor="left", yanchor="bottom",
             steps=[
                 dict(
                     args=[
@@ -832,13 +836,12 @@ def line_dropdown(dfs, regions_df):
     ]
 
     fig.update_layout(
-        sliders=sliders
+        sliders=sliders,
+        updatemenus=create_menus(first_key),
+        margin=dict(t=200)
     )
-    # fig.update_layout(
-    #     updatemenus=create_menus(first_key)
-    # )
-
     return fig
+
 
 
 def enhance_plotly_html_for_mobile(html_path, output_path=None):
