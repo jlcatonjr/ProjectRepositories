@@ -813,7 +813,7 @@ def line_dropdown(dfs, regions_df):
             active=True,
             currentvalue={"prefix": ""},
             pad={"t": 50},
-            y = -0.1, x=0, xanchor="left", yanchor="bottom",
+            y = 0, x=0, xanchor="left", yanchor="top",
             steps=[
                 dict(
                     args=[
