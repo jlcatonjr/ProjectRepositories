@@ -838,7 +838,9 @@ def line_dropdown(dfs, regions_df):
     fig.update_layout(
         sliders=sliders,
         updatemenus=create_menus(first_key),
-        margin=dict(t=200)
+        margin=dict(t=200),
+        clickmode='event+select',
+        hovermode='closest'        
     )
     return fig
 
