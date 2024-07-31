@@ -696,9 +696,8 @@ def dict_of_figs_to_dropdown_fig(figs, show_fig=True, use_sliders=False):
 import plotly.express as px
 from plotly.subplots import make_subplots
 from pandas.api.types import is_numeric_dtype
-import plotly.io as pio
 
-def line_dropdown(dfs, regions_df, filename):
+def line_dropdown(dfs, regions_df):
     fig = make_subplots(rows=1, cols=1)
     menu_font =dict(size=20)
     # Extract keys and initialize the first plot
@@ -754,15 +753,6 @@ def line_dropdown(dfs, regions_df, filename):
         
         menus = [
             dict(
-                buttons=y_buttons,
-                direction="down",
-                showactive=True,
-                x=0,
-                xanchor="left",
-                y=1.3,
-                yanchor="top",
-            ),
-            dict(
                 type="buttons",
                 direction="left",
                 buttons=[
@@ -811,6 +801,15 @@ def line_dropdown(dfs, regions_df, filename):
                 y=1.06,
                 yanchor="top",
             ),
+            dict(
+                buttons=y_buttons,
+                direction="down",
+                showactive=True,
+                x=0,
+                xanchor="left",
+                y=1.3,
+                yanchor="top",
+            )            
         ]
         return menus
 
@@ -857,56 +856,11 @@ def line_dropdown(dfs, regions_df, filename):
         template='plotly_white',
         updatemenus=[dict(font=dict(size=20), yanchor='top')],
         autosize=True,
+        # dragmode=False
     )
- # Generate the HTML content
-    html_content = pio.to_html(fig, full_html=False, config=dict(displayModeBar=False))
-
-    # Create the complete HTML with custom CSS and JavaScript
-    html_template = f"""
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-            /* Custom CSS to improve touch interaction */
-            .plotly .dropdown-menu {{
-                touch-action: manipulation;
-                -ms-touch-action: manipulation;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                user-select: none;
-            }}
-            .plotly .dropdown-menu .dropdown-item {{
-                touch-action: manipulation;
-                -ms-touch-action: manipulation;
-                cursor: pointer;
-            }}
-            .plotly .modebar-btn {{
-                touch-action: manipulation;
-                -ms-touch-action: manipulation;
-            }}
-            .plotly-graph-div {{
-                width: 100% !important;
-                height: 100vh !important;  /* Use viewport height */
-            }}
-        
-
-        </style>
-    </head>
-    <body>
-        <div id="plotly-div">{html_content}</div>
-        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    </body>
-    </html>
-    """
-
-    # Save the HTML content to a file
-    with open(filename, 'w') as f:
-        f.write(html_template)
-
+ 
     return fig
 
-# Usage:
 
 
 def enhance_plotly_html_for_mobile(html_path, output_path=None):
