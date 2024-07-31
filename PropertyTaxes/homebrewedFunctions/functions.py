@@ -753,6 +753,15 @@ def line_dropdown(dfs, regions_df):
         
         menus = [
             dict(
+                buttons=y_buttons,
+                direction="down",
+                showactive=True,
+                x=0,
+                xanchor="left",
+                y=1.3,
+                yanchor="top",
+            ),
+            dict(
                 type="buttons",
                 direction="left",
                 buttons=[
@@ -801,15 +810,6 @@ def line_dropdown(dfs, regions_df):
                 y=1.06,
                 yanchor="top",
             ),
-            dict(
-                buttons=y_buttons,
-                direction="down",
-                showactive=True,
-                x=0,
-                xanchor="left",
-                y=1.3,
-                yanchor="top",
-            )            
         ]
         return menus
 
@@ -855,7 +855,7 @@ def line_dropdown(dfs, regions_df):
     fig.update_layout(
         template='plotly_white',
         updatemenus=[dict(font=dict(size=20), yanchor='top')],
-        autosize=True,
+        # autosize=True
         # dragmode=False
     )
  
