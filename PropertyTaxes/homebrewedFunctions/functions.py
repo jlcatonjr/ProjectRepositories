@@ -699,7 +699,7 @@ from pandas.api.types import is_numeric_dtype
 
 def line_dropdown(dfs, regions_df):
     fig = make_subplots(rows=1, cols=1)
-    
+    menu_font =dict(size=20)
     # Extract keys and initialize the first plot
     keys = list(dfs.keys())
     first_key = keys[0]
@@ -718,11 +718,12 @@ def line_dropdown(dfs, regions_df):
                     dict(
                         args=[
                             {"y": [df.loc[state][col] for state in plot_df['State'].unique()]},
-                            {"yaxis.title.text": col}
+                            {"yaxis.title.text": col,
+                            "font":menu_font}
                         ],
                         label=col,
-                        method="update"
-                    )
+                        method="update",
+                )
                 )
 
         # Create buttons for Region and Division
@@ -730,9 +731,10 @@ def line_dropdown(dfs, regions_df):
                     "Division": []}
         # button to show all states
         regdiv_buttons["Region"].append(dict(
-                    args=[{"visible": df.index.get_level_values("State").unique().isin(df.index.get_level_values("State").unique())}],
+                    args=[{"visible": df.index.get_level_values("State").unique().isin(df.index.get_level_values("State").unique()),
+                           "font":menu_font}],
                     label="All",
-                    method="update"
+                    method="update",
                     ))
         for regdiv_key in regdiv_buttons:
             regions = regions_df[regdiv_key].unique()
@@ -741,9 +743,11 @@ def line_dropdown(dfs, regions_df):
                 visible_states = df.index.get_level_values("State").unique().isin(states_in_region)
                 regdiv_buttons[regdiv_key].append(
                     dict(
-                        args=[{"visible": visible_states}],
+                        args=[{"visible": visible_states,
+                               "font":menu_font}],
                         label=region,
-                        method="update"
+                        method="update",
+                        
                     )
                 )
         
@@ -762,12 +766,14 @@ def line_dropdown(dfs, regions_df):
                 direction="left",
                 buttons=[
                     dict(
-                        args=[{"yaxis.type": "linear"}],
+                        args=[{"yaxis.type": "linear",
+                               "font":menu_font}],
                         label="Linear Y",
                         method="relayout"
                     ),
                     dict(
-                        args=[{"yaxis.type": "log"}],
+                        args=[{"yaxis.type": "log",
+                               "font":menu_font}],
                         label="Log Y",
                         method="relayout"
                     )
@@ -775,7 +781,7 @@ def line_dropdown(dfs, regions_df):
                 x=0,
                 xanchor="left",
                 y=1.24,
-                yanchor="top"
+                yanchor="top",
             ),
             dict(
                 type="buttons",
@@ -825,7 +831,8 @@ def line_dropdown(dfs, regions_df):
                         },
                         {
                             "updatemenus": create_menus(key),
-                            "yaxis.title.text": "General Revenue"                            
+                            "yaxis.title.text": "General Revenue" ,
+                            "font":menu_font                           
                         }
                     ],                    label=key,
                     method="update"
@@ -839,9 +846,19 @@ def line_dropdown(dfs, regions_df):
         sliders=sliders,
         updatemenus=create_menus(first_key),
         margin=dict(t=200),
+        font=dict(size=20),
         clickmode='event+select',
         hovermode='closest'        
     )
+
+    # Add custom CSS to improve touch interaction
+    fig.update_layout(
+        template='plotly_white',
+        updatemenus=[dict(font=dict(size=20), yanchor='top')],
+        autosize=True,
+        # dragmode=False
+    )
+ 
     return fig
 
 
