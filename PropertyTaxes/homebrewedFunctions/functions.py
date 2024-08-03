@@ -705,6 +705,9 @@ def line_dropdown(dfs, regions_df):
     first_key = keys[0]
     plot_df = dfs[first_key].reset_index()
     fig = px.line(plot_df, x="Year", y="General Revenue", color="State")
+    initial_hovertemplate = f"%{{x}}<br>%{{yaxis.title.text}}: %{{y}}"
+    fig.update_traces(hovertemplate=initial_hovertemplate)
+
 
     def create_menus(df_key):
         df = dfs[df_key]
