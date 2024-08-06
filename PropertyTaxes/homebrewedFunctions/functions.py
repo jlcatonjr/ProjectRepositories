@@ -185,8 +185,9 @@ def plot_r2(r2_df, r2s, key, variant):
 
 
 def line_dropdown(df, regions_df):
+    y0_name = list(df.keys())[0]
     plot_df = df.reset_index()
-    fig = px.line(plot_df, x="Year", y="General Revenue", color="State")
+    fig = px.line(plot_df, x="Year", y=y0_name, color="State")
     initial_hovertemplate = f"%{{x}}<br>%{{yaxis.title.text}}: %{{y}}"
     fig.update_traces(hovertemplate=initial_hovertemplate)
 
@@ -280,6 +281,16 @@ def line_dropdown(df, regions_df):
                 yanchor="top",
             )
         ],
+    )
+    fig.update_layout(
+        margin=dict(t=200),
+        font=dict(size=20),
+        clickmode='event+select',
+        hovermode='closest',    
+        template='plotly_white',
+        updatemenus=[dict(font=dict(size=20), yanchor='top')],
+        # autosize=True
+        # dragmode=False
     )
 
     return fig
@@ -697,14 +708,15 @@ import plotly.express as px
 from plotly.subplots import make_subplots
 from pandas.api.types import is_numeric_dtype
 
-def line_dropdown(dfs, regions_df):
+def aggregated_line_dropdown(dfs, regions_df):
     fig = make_subplots(rows=1, cols=1)
     menu_font =dict(size=20)
     # Extract keys and initialize the first plot
     keys = list(dfs.keys())
     first_key = keys[0]
     plot_df = dfs[first_key].reset_index()
-    fig = px.line(plot_df, x="Year", y="General Revenue", color="State")
+    y0 = list(dfs[first_key].keys())[0]
+    fig = px.line(plot_df, x="Year", y=y0, color="State")
     initial_hovertemplate = f"%{{x}}<br>%{{yaxis.title.text}}: %{{y}}"
     fig.update_traces(hovertemplate=initial_hovertemplate)
 
@@ -829,12 +841,12 @@ def line_dropdown(dfs, regions_df):
                         {
                             
                             "x": [dfs[key].loc[state].index.get_level_values('Year') for state in dfs[key].index.get_level_values("State").unique()],
-                            "y": [dfs[key].loc[state]['General Revenue'] for state in dfs[key].index.get_level_values("State").unique()],
+                            "y": [dfs[key].loc[state][y0] for state in dfs[key].index.get_level_values("State").unique()],
 
                         },
                         {
                             "updatemenus": create_menus(key),
-                            "yaxis.title.text": "General Revenue" ,
+                            "yaxis.title.text": y0,
                             "font":menu_font                           
                         }
                     ],                    label=key,
