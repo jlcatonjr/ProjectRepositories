@@ -186,6 +186,8 @@ def plot_r2(r2_df, r2s, key, variant):
 
 def line_dropdown(df, regions_df):
     y0_name = list(df.keys())[0]
+    menu_font =dict(size=20)
+
     plot_df = df.reset_index()
     fig = px.line(plot_df, x="Year", y=y0_name, color="State")
     initial_hovertemplate = f"%{{x}}<br>%{{yaxis.title.text}}: %{{y}}"
@@ -205,8 +207,15 @@ def line_dropdown(df, regions_df):
                 )
             )
 
-    regdiv_buttons = {"Region":[],
-                      "Division":[]}
+    regdiv_buttons = {"Region": [], 
+                "Division": []}
+    # button to show all states
+    regdiv_buttons["Region"].append(dict(
+                args=[{"visible": df.index.get_level_values("State").unique().isin(df.index.get_level_values("State").unique()),
+                        "font":menu_font}],
+                label="All",
+                method="update",
+                ))
     for regdiv_key in regdiv_buttons:
         
         regions = regions_df[regdiv_key].unique()
@@ -215,7 +224,8 @@ def line_dropdown(df, regions_df):
             visible_states = df.index.get_level_values("State").unique().isin(states_in_region)
             regdiv_buttons[regdiv_key].append(
                 dict(
-                    args=[{"visible": visible_states}],
+                    args=[{"visible": visible_states,
+                           "font":menu_font}],
                     label=region,
                     method="update"
                 )
@@ -237,12 +247,14 @@ def line_dropdown(df, regions_df):
                 direction="left",
                 buttons=[
                     dict(
-                        args=[{"yaxis.type": "linear"}],
+                        args=[{"yaxis.type": "linear",
+                               "font":menu_font}],
                         label="Linear Y",
                         method="relayout"
                     ),
                     dict(
-                        args=[{"yaxis.type": "log"}],
+                        args=[{"yaxis.type": "log",
+                               "font":menu_font}],
                         label="Log Y",
                         method="relayout"
                     )
