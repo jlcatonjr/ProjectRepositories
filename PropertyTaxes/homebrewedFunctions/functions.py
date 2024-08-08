@@ -184,12 +184,12 @@ def plot_r2(r2_df, r2s, key, variant):
     return fig, axs
 
 
-def line_dropdown(df, regions_df):
+def line_dropdown(df, regions_df, title = ""):
     y0_name = list(df.keys())[0]
     menu_font =dict(size=20)
 
     plot_df = df.reset_index()
-    fig = px.line(plot_df, x="Year", y=y0_name, color="State")
+    fig = px.line(plot_df, x="Year", y=y0_name, color="State", title = title)
     initial_hovertemplate = f"%{{x}}<br>%{{yaxis.title.text}}: %{{y}}"
     fig.update_traces(hovertemplate=initial_hovertemplate)
 
@@ -310,7 +310,7 @@ def line_dropdown(df, regions_df):
 
 
 
-def create_scatter_dropdown(df, regions_df,
+def create_scatter_dropdown(df, regions_df, title = "",
                             filename="interactive_scatter_plot.html", 
                             entity = "State", time = "Year", show_fig=False):
     # Create a subplot with 1 row and 1 column
@@ -328,7 +328,8 @@ def create_scatter_dropdown(df, regions_df,
     fig.update_layout(
         xaxis_title=df.columns[0],
         yaxis_title=df.columns[0],
-    )
+        title = dict(text=title, x=1, xanchor='right')
+        )
 
     initial_hovertemplate = f"%{{text}}<br>%{{xaxis.title.text}}: %{{x}}<br>%{{yaxis.title.text}}: %{{y}}<br>{df.columns[0]}: %{{marker.color}}"
     fig.update_traces(hovertemplate=initial_hovertemplate)
@@ -480,7 +481,7 @@ def create_scatter_dropdown(df, regions_df,
 import plotly.express as px
 import pandas as pd
 
-def create_map(df, name, stable_cbar = True, entity_name = "State", time_name = "DATE"):
+def create_map(df, name, title ="", stable_cbar = True, entity_name = "State", time_name = "DATE"):
     plot_df = df[[entity_name, time_name, name]].dropna()
     dates = sorted([str(d)[:4] for d in plot_df[time_name].unique()])
     plot_df[time_name] = plot_df[time_name].astype(str).str[:4]
@@ -521,22 +522,22 @@ def create_map(df, name, stable_cbar = True, entity_name = "State", time_name = 
                 method="update",
                 args=[
                     {"z": [plot_df[date]]},
-                    {"hovertemplate": "%{location}: " + plot_df[date].astype(str) + "<extra></extra>"},
-                    {"title": f"{name}: {date}"}
+                    {"title": dict(text= f"{title}<br>{name}: {date}", x=0.5)},
+                    {"hovertemplate": "%{location}: " + plot_df[date].astype(str) + "<extra></extra>"}
                 ]
             ) for date in dates
         ]
     )]
     fig.update_layout(
+        title = dict(text= f"{title}<br>{name}: {init_var}", x=0.5),
         sliders=sliders,
-        title_text=name, title_x=0.5,
         coloraxis_colorbar=dict(title=''),
         coloraxis=dict(cmin=min_val, cmax=max_val, colorscale='spectral_r')
         )
 
     return fig
 
-def combine_map_figs(figs):
+def combine_map_figs(figs, title = ""):
     # Combine all figures into one figure with a menu to select between them
     combined_fig = make_subplots(rows=1, cols=1)
     names = list(figs.keys())
@@ -550,13 +551,13 @@ def combine_map_figs(figs):
             method="update",
             args=[{"visible": [True if name == selected_name else False for selected_name in names]},
                 {**figs[name].layout.to_plotly_json()},
-                {"title": name}]
+                {"title": f"{title}<br>{name}"}]
         ) for name in names
     ]
     combined_fig.layout = {**figs[list(figs.keys())[0]].layout.to_plotly_json()}
     combined_fig.update_layout(
-        updatemenus=[dict(buttons=dropdown_buttons, direction="down", showactive=True, x =1, y = 1, yanchor = "bottom", xanchor = "right")],
-        title_text=names[0], title_x=0.5
+        updatemenus=[dict(buttons=dropdown_buttons, direction="down", showactive=True, x =1, y = 1, yanchor = "bottom", xanchor = "right")]#,
+        # title_text=f"{title}<br>{names[0]}", title_x=0.5
     )
 
     # Set visibility for initial state
@@ -720,7 +721,7 @@ import plotly.express as px
 from plotly.subplots import make_subplots
 from pandas.api.types import is_numeric_dtype
 
-def aggregated_line_dropdown(dfs, regions_df):
+def aggregated_line_dropdown(dfs, regions_df,title = ""):
     fig = make_subplots(rows=1, cols=1)
     menu_font =dict(size=20)
     # Extract keys and initialize the first plot
@@ -859,6 +860,7 @@ def aggregated_line_dropdown(dfs, regions_df):
                         {
                             "updatemenus": create_menus(key),
                             "yaxis.title.text": y0,
+                            "title" : dict(text=f"{title}<br>{key}", x=1, xanchor='right'),
                             "font":menu_font                           
                         }
                     ],                    label=key,
@@ -875,7 +877,8 @@ def aggregated_line_dropdown(dfs, regions_df):
         margin=dict(t=200),
         font=dict(size=20),
         clickmode='event+select',
-        hovermode='closest'        
+        hovermode='closest',
+        title = dict(text=f"{title}<br>Level", x=1, xanchor='right')         
     )
 
     # Add custom CSS to improve touch interaction
