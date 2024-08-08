@@ -31,6 +31,6 @@ for kind in ("Level", "Percent of Personal Income", "Real Level", "Real Value Pe
     #     files_to_copy.append(f"../outputs/{state} government amount/MapPlotsByVariableAndYear{state} government amount{kind}.html")
     #     files_to_copy.append(f"../outputs/{state} government amount/LinePlotsStateFinancesAsPercentRevenuePercentGDPAndPerCapitaFigs{state} government amount.html")
 for file in files_to_copy:    
-    copyfile(file, file.split("/")[-1])
+    copyfile(file, "InteractiveHTML/"+file.split("/")[-1])
 
 os.system("jupyter nbconvert --to html ImportTemplates.ipynb")

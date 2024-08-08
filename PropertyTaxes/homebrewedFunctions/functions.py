@@ -189,7 +189,7 @@ def line_dropdown(df, regions_df, title = ""):
     menu_font =dict(size=20)
 
     plot_df = df.reset_index()
-    fig = px.line(plot_df, x="Year", y=y0_name, color="State", title = title)
+    fig = px.line(plot_df.dropna(subset = y0_name,axis = 0), x="Year", y=y0_name, color="State", title = title)
     initial_hovertemplate = f"%{{x}}<br>%{{yaxis.title.text}}: %{{y}}"
     fig.update_traces(hovertemplate=initial_hovertemplate)
 
