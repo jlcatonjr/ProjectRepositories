@@ -199,7 +199,7 @@ def line_dropdown(df, regions_df, title = ""):
             y_buttons.append(
                 dict(
                     args=[
-                        {"y": [df.loc[state][col] for state in plot_df['State'].unique()]},
+                        {"y": [df.loc[state][col].dropna(axis = 0) for state in plot_df['State'].unique()]},
                         {"yaxis.title.text": col}
                     ],
                     label=col,
