@@ -23,6 +23,8 @@ check_dir = os.listdir(check_path)
 for file in check_dir:
     files_to_copy.append(f"{check_path}/{file}")
 files_to_copy.append("../outputs/PersonalIncome/LinePlotsStatePI.html")
+for kind in ("Level", "Percent of Personal Income", "Real Level", "Real Value Per Capita"):
+    files_to_copy.append(f"../outputs/PersonalIncome/ScatterPlotsPersonalIncome{kind}.html")
     # for kind in ("Percent of Expenditure", "Percent of General Revenue", "Percent of GDP", "Value Per Capita"):
     #     files_to_copy.append(f"../outputs/{state} government amount/AreaPlots{state} government amount{kind}TaxesFigs.html")
     #     files_to_copy.append(f"../outputs/{state} government amount/AreaPlots{state} government amount{kind}Revenue Source by GovernmentFigs.html")
