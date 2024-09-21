@@ -1,0 +1,45 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personal Income</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+            iframe {
+                width: 100%;
+                height: 1000px;
+                border: 1px solid #ccc;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Personal Income and Components</h1>
+        
+        <label for="pageSelect">Type: </label>
+        <select id="pageSelect">
+            <option value="" disabled selected>Select a Plot</option>
+        <option value="InteractiveHTML/AreaPlotsPersonalIncomePercentofPersonalIncome3.html">As Percent of Personal Income3: Area</option>
+        <option value="InteractiveHTML/LinePlotsStatePI.html">Select Data Format Options: Lines</option>
+        <option value="InteractiveHTML/MapPlotsPersonalIncomeReal Value Per Capita.html">Real Value Per Capita: Maps</option>
+        <option value="InteractiveHTML/ScatterPlotsPersonalIncomeReal Value Per Capita.html">Real Value Per Capita: Scatter</option>
+
+        </select>
+
+        <iframe id="contentFrame" src=""></iframe>
+
+        <script>
+            document.getElementById('pageSelect').addEventListener('change', function() {
+                var selectedPage = this.value;
+                document.getElementById('contentFrame').src = selectedPage;
+            });
+        </script>
+
+    </body>
+    </html>
+    

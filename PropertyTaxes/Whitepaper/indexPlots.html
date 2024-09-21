@@ -1,0 +1,53 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dynamic iFrame Loader</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+            iframe {
+                width: 100%;
+                height: 1000px;
+                border: 1px solid #ccc;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>State Level Data</h1>
+        
+        <label for="pageSelect">Chapter: </label>
+        <select id="pageSelect">
+            <option value="" disabled selected>Select a page</option>
+            <option value="InteractiveHTML/LinePlotsStatePI.html">InteractiveHTML/LinePlotsStatePI.html</option>
+        <option value="InteractiveHTML/LinePlotsStateFinancesAsPercentRevenuePercentGDPAndPerCapitaFigsState & local government amount.html">InteractiveHTML/LinePlotsStateFinancesAsPercentRevenuePercentGDPAndPerCapitaFigsState & local government amount.html</option>
+        <option value="InteractiveHTML/ScatterPlotsExpenditureState & local government amountPercent of Expenditure.html">InteractiveHTML/ScatterPlotsExpenditureState & local government amountPercent of Expenditure.html</option>
+        <option value="InteractiveHTML/ScatterPlotsExpenditureState government amountPercent of Expenditure.html">InteractiveHTML/ScatterPlotsExpenditureState government amountPercent of Expenditure.html</option>
+        <option value="InteractiveHTML/EFNALinePlot.html">InteractiveHTML/EFNALinePlot.html</option>
+        <option value="InteractiveHTML/AreaPlotsRevenueState government amountPercent of GDPTaxesFigs.html">InteractiveHTML/AreaPlotsRevenueState government amountPercent of GDPTaxesFigs.html</option>
+        <option value="InteractiveHTML/AreaPlotsRevenueState government amountPercent of ExpenditureTaxesFigs.html">InteractiveHTML/AreaPlotsRevenueState government amountPercent of ExpenditureTaxesFigs.html</option>
+        <option value="InteractiveHTML/AreaPlotsRevenueState government amountPercent of RevenueTaxesFigs.html">InteractiveHTML/AreaPlotsRevenueState government amountPercent of RevenueTaxesFigs.html</option>
+        <option value="InteractiveHTML/MapPlotsByVariableAndYearExpenditureState & local government amountReal Value Per Capita.html">InteractiveHTML/MapPlotsByVariableAndYearExpenditureState & local government amountReal Value Per Capita.html</option>
+        <option value="InteractiveHTML/MapPlotsByVariableAndYearRevenueState & local government amountReal Value Per Capita.html">InteractiveHTML/MapPlotsByVariableAndYearRevenueState & local government amountReal Value Per Capita.html</option>
+        <option value="InteractiveHTML/MapPlotsByVariableAndYearDebtState & local government amountReal Value Per Capita.html">InteractiveHTML/MapPlotsByVariableAndYearDebtState & local government amountReal Value Per Capita.html</option>
+
+        </select>
+
+        <iframe id="contentFrame" src=""></iframe>
+
+        <script>
+            document.getElementById('pageSelect').addEventListener('change', function() {
+                var selectedPage = this.value;
+                document.getElementById('contentFrame').src = selectedPage;
+            });
+        </script>
+
+    </body>
+    </html>
+    

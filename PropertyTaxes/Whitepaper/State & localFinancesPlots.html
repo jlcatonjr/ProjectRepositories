@@ -1,0 +1,58 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>State & Local Finances</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+            iframe {
+                width: 100%;
+                height: 1000px;
+                border: 1px solid #ccc;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>State & Local Finances</h1>
+        
+        <label for="pageSelect">Type: </label>
+        <select id="pageSelect">
+            <option value="" disabled selected>Select a page</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresState & local government financesPercent of ExpenditureExpenditure by Function.html">Area: State and Local Expenditures by Sector as Percent of Expenditure</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresState & local government financesPercent of ExpenditureExpenditures.html">State and Local Expenditures by General Function as Percent of Expenditure</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresState & local government financesPercent of General RevenueExpenditure by Function.html">Area: State and Local Expenditures by Sector as Percent of General Revenue</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresState & local government financesPercent of General RevenueExpenditures.html">Area: State and Local Expenditures by General Function as Percent of General Revenue</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesState & local government financesPercent of GDPTaxes.html">Area: State and Local Revenues by Sector as Percent of GDP</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesState & local government financesPercent of GDPRevenue Source by Government.html">Area: State and Local Revenues by General Source as Percent of GDP</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesState & local government financesPercent of General RevenueRevenue Source by Government.html">Area: State and Local Revenues by General Source as Percent of General Revenue</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesState & local government financesPercent of General RevenueTaxes.html">Area: State and Local Revenues by Sector as Percent of General Revenue</option>
+        <option value="InteractiveHTML/LinePlotsStateFinancesExpendituresState & local government finances.html">Line: State and Local Expenditures</option>
+        <option value="InteractiveHTML/LinePlotsStateFinancesRevenuesState & local government finances.html">Line: State and Local Revenues</option>
+        <option value="InteractiveHTML/LinePlotsStateFinancesDebtsState & local government finances.html">Line: State and Local Debt</option>
+        <option value="InteractiveHTML/MapPlotsDebtsState & local government financesPercent of GDP.html">Map: State and Local Debt as Percent of GDP</option>
+        <option value="InteractiveHTML/MapPlotsExpendituresState & local government financesPercent of GDP.html">Map: State and Local Expenditures as Percent of GDP</option>
+        <option value="InteractiveHTML/MapPlotsRevenuesState & local government financesPercent of GDP.html">Map: State and Local Debt Revenues as Percent of GDP</option>
+        <option value="InteractiveHTML/ScatterPlotsExpendituresState & local government financesPercent of GDP.html">Scatter: State and Local Expenditures as Percent of GDP</option>
+        <option value="InteractiveHTML/ScatterPlotsRevenuesState & local government financesPercent of GDP.html">Scatter: State and Local Revenues as Percent of GDP</option>
+        <option value="InteractiveHTML/ScatterPlotsDebtsState & local government financesPercent of GDP.html">Scatter: State and Local Debts as Percent of GDP</option>
+
+        </select>
+
+        <iframe id="contentFrame" src=""></iframe>
+
+        <script>
+            document.getElementById('pageSelect').addEventListener('change', function() {
+                var selectedPage = this.value;
+                document.getElementById('contentFrame').src = selectedPage;
+            });
+        </script>
+
+    </body>
+    </html>
+    

@@ -1,0 +1,42 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dynamic iFrame Loader</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+            iframe {
+                width: 100%;
+                height: 1000px;
+                border: 1px solid #ccc;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>State & local</h1>
+        
+        <label for="pageSelect">Chapter: </label>
+        <select id="pageSelect">
+            <option value="" disabled selected>Select a page</option>
+    
+        </select>
+
+        <iframe id="contentFrame" src=""></iframe>
+
+        <script>
+            document.getElementById('pageSelect').addEventListener('change', function() {
+                var selectedPage = this.value;
+                document.getElementById('contentFrame').src = selectedPage;
+            });
+        </script>
+
+    </body>
+    </html>
+    

@@ -1,0 +1,104 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Local Finances</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+            iframe {
+                width: 100%;
+                height: 1000px;
+                border: 1px solid #ccc;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Local Finances</h1>
+        
+        <label for="pageSelect">Type: </label>
+        <select id="pageSelect">
+            <option value="" disabled selected>Select a page</option>
+            <option value="InteractiveHTML/AreaPlotsExpendituresLocal government financesLevelExpenditure by Function.html">AreaPlotsExpendituresLocal government financesLevelExpenditure by Function</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresLocal government financesLevelExpenditures.html">AreaPlotsExpendituresLocal government financesLevelExpenditures</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresLocal government financesPercent of ExpenditureExpenditure by Function.html">AreaPlotsExpendituresLocal government financesPercent of ExpenditureExpenditure by Function</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresLocal government financesPercent of ExpenditureExpenditures.html">AreaPlotsExpendituresLocal government financesPercent of ExpenditureExpenditures</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresLocal government financesPercent of GDPExpenditure by Function.html">AreaPlotsExpendituresLocal government financesPercent of GDPExpenditure by Function</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresLocal government financesPercent of GDPExpenditures.html">AreaPlotsExpendituresLocal government financesPercent of GDPExpenditures</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresLocal government financesPercent of General RevenueExpenditure by Function.html">AreaPlotsExpendituresLocal government financesPercent of General RevenueExpenditure by Function</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresLocal government financesPercent of General RevenueExpenditures.html">AreaPlotsExpendituresLocal government financesPercent of General RevenueExpenditures</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresLocal government financesReal LevelExpenditure by Function.html">AreaPlotsExpendituresLocal government financesReal LevelExpenditure by Function</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresLocal government financesReal LevelExpenditures.html">AreaPlotsExpendituresLocal government financesReal LevelExpenditures</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresLocal government financesReal Value Per CapitaExpenditure by Function.html">AreaPlotsExpendituresLocal government financesReal Value Per CapitaExpenditure by Function</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresLocal government financesReal Value Per CapitaExpenditures.html">AreaPlotsExpendituresLocal government financesReal Value Per CapitaExpenditures</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesLocal government financesLevelRevenue Source by Government.html">AreaPlotsRevenuesLocal government financesLevelRevenue Source by Government</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesLocal government financesLevelTaxes.html">AreaPlotsRevenuesLocal government financesLevelTaxes</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesLocal government financesPercent of ExpenditureRevenue Source by Government.html">AreaPlotsRevenuesLocal government financesPercent of ExpenditureRevenue Source by Government</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesLocal government financesPercent of ExpenditureTaxes.html">AreaPlotsRevenuesLocal government financesPercent of ExpenditureTaxes</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesLocal government financesPercent of GDPRevenue Source by Government.html">AreaPlotsRevenuesLocal government financesPercent of GDPRevenue Source by Government</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesLocal government financesPercent of GDPTaxes.html">AreaPlotsRevenuesLocal government financesPercent of GDPTaxes</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesLocal government financesPercent of General RevenueRevenue Source by Government.html">AreaPlotsRevenuesLocal government financesPercent of General RevenueRevenue Source by Government</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesLocal government financesPercent of General RevenueTaxes.html">AreaPlotsRevenuesLocal government financesPercent of General RevenueTaxes</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesLocal government financesReal LevelRevenue Source by Government.html">AreaPlotsRevenuesLocal government financesReal LevelRevenue Source by Government</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesLocal government financesReal LevelTaxes.html">AreaPlotsRevenuesLocal government financesReal LevelTaxes</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesLocal government financesReal Value Per CapitaRevenue Source by Government.html">AreaPlotsRevenuesLocal government financesReal Value Per CapitaRevenue Source by Government</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesLocal government financesReal Value Per CapitaTaxes.html">AreaPlotsRevenuesLocal government financesReal Value Per CapitaTaxes</option>
+        <option value="InteractiveHTML/LinePlotsStateFinancesDebtsLocal government finances.html">LinePlotsStateFinancesDebtsLocal government finances</option>
+        <option value="InteractiveHTML/LinePlotsStateFinancesExpendituresLocal government finances.html">LinePlotsStateFinancesExpendituresLocal government finances</option>
+        <option value="InteractiveHTML/LinePlotsStateFinancesRevenuesLocal government finances.html">LinePlotsStateFinancesRevenuesLocal government finances</option>
+        <option value="InteractiveHTML/MapPlotsDebtsLocal government financesLevel.html">MapPlotsDebtsLocal government financesLevel</option>
+        <option value="InteractiveHTML/MapPlotsDebtsLocal government financesPercent of Expenditure.html">MapPlotsDebtsLocal government financesPercent of Expenditure</option>
+        <option value="InteractiveHTML/MapPlotsDebtsLocal government financesPercent of GDP.html">MapPlotsDebtsLocal government financesPercent of GDP</option>
+        <option value="InteractiveHTML/MapPlotsDebtsLocal government financesPercent of General Revenue.html">MapPlotsDebtsLocal government financesPercent of General Revenue</option>
+        <option value="InteractiveHTML/MapPlotsDebtsLocal government financesReal Level.html">MapPlotsDebtsLocal government financesReal Level</option>
+        <option value="InteractiveHTML/MapPlotsDebtsLocal government financesReal Value Per Capita.html">MapPlotsDebtsLocal government financesReal Value Per Capita</option>
+        <option value="InteractiveHTML/MapPlotsExpendituresLocal government financesLevel.html">MapPlotsExpendituresLocal government financesLevel</option>
+        <option value="InteractiveHTML/MapPlotsExpendituresLocal government financesPercent of Expenditure.html">MapPlotsExpendituresLocal government financesPercent of Expenditure</option>
+        <option value="InteractiveHTML/MapPlotsExpendituresLocal government financesPercent of GDP.html">MapPlotsExpendituresLocal government financesPercent of GDP</option>
+        <option value="InteractiveHTML/MapPlotsExpendituresLocal government financesPercent of General Revenue.html">MapPlotsExpendituresLocal government financesPercent of General Revenue</option>
+        <option value="InteractiveHTML/MapPlotsExpendituresLocal government financesReal Level.html">MapPlotsExpendituresLocal government financesReal Level</option>
+        <option value="InteractiveHTML/MapPlotsExpendituresLocal government financesReal Value Per Capita.html">MapPlotsExpendituresLocal government financesReal Value Per Capita</option>
+        <option value="InteractiveHTML/MapPlotsRevenuesLocal government financesLevel.html">MapPlotsRevenuesLocal government financesLevel</option>
+        <option value="InteractiveHTML/MapPlotsRevenuesLocal government financesPercent of Expenditure.html">MapPlotsRevenuesLocal government financesPercent of Expenditure</option>
+        <option value="InteractiveHTML/MapPlotsRevenuesLocal government financesPercent of GDP.html">MapPlotsRevenuesLocal government financesPercent of GDP</option>
+        <option value="InteractiveHTML/MapPlotsRevenuesLocal government financesPercent of General Revenue.html">MapPlotsRevenuesLocal government financesPercent of General Revenue</option>
+        <option value="InteractiveHTML/MapPlotsRevenuesLocal government financesReal Level.html">MapPlotsRevenuesLocal government financesReal Level</option>
+        <option value="InteractiveHTML/MapPlotsRevenuesLocal government financesReal Value Per Capita.html">MapPlotsRevenuesLocal government financesReal Value Per Capita</option>
+        <option value="InteractiveHTML/ScatterPlotsDebtsLocal government financesLevel.html">ScatterPlotsDebtsLocal government financesLevel</option>
+        <option value="InteractiveHTML/ScatterPlotsDebtsLocal government financesPercent of Expenditure.html">ScatterPlotsDebtsLocal government financesPercent of Expenditure</option>
+        <option value="InteractiveHTML/ScatterPlotsDebtsLocal government financesPercent of GDP.html">ScatterPlotsDebtsLocal government financesPercent of GDP</option>
+        <option value="InteractiveHTML/ScatterPlotsDebtsLocal government financesPercent of General Revenue.html">ScatterPlotsDebtsLocal government financesPercent of General Revenue</option>
+        <option value="InteractiveHTML/ScatterPlotsDebtsLocal government financesReal Level.html">ScatterPlotsDebtsLocal government financesReal Level</option>
+        <option value="InteractiveHTML/ScatterPlotsDebtsLocal government financesReal Value Per Capita.html">ScatterPlotsDebtsLocal government financesReal Value Per Capita</option>
+        <option value="InteractiveHTML/ScatterPlotsExpendituresLocal government financesLevel.html">ScatterPlotsExpendituresLocal government financesLevel</option>
+        <option value="InteractiveHTML/ScatterPlotsExpendituresLocal government financesPercent of Expenditure.html">ScatterPlotsExpendituresLocal government financesPercent of Expenditure</option>
+        <option value="InteractiveHTML/ScatterPlotsExpendituresLocal government financesPercent of GDP.html">ScatterPlotsExpendituresLocal government financesPercent of GDP</option>
+        <option value="InteractiveHTML/ScatterPlotsExpendituresLocal government financesPercent of General Revenue.html">ScatterPlotsExpendituresLocal government financesPercent of General Revenue</option>
+        <option value="InteractiveHTML/ScatterPlotsExpendituresLocal government financesReal Level.html">ScatterPlotsExpendituresLocal government financesReal Level</option>
+        <option value="InteractiveHTML/ScatterPlotsExpendituresLocal government financesReal Value Per Capita.html">ScatterPlotsExpendituresLocal government financesReal Value Per Capita</option>
+        <option value="InteractiveHTML/ScatterPlotsRevenuesLocal government financesLevel.html">ScatterPlotsRevenuesLocal government financesLevel</option>
+        <option value="InteractiveHTML/ScatterPlotsRevenuesLocal government financesPercent of Expenditure.html">ScatterPlotsRevenuesLocal government financesPercent of Expenditure</option>
+        <option value="InteractiveHTML/ScatterPlotsRevenuesLocal government financesPercent of GDP.html">ScatterPlotsRevenuesLocal government financesPercent of GDP</option>
+        <option value="InteractiveHTML/ScatterPlotsRevenuesLocal government financesPercent of General Revenue.html">ScatterPlotsRevenuesLocal government financesPercent of General Revenue</option>
+        <option value="InteractiveHTML/ScatterPlotsRevenuesLocal government financesReal Level.html">ScatterPlotsRevenuesLocal government financesReal Level</option>
+        <option value="InteractiveHTML/ScatterPlotsRevenuesLocal government financesReal Value Per Capita.html">ScatterPlotsRevenuesLocal government financesReal Value Per Capita</option>
+
+        </select>
+
+        <iframe id="contentFrame" src=""></iframe>
+
+        <script>
+            document.getElementById('pageSelect').addEventListener('change', function() {
+                var selectedPage = this.value;
+                document.getElementById('contentFrame').src = selectedPage;
+            });
+        </script>
+
+    </body>
+    </html>
+    

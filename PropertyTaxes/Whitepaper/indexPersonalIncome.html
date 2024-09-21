@@ -1,0 +1,66 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personal Income</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+            iframe {
+                width: 100%;
+                height: 1000px;
+                border: 1px solid #ccc;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Personal Income</h1>
+        
+        <label for="pageSelect">Type: </label>
+        <select id="pageSelect">
+            <option value="" disabled selected>Select a page</option>
+            <option value="InteractiveHTML/AreaPlotsPersonalIncomeLevel0.html">AreaPlotsPersonalIncomeLevel0</option>
+        <option value="InteractiveHTML/AreaPlotsPersonalIncomeLevel1.html">AreaPlotsPersonalIncomeLevel1</option>
+        <option value="InteractiveHTML/AreaPlotsPersonalIncomeLevel2.html">AreaPlotsPersonalIncomeLevel2</option>
+        <option value="InteractiveHTML/AreaPlotsPersonalIncomeLevel3.html">AreaPlotsPersonalIncomeLevel3</option>
+        <option value="InteractiveHTML/AreaPlotsPersonalIncomePercentofPersonalIncome0.html">AreaPlotsPersonalIncomePercentofPersonalIncome0</option>
+        <option value="InteractiveHTML/AreaPlotsPersonalIncomePercentofPersonalIncome1.html">AreaPlotsPersonalIncomePercentofPersonalIncome1</option>
+        <option value="InteractiveHTML/AreaPlotsPersonalIncomePercentofPersonalIncome2.html">AreaPlotsPersonalIncomePercentofPersonalIncome2</option>
+        <option value="InteractiveHTML/AreaPlotsPersonalIncomePercentofPersonalIncome3.html">AreaPlotsPersonalIncomePercentofPersonalIncome3</option>
+        <option value="InteractiveHTML/AreaPlotsPersonalIncomeRealLevel0.html">AreaPlotsPersonalIncomeRealLevel0</option>
+        <option value="InteractiveHTML/AreaPlotsPersonalIncomeRealLevel1.html">AreaPlotsPersonalIncomeRealLevel1</option>
+        <option value="InteractiveHTML/AreaPlotsPersonalIncomeRealLevel2.html">AreaPlotsPersonalIncomeRealLevel2</option>
+        <option value="InteractiveHTML/AreaPlotsPersonalIncomeRealLevel3.html">AreaPlotsPersonalIncomeRealLevel3</option>
+        <option value="InteractiveHTML/AreaPlotsPersonalIncomeRealValuePerCapita0.html">AreaPlotsPersonalIncomeRealValuePerCapita0</option>
+        <option value="InteractiveHTML/AreaPlotsPersonalIncomeRealValuePerCapita1.html">AreaPlotsPersonalIncomeRealValuePerCapita1</option>
+        <option value="InteractiveHTML/AreaPlotsPersonalIncomeRealValuePerCapita2.html">AreaPlotsPersonalIncomeRealValuePerCapita2</option>
+        <option value="InteractiveHTML/AreaPlotsPersonalIncomeRealValuePerCapita3.html">AreaPlotsPersonalIncomeRealValuePerCapita3</option>
+        <option value="InteractiveHTML/LinePlotsStatePI.html">LinePlotsStatePI</option>
+        <option value="InteractiveHTML/MapPlotsPersonalIncomeLevel.html">MapPlotsPersonalIncomeLevel</option>
+        <option value="InteractiveHTML/MapPlotsPersonalIncomePercent of Personal Income.html">MapPlotsPersonalIncomePercent of Personal Income</option>
+        <option value="InteractiveHTML/MapPlotsPersonalIncomeReal Level.html">MapPlotsPersonalIncomeReal Level</option>
+        <option value="InteractiveHTML/MapPlotsPersonalIncomeReal Value Per Capita.html">MapPlotsPersonalIncomeReal Value Per Capita</option>
+        <option value="InteractiveHTML/ScatterPlotsPersonalIncomeLevel.html">ScatterPlotsPersonalIncomeLevel</option>
+        <option value="InteractiveHTML/ScatterPlotsPersonalIncomePercent of Personal Income.html">ScatterPlotsPersonalIncomePercent of Personal Income</option>
+        <option value="InteractiveHTML/ScatterPlotsPersonalIncomeReal Level.html">ScatterPlotsPersonalIncomeReal Level</option>
+        <option value="InteractiveHTML/ScatterPlotsPersonalIncomeReal Value Per Capita.html">ScatterPlotsPersonalIncomeReal Value Per Capita</option>
+
+        </select>
+
+        <iframe id="contentFrame" src=""></iframe>
+
+        <script>
+            document.getElementById('pageSelect').addEventListener('change', function() {
+                var selectedPage = this.value;
+                document.getElementById('contentFrame').src = selectedPage;
+            });
+        </script>
+
+    </body>
+    </html>
+    

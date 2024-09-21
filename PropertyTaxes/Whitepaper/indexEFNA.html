@@ -1,0 +1,47 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E F N A</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+            iframe {
+                width: 100%;
+                height: 1000px;
+                border: 1px solid #ccc;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>E F N A</h1>
+        
+        <label for="pageSelect">Type: </label>
+        <select id="pageSelect">
+            <option value="" disabled selected>Select a page</option>
+            <option value="InteractiveHTML/AreaPlotsEFNA 1.html">AreaPlotsEFNA 1</option>
+        <option value="InteractiveHTML/AreaPlotsEFNA 2.html">AreaPlotsEFNA 2</option>
+        <option value="InteractiveHTML/AreaPlotsEFNA 3.html">AreaPlotsEFNA 3</option>
+        <option value="InteractiveHTML/AreaPlotsMajor EFNA Components.html">AreaPlotsMajor EFNA Components</option>
+        <option value="InteractiveHTML/EFNALinePlot.html">EFNALinePlot</option>
+        <option value="InteractiveHTML/MapPlotsEFNA.html">MapPlotsEFNA</option>
+
+        </select>
+
+        <iframe id="contentFrame" src=""></iframe>
+
+        <script>
+            document.getElementById('pageSelect').addEventListener('change', function() {
+                var selectedPage = this.value;
+                document.getElementById('contentFrame').src = selectedPage;
+            });
+        </script>
+
+    </body>
+    </html>
+    

@@ -511,8 +511,27 @@ def create_map(df, name, title ="", stable_cbar = True, entity_name = "State", t
         coloraxis_colorbar=dict(title=''),
         coloraxis=dict(cmin=min_val, cmax=max_val, colorscale='spectral_r')
         )
+    color_scales = colors.PLOTLY_SCALES.keys()
+    # Create a slider for colormaps
+    colorscale_steps = [
+        dict(
+            method='relayout',
+            label=scale,
+            args=[{'coloraxis.colorscale': scale}]
+        ) for scale in color_scales
+    ]
+
+    colormap_slider = [dict(
+        active=0,
+        currentvalue={"prefix": "Colormap: "},
+        pad={"t": 50},
+        steps=colorscale_steps,
+        xanchor="left",
+        yanchor="top",
+    )]
+
     # Update layout with slider
-    sliders = [dict(
+    date_slider = [dict(
         active=len(dates)-1,
         currentvalue={"prefix": "Year: "},
         pad={"t": 50},
@@ -526,8 +545,14 @@ def create_map(df, name, title ="", stable_cbar = True, entity_name = "State", t
                     {"hovertemplate": "%{location}: " + plot_df[date].astype(str) + "<extra></extra>"}
                 ]
             ) for date in dates
-        ]
-    )]
+        ],
+        yanchor = "bottom",
+        y = -0.05
+    ),
+
+    ]
+    sliders = date_slider + colormap_slider
+
     fig.update_layout(
         title = dict(text= f"{title}<br>{name}: {init_var}", x=0.5),
         sliders=sliders,

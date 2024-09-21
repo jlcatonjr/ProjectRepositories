@@ -1,0 +1,105 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dynamic iFrame Loader</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+            iframe {
+                width: 100%;
+                height: 1000px;
+                border: 1px solid #ccc;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>State</h1>
+        
+        <label for="pageSelect">Chapter: </label>
+        <select id="pageSelect">
+            <option value="" disabled selected>Select a page</option>
+            <option value="InteractiveHTML/AreaPlotsExpendituresState government financesLevelExpenditure by Function.html">AreaPlotsExpendituresState government financesLevelExpenditure by Function</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresState government financesLevelExpenditures.html">AreaPlotsExpendituresState government financesLevelExpenditures</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresState government financesPercent of ExpenditureExpenditure by Function.html">AreaPlotsExpendituresState government financesPercent of ExpenditureExpenditure by Function</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresState government financesPercent of ExpenditureExpenditures.html">AreaPlotsExpendituresState government financesPercent of ExpenditureExpenditures</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresState government financesPercent of GDPExpenditure by Function.html">AreaPlotsExpendituresState government financesPercent of GDPExpenditure by Function</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresState government financesPercent of GDPExpenditures.html">AreaPlotsExpendituresState government financesPercent of GDPExpenditures</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresState government financesPercent of General RevenueExpenditure by Function.html">AreaPlotsExpendituresState government financesPercent of General RevenueExpenditure by Function</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresState government financesPercent of General RevenueExpenditures.html">AreaPlotsExpendituresState government financesPercent of General RevenueExpenditures</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresState government financesReal LevelExpenditure by Function.html">AreaPlotsExpendituresState government financesReal LevelExpenditure by Function</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresState government financesReal LevelExpenditures.html">AreaPlotsExpendituresState government financesReal LevelExpenditures</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresState government financesReal Value Per CapitaExpenditure by Function.html">AreaPlotsExpendituresState government financesReal Value Per CapitaExpenditure by Function</option>
+        <option value="InteractiveHTML/AreaPlotsExpendituresState government financesReal Value Per CapitaExpenditures.html">AreaPlotsExpendituresState government financesReal Value Per CapitaExpenditures</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesState government financesLevelRevenue Source by Government.html">AreaPlotsRevenuesState government financesLevelRevenue Source by Government</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesState government financesLevelTaxes.html">AreaPlotsRevenuesState government financesLevelTaxes</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesState government financesPercent of ExpenditureRevenue Source by Government.html">AreaPlotsRevenuesState government financesPercent of ExpenditureRevenue Source by Government</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesState government financesPercent of ExpenditureTaxes.html">AreaPlotsRevenuesState government financesPercent of ExpenditureTaxes</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesState government financesPercent of GDPRevenue Source by Government.html">AreaPlotsRevenuesState government financesPercent of GDPRevenue Source by Government</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesState government financesPercent of GDPTaxes.html">AreaPlotsRevenuesState government financesPercent of GDPTaxes</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesState government financesPercent of General RevenueRevenue Source by Government.html">AreaPlotsRevenuesState government financesPercent of General RevenueRevenue Source by Government</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesState government financesPercent of General RevenueTaxes.html">AreaPlotsRevenuesState government financesPercent of General RevenueTaxes</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesState government financesReal LevelRevenue Source by Government.html">AreaPlotsRevenuesState government financesReal LevelRevenue Source by Government</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesState government financesReal LevelTaxes.html">AreaPlotsRevenuesState government financesReal LevelTaxes</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesState government financesReal Value Per CapitaRevenue Source by Government.html">AreaPlotsRevenuesState government financesReal Value Per CapitaRevenue Source by Government</option>
+        <option value="InteractiveHTML/AreaPlotsRevenuesState government financesReal Value Per CapitaTaxes.html">AreaPlotsRevenuesState government financesReal Value Per CapitaTaxes</option>
+        <option value="InteractiveHTML/LinePlotsStateFinancesDebtsState government finances.html">LinePlotsStateFinancesDebtsState government finances</option>
+        <option value="InteractiveHTML/LinePlotsStateFinancesExpendituresState government finances.html">LinePlotsStateFinancesExpendituresState government finances</option>
+        <option value="InteractiveHTML/LinePlotsStateFinancesRevenuesState government finances.html">LinePlotsStateFinancesRevenuesState government finances</option>
+        <option value="InteractiveHTML/MapPlotsDebtsState government financesLevel.html">MapPlotsDebtsState government financesLevel</option>
+        <option value="InteractiveHTML/MapPlotsDebtsState government financesPercent of Expenditure.html">MapPlotsDebtsState government financesPercent of Expenditure</option>
+        <option value="InteractiveHTML/MapPlotsDebtsState government financesPercent of GDP.html">MapPlotsDebtsState government financesPercent of GDP</option>
+        <option value="InteractiveHTML/MapPlotsDebtsState government financesPercent of General Revenue.html">MapPlotsDebtsState government financesPercent of General Revenue</option>
+        <option value="InteractiveHTML/MapPlotsDebtsState government financesReal Level.html">MapPlotsDebtsState government financesReal Level</option>
+        <option value="InteractiveHTML/MapPlotsDebtsState government financesReal Value Per Capita.html">MapPlotsDebtsState government financesReal Value Per Capita</option>
+        <option value="InteractiveHTML/MapPlotsExpendituresState government financesLevel.html">MapPlotsExpendituresState government financesLevel</option>
+        <option value="InteractiveHTML/MapPlotsExpendituresState government financesPercent of Expenditure.html">MapPlotsExpendituresState government financesPercent of Expenditure</option>
+        <option value="InteractiveHTML/MapPlotsExpendituresState government financesPercent of GDP.html">MapPlotsExpendituresState government financesPercent of GDP</option>
+        <option value="InteractiveHTML/MapPlotsExpendituresState government financesPercent of General Revenue.html">MapPlotsExpendituresState government financesPercent of General Revenue</option>
+        <option value="InteractiveHTML/MapPlotsExpendituresState government financesReal Level.html">MapPlotsExpendituresState government financesReal Level</option>
+        <option value="InteractiveHTML/MapPlotsExpendituresState government financesReal Value Per Capita.html">MapPlotsExpendituresState government financesReal Value Per Capita</option>
+        <option value="InteractiveHTML/MapPlotsRevenuesState government financesLevel.html">MapPlotsRevenuesState government financesLevel</option>
+        <option value="InteractiveHTML/MapPlotsRevenuesState government financesPercent of Expenditure.html">MapPlotsRevenuesState government financesPercent of Expenditure</option>
+        <option value="InteractiveHTML/MapPlotsRevenuesState government financesPercent of GDP.html">MapPlotsRevenuesState government financesPercent of GDP</option>
+        <option value="InteractiveHTML/MapPlotsRevenuesState government financesPercent of General Revenue.html">MapPlotsRevenuesState government financesPercent of General Revenue</option>
+        <option value="InteractiveHTML/MapPlotsRevenuesState government financesReal Level.html">MapPlotsRevenuesState government financesReal Level</option>
+        <option value="InteractiveHTML/MapPlotsRevenuesState government financesReal Value Per Capita.html">MapPlotsRevenuesState government financesReal Value Per Capita</option>
+        <option value="InteractiveHTML/ScatterPlotsDebtsState government financesLevel.html">ScatterPlotsDebtsState government financesLevel</option>
+        <option value="InteractiveHTML/ScatterPlotsDebtsState government financesPercent of Expenditure.html">ScatterPlotsDebtsState government financesPercent of Expenditure</option>
+        <option value="InteractiveHTML/ScatterPlotsDebtsState government financesPercent of GDP.html">ScatterPlotsDebtsState government financesPercent of GDP</option>
+        <option value="InteractiveHTML/ScatterPlotsDebtsState government financesPercent of General Revenue.html">ScatterPlotsDebtsState government financesPercent of General Revenue</option>
+        <option value="InteractiveHTML/ScatterPlotsDebtsState government financesReal Level.html">ScatterPlotsDebtsState government financesReal Level</option>
+        <option value="InteractiveHTML/ScatterPlotsDebtsState government financesReal Value Per Capita.html">ScatterPlotsDebtsState government financesReal Value Per Capita</option>
+        <option value="InteractiveHTML/ScatterPlotsExpendituresState government financesLevel.html">ScatterPlotsExpendituresState government financesLevel</option>
+        <option value="InteractiveHTML/ScatterPlotsExpendituresState government financesPercent of Expenditure.html">ScatterPlotsExpendituresState government financesPercent of Expenditure</option>
+        <option value="InteractiveHTML/ScatterPlotsExpendituresState government financesPercent of GDP.html">ScatterPlotsExpendituresState government financesPercent of GDP</option>
+        <option value="InteractiveHTML/ScatterPlotsExpendituresState government financesPercent of General Revenue.html">ScatterPlotsExpendituresState government financesPercent of General Revenue</option>
+        <option value="InteractiveHTML/ScatterPlotsExpendituresState government financesReal Level.html">ScatterPlotsExpendituresState government financesReal Level</option>
+        <option value="InteractiveHTML/ScatterPlotsExpendituresState government financesReal Value Per Capita.html">ScatterPlotsExpendituresState government financesReal Value Per Capita</option>
+        <option value="InteractiveHTML/ScatterPlotsRevenuesState government financesLevel.html">ScatterPlotsRevenuesState government financesLevel</option>
+        <option value="InteractiveHTML/ScatterPlotsRevenuesState government financesPercent of Expenditure.html">ScatterPlotsRevenuesState government financesPercent of Expenditure</option>
+        <option value="InteractiveHTML/ScatterPlotsRevenuesState government financesPercent of GDP.html">ScatterPlotsRevenuesState government financesPercent of GDP</option>
+        <option value="InteractiveHTML/ScatterPlotsRevenuesState government financesPercent of General Revenue.html">ScatterPlotsRevenuesState government financesPercent of General Revenue</option>
+        <option value="InteractiveHTML/ScatterPlotsRevenuesState government financesReal Level.html">ScatterPlotsRevenuesState government financesReal Level</option>
+        <option value="InteractiveHTML/ScatterPlotsRevenuesState government financesReal Value Per Capita.html">ScatterPlotsRevenuesState government financesReal Value Per Capita</option>
+
+        </select>
+
+        <iframe id="contentFrame" src=""></iframe>
+
+        <script>
+            document.getElementById('pageSelect').addEventListener('change', function() {
+                var selectedPage = this.value;
+                document.getElementById('contentFrame').src = selectedPage;
+            });
+        </script>
+
+    </body>
+    </html>
+    

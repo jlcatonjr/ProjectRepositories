@@ -1,0 +1,46 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aggregate Cost Estimates if Average Cost == Marginal Cost</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+            iframe {
+                width: 100%;
+                height: 1000px;
+                border: 1px solid #ccc;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>Aggregate Cost Estimates if Average Cost == Marginal Cost</h1>
+        
+        <label for="pageSelect">Type: </label>
+        <select id="pageSelect">
+            <option value="" disabled selected>Select a page</option>
+            <option value="PerCapitaExcessCostStackedGradientNoOffshore wind.html"> Per Capita Excess Costs (Assume Onshore Wind Costs)</option>
+            <option value="PerCapitaExcessCostStackedGradientNoOnshore wind.html">Very Long-run Per Capita Excess Costs (Assume Offshore Wind Costs)</option>
+            <option value="TotalExcessCostStackedGradientNoOffshore wind.html">Very Long-run Total Excess Costs (Assume Onshore Wind Costs)</option>
+            <option value="TotalExcessCostStackedGradientNoOnshore wind.html">Very Long-run Total Excess Costs (Assume Offshore Wind Costs)</option>
+
+        </select>
+
+        <iframe id="contentFrame" src=""></iframe>
+
+        <script>
+            document.getElementById('pageSelect').addEventListener('change', function() {
+                var selectedPage = this.value;
+                document.getElementById('contentFrame').src = selectedPage;
+            });
+        </script>
+
+    </body>
+    </html>
+    
