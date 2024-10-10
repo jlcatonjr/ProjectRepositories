@@ -1,0 +1,53 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>State Expenditures and Revenues as Proportions</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+            iframe {
+                width: 100%;
+                height: 1000px;
+                border: 1px solid #ccc;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>State Level Data</h1>
+        
+        <label for="pageSelect">Type: </label>
+        <select id="pageSelect">
+            <option value="" disabled selected>Select a page</option>
+            <option value="InteractiveHTML/LinePlotsStateFinancesRevenuesState government finances.html">Line: State Revenues</option>
+            <option value="InteractiveHTML/LinePlotsStateFinancesExpendituresState government finances.html">Line: State Expenditures</option>
+            <option value="InteractiveHTML/LinePlotsStateFinancesDebtsState government finances.html">Line: State Debts and Security Holdings</option>
+            <option value="InteractiveHTML/AreaPlotsExpendituresState government financesPercent of ExpenditureExpenditure by Function.html">Area: State Expenditures by Sector as Percent of Expenditure</option>
+            <option value="InteractiveHTML/AreaPlotsExpendituresState government financesPercent of ExpenditureExpenditures.html">Area: State Expenditures by General Function as Percent of Expenditure</option>
+            <option value="InteractiveHTML/AreaPlotsRevenuesState government financesPercent of General RevenueTaxes.html">Area: State Revenues by Sector as Percent of General Revenue</option>
+            <option value="InteractiveHTML/AreaPlotsRevenuesState government financesPercent of General RevenueRevenue Source by Government.html">Area: State Revenues by Source as Percent of General Revenue</option>
+            <option value="InteractiveHTML/TaxBrackets.html">Line: State Individual Income Tax Brackets</option>
+            <option value="InteractiveHTML/2024 State Corporate Income Tax Rates .html">Line: State Maximum Corporate Income Tax Rate</option>
+            <option value="InteractiveHTML/LinePlotsStateRetirementPlans.html">Line: State Retirement Funds</option>
+            <option value="InteractiveHTML/EstimatedOilRevenue.html">Line: North Dakota Oil Production and Oil Revenues</option>
+                        
+        </select>
+
+        <iframe id="contentFrame" src=""></iframe>
+
+        <script>
+            document.getElementById('pageSelect').addEventListener('change', function() {
+                var selectedPage = this.value;
+                document.getElementById('contentFrame').src = selectedPage;
+            });
+        </script>
+
+    </body>
+    </html>
+    

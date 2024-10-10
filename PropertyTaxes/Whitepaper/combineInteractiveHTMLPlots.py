@@ -11,7 +11,9 @@ filenames_dct ={"State":{},
                 "State & local":{},
                 "Local":{},
                 "EFNA":{},
-                "PersonalIncome":{}}
+                "PersonalIncome":{},
+                "StateRetirementPlans":{},
+                "NDOilProduction":{},}
 root = "../outputs"
 for state_local in filenames_dct.keys():
     filenames_dct[state_local] = {}
@@ -25,9 +27,6 @@ for state_local in filenames_dct.keys():
             shutil.copytree(path, f"InteractiveHTML", dirs_exist_ok=True)
         
 folder = "InteractiveHTML"
-# filenames_dct = {key: [f"{folder}/{f}" for f in filenames] for key, filenames in filenames_dct.items()}
-# filenames_dct["Taxonomies"] = [f"{f} Taxonomy.html" for f in filenames_dct["Taxonomies"]]
-# List of filenames to include in the dropdown
 for key, filenames in filenames_dct.items():
     if key not in ["EFNA", "PersonalIncome"]:
         key = key + "Finances"
