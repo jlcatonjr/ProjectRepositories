@@ -1,0 +1,49 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>State and Loxal Expenditures and Revenues</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+            iframe {
+                width: 100%;
+                height: 1000px;
+                border: 1px solid #ccc;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>State and Local Expenditures and Revenues</h1>
+        
+        <label for="pageSelect">Type: </label>
+        <select id="pageSelect">
+            <option value="" disabled selected>Select a page</option>
+            <option value="InteractiveHTML/AreaPlotsExpendituresState & local government financesPercent of ExpenditureExpenditure by Function.html">Area: Expenditures by Sector as Percent of Expenditure</option>
+            <option value="InteractiveHTML/AreaPlotsExpendituresState & local government financesPercent of ExpenditureExpenditures.html">Area: Expenditures by General Function as Percent of Expenditure</option>
+            <option value="InteractiveHTML/AreaPlotsRevenuesState & local government financesPercent of General RevenueTaxes.html">Area: Revenues by Sector as Percent of General Revenue</option>
+            <option value="InteractiveHTML/AreaPlotsRevenuesState & local government financesPercent of General RevenueRevenue Source by Government.html">Area: Revenues by Source as Percent of General Revenue</option>
+            <option value="InteractiveHTML/LinePlotsStateFinancesRevenuesState & local government finances.html">Line: Revenues</option>
+            <option value="InteractiveHTML/LinePlotsStateFinancesExpendituresState & local government finances.html">Line: Expenditures</option>
+
+
+        </select>
+
+        <iframe id="contentFrame" src=""></iframe>
+
+        <script>
+            document.getElementById('pageSelect').addEventListener('change', function() {
+                var selectedPage = this.value;
+                document.getElementById('contentFrame').src = selectedPage;
+            });
+        </script>
+
+    </body>
+    </html>
+    

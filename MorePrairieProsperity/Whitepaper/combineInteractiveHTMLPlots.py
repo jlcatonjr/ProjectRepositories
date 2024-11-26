@@ -15,6 +15,7 @@ filenames_dct ={"State":{},
                 "StateRetirementPlans":{},
                 "NDOilProduction":{},
                 "Employment":{},
+                "PropertyTaxesAndHomePrices":{},
                 }
 root = "../outputs"
 for state_local in filenames_dct.keys():

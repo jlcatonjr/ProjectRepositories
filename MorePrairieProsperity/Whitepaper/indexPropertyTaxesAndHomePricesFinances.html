@@ -1,0 +1,48 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Property Taxes And Home Prices Finances</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+            iframe {
+                width: 100%;
+                height: 1000px;
+                border: 1px solid #ccc;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Property Taxes And Home Prices Finances</h1>
+        
+        <label for="pageSelect">Type: </label>
+        <select id="pageSelect">
+            <option value="" disabled selected>Select a page</option>
+            <option value="InteractiveHTML/As Percent of Expenditures.html">As Percent of Expenditures</option>
+        <option value="InteractiveHTML/As Percent of GDP.html">As Percent of GDP</option>
+        <option value="InteractiveHTML/As Percent of Revenue.html">As Percent of Revenue</option>
+        <option value="InteractiveHTML/Level.html">Level</option>
+        <option value="InteractiveHTML/Per Capita.html">Per Capita</option>
+        <option value="InteractiveHTML/corrplots.html">corrplots</option>
+        <option value="InteractiveHTML/pcorrplots.html">pcorrplots</option>
+
+        </select>
+
+        <iframe id="contentFrame" src=""></iframe>
+
+        <script>
+            document.getElementById('pageSelect').addEventListener('change', function() {
+                var selectedPage = this.value;
+                document.getElementById('contentFrame').src = selectedPage;
+            });
+        </script>
+
+    </body>
+    </html>
+    
