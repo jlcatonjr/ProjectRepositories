@@ -214,7 +214,7 @@ def simultaneous_SUR(reg_data, sink_source, model_type = "DAG", constant = False
 
         formulas[sink] = formula
     model = SUR.from_formula(formulas, reg_data)
-    results = model.fit(cov_type="unadjusted")
+    results = model.fit(cov_type="kernel", kernel="bartlett", bandwidth=None)
     #save regression results
     SUR_results = pd.DataFrame([results.params, results.pvalues])
     SUR_results.to_excel("SUR" + str(list(reg_data.index)[0])[:10]+"-"+str(list(reg_data.index)[-1])[:10]+".xlsx")
@@ -285,7 +285,7 @@ def VAR(endog, exog, sig_vals = [0.05, 0.01, 0.001], constant = True):
     endog_keys= list(endog.keys())
     exog_keys = list(exog.keys())    
     model = SUR.multivariate_ls(endog,exog)
-    results = model.fit()
+    results = model.fit(cov_type="kernel", kernel="bartlett", bandwidth=None)
     
     # save results with columns defined by endogenous variables
     index = results.pvalues.index.str.split("_")

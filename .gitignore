@@ -1,0 +1,2 @@
+# Ignore generated agent team files (not tracked in this research repo)
+.github/
