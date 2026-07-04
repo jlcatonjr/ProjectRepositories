@@ -1,2 +1,13 @@
 # Ignore generated agent team files (not tracked in this research repo)
 .github/
+
+# agentteams local artifacts — do not commit
+.agentteams-backups/
+.agentteams-fleet/
+bridge-merge.report.md
+*.bak
+*.bak.*
+*.bak-*
+*.prelabel.bak
+.DS_Store
+.github/agents/.github/
