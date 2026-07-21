@@ -1,0 +1,5015 @@
+{
+  "schema_version": "1.2",
+  "project_name": "ProjectRepositories",
+  "framework": "claude",
+  "project_type": "software",
+  "archetypes": [
+    "primary-producer",
+    "quality-auditor",
+    "cohesion-repairer",
+    "style-guardian",
+    "technical-validator",
+    "format-converter",
+    "reference-manager",
+    "output-compiler",
+    "visual-designer",
+    "tool-doc-researcher"
+  ],
+  "components": [
+    "crisis-credit-allocation",
+    "fed-response-dag",
+    "prairie-prosperity",
+    "sugarscape",
+    "visualize-energy-data"
+  ],
+  "files_written": [
+    ".claude/agents/orchestrator.md",
+    ".claude/agents/navigator.md",
+    ".claude/agents/security.md",
+    ".claude/agents/code-hygiene.md",
+    ".claude/agents/adversarial.md",
+    ".claude/agents/conflict-auditor.md",
+    ".claude/agents/conflict-resolution.md",
+    ".claude/agents/cleanup.md",
+    ".claude/agents/agent-updater.md",
+    ".claude/agents/agent-refactor.md",
+    ".claude/agents/repo-liaison.md",
+    ".claude/agents/git-operations.md",
+    ".claude/agents/work-summarizer.md",
+    ".claude/agents/primary-producer.md",
+    ".claude/agents/quality-auditor.md",
+    ".claude/agents/cohesion-repairer.md",
+    ".claude/agents/style-guardian.md",
+    ".claude/agents/technical-validator.md",
+    ".claude/agents/format-converter.md",
+    ".claude/agents/reference-manager.md",
+    ".claude/agents/output-compiler.md",
+    ".claude/agents/visual-designer.md",
+    ".claude/agents/tool-doc-researcher.md",
+    ".claude/skills/tool-sqlite.md",
+    ".claude/agents/references/ref-jupyter-reference.md",
+    ".claude/agents/references/ref-pandas-reference.md",
+    ".claude/agents/references/ref-numpy-reference.md",
+    ".claude/agents/references/ref-matplotlib-reference.md",
+    ".claude/agents/references/ref-plotly-reference.md",
+    ".claude/agents/references/ref-pandas-datareader-reference.md",
+    ".claude/agents/references/ref-linearmodels-reference.md",
+    ".claude/agents/references/ref-anacondadepends-reference.md",
+    ".claude/agents/references/ref-ipywjlabnbextconf-reference.md",
+    ".claude/agents/references/ref-alabaster-reference.md",
+    ".claude/agents/references/ref-anaconda-reference.md",
+    ".claude/agents/references/ref-anaconda-anon-usage-reference.md",
+    ".claude/agents/references/ref-anaconda-client-reference.md",
+    ".claude/agents/references/ref-anaconda-cloud-auth-reference.md",
+    ".claude/agents/references/ref-anaconda-navigator-reference.md",
+    ".claude/agents/references/ref-anaconda-project-reference.md",
+    ".claude/agents/references/ref-ansi2html-reference.md",
+    ".claude/agents/references/ref-anyio-reference.md",
+    ".claude/agents/references/ref-appdirs-reference.md",
+    ".claude/agents/references/ref-arch-reference.md",
+    ".claude/agents/references/ref-argon2-cffi-reference.md",
+    ".claude/agents/references/ref-argon2-cffi-bindings-reference.md",
+    ".claude/agents/references/ref-arrow-reference.md",
+    ".claude/agents/references/ref-arrow-cpp-reference.md",
+    ".claude/agents/references/ref-astroid-reference.md",
+    ".claude/agents/references/ref-astropy-reference.md",
+    ".claude/agents/references/ref-atomicwrites-reference.md",
+    ".claude/agents/references/ref-attrs-reference.md",
+    ".claude/agents/references/ref-automat-reference.md",
+    ".claude/agents/references/ref-autopep8-reference.md",
+    ".claude/agents/references/ref-aws-c-common-reference.md",
+    ".claude/agents/references/ref-aws-c-event-stream-reference.md",
+    ".claude/agents/references/ref-aws-checksums-reference.md",
+    ".claude/agents/references/ref-aws-sdk-cpp-reference.md",
+    ".claude/agents/references/ref-babel-reference.md",
+    ".claude/agents/references/ref-backcall-reference.md",
+    ".claude/agents/references/ref-backports-reference.md",
+    ".claude/agents/references/ref-backportsfunctoolslrucache-reference.md",
+    ".claude/agents/references/ref-backportstempfile-reference.md",
+    ".claude/agents/references/ref-backportsweakref-reference.md",
+    ".claude/agents/references/ref-bcrypt-reference.md",
+    ".claude/agents/references/ref-beautifulsoup4-reference.md",
+    ".claude/agents/references/ref-binaryornot-reference.md",
+    ".claude/agents/references/ref-bitarray-reference.md",
+    ".claude/agents/references/ref-bkcharts-reference.md",
+    ".claude/agents/references/ref-black-reference.md",
+    ".claude/agents/references/ref-blas-reference.md",
+    ".claude/agents/references/ref-bleach-reference.md",
+    ".claude/agents/references/ref-blosc-reference.md",
+    ".claude/agents/references/ref-bokeh-reference.md",
+    ".claude/agents/references/ref-boltons-reference.md",
+    ".claude/agents/references/ref-boost-cpp-reference.md",
+    ".claude/agents/references/ref-boto3-reference.md",
+    ".claude/agents/references/ref-botocore-reference.md",
+    ".claude/agents/references/ref-bottleneck-reference.md",
+    ".claude/agents/references/ref-branca-reference.md",
+    ".claude/agents/references/ref-brotli-reference.md",
+    ".claude/agents/references/ref-brotli-bin-reference.md",
+    ".claude/agents/references/ref-brotlipy-reference.md",
+    ".claude/agents/references/ref-bt-reference.md",
+    ".claude/agents/references/ref-bzip2-reference.md",
+    ".claude/agents/references/ref-c-ares-reference.md",
+    ".claude/agents/references/ref-ca-certificates-reference.md",
+    ".claude/agents/references/ref-certifi-reference.md",
+    ".claude/agents/references/ref-cffi-reference.md",
+    ".claude/agents/references/ref-cfitsio-reference.md",
+    ".claude/agents/references/ref-chardet-reference.md",
+    ".claude/agents/references/ref-charls-reference.md",
+    ".claude/agents/references/ref-charset-normalizer-reference.md",
+    ".claude/agents/references/ref-click-reference.md",
+    ".claude/agents/references/ref-click-plugins-reference.md",
+    ".claude/agents/references/ref-cligj-reference.md",
+    ".claude/agents/references/ref-cloudpickle-reference.md",
+    ".claude/agents/references/ref-clyent-reference.md",
+    ".claude/agents/references/ref-colorama-reference.md",
+    ".claude/agents/references/ref-colorcet-reference.md",
+    ".claude/agents/references/ref-comtypes-reference.md",
+    ".claude/agents/references/ref-conda-reference.md",
+    ".claude/agents/references/ref-conda-build-reference.md",
+    ".claude/agents/references/ref-conda-content-trust-reference.md",
+    ".claude/agents/references/ref-conda-env-reference.md",
+    ".claude/agents/references/ref-conda-pack-reference.md",
+    ".claude/agents/references/ref-conda-package-handling-reference.md",
+    ".claude/agents/references/ref-conda-package-streaming-reference.md",
+    ".claude/agents/references/ref-conda-repo-cli-reference.md",
+    ".claude/agents/references/ref-conda-token-reference.md",
+    ".claude/agents/references/ref-conda-verify-reference.md",
+    ".claude/agents/references/ref-config-reference.md",
+    ".claude/agents/references/ref-consoleshortcut-reference.md",
+    ".claude/agents/references/ref-constantly-reference.md",
+    ".claude/agents/references/ref-cookiecutter-reference.md",
+    ".claude/agents/references/ref-cryptography-reference.md",
+    ".claude/agents/references/ref-cssselect-reference.md",
+    ".claude/agents/references/ref-curl-reference.md",
+    ".claude/agents/references/ref-cvxpy-reference.md",
+    ".claude/agents/references/ref-cycler-reference.md",
+    ".claude/agents/references/ref-cython-reference.md",
+    ".claude/agents/references/ref-cytoolz-reference.md",
+    ".claude/agents/references/ref-daal4py-reference.md",
+    ".claude/agents/references/ref-dal-reference.md",
+    ".claude/agents/references/ref-dash-reference.md",
+    ".claude/agents/references/ref-dash-core-components-reference.md",
+    ".claude/agents/references/ref-dash-html-components-reference.md",
+    ".claude/agents/references/ref-dash-table-reference.md",
+    ".claude/agents/references/ref-dask-reference.md",
+    ".claude/agents/references/ref-dask-core-reference.md",
+    ".claude/agents/references/ref-dataclasses-reference.md",
+    ".claude/agents/references/ref-datashader-reference.md",
+    ".claude/agents/references/ref-datashape-reference.md",
+    ".claude/agents/references/ref-debugpy-reference.md",
+    ".claude/agents/references/ref-decorator-reference.md",
+    ".claude/agents/references/ref-defusedxml-reference.md",
+    ".claude/agents/references/ref-diff-match-patch-reference.md",
+    ".claude/agents/references/ref-dill-reference.md",
+    ".claude/agents/references/ref-distributed-reference.md",
+    ".claude/agents/references/ref-docutils-reference.md",
+    ".claude/agents/references/ref-ecos-reference.md",
+    ".claude/agents/references/ref-entrypoints-reference.md",
+    ".claude/agents/references/ref-etxmlfile-reference.md",
+    ".claude/agents/references/ref-expat-reference.md",
+    ".claude/agents/references/ref-ffn-reference.md",
+    ".claude/agents/references/ref-fftw-reference.md",
+    ".claude/agents/references/ref-filelock-reference.md",
+    ".claude/agents/references/ref-fiona-reference.md",
+    ".claude/agents/references/ref-flake8-reference.md",
+    ".claude/agents/references/ref-flask-reference.md",
+    ".claude/agents/references/ref-folium-reference.md",
+    ".claude/agents/references/ref-fonttools-reference.md",
+    ".claude/agents/references/ref-freetype-reference.md",
+    ".claude/agents/references/ref-freexl-reference.md",
+    ".claude/agents/references/ref-frozendict-reference.md",
+    ".claude/agents/references/ref-fsspec-reference.md",
+    ".claude/agents/references/ref-future-reference.md",
+    ".claude/agents/references/ref-gdal-reference.md",
+    ".claude/agents/references/ref-gensim-reference.md",
+    ".claude/agents/references/ref-geographiclib-reference.md",
+    ".claude/agents/references/ref-geopandas-reference.md",
+    ".claude/agents/references/ref-geopandas-base-reference.md",
+    ".claude/agents/references/ref-geopy-reference.md",
+    ".claude/agents/references/ref-geos-reference.md",
+    ".claude/agents/references/ref-geotiff-reference.md",
+    ".claude/agents/references/ref-gflags-reference.md",
+    ".claude/agents/references/ref-giflib-reference.md",
+    ".claude/agents/references/ref-glob2-reference.md",
+    ".claude/agents/references/ref-glog-reference.md",
+    ".claude/agents/references/ref-greenlet-reference.md",
+    ".claude/agents/references/ref-h5py-reference.md",
+    ".claude/agents/references/ref-hdf4-reference.md",
+    ".claude/agents/references/ref-hdf5-reference.md",
+    ".claude/agents/references/ref-heapdict-reference.md",
+    ".claude/agents/references/ref-holoviews-reference.md",
+    ".claude/agents/references/ref-html5lib-reference.md",
+    ".claude/agents/references/ref-hvplot-reference.md",
+    ".claude/agents/references/ref-hyperlink-reference.md",
+    ".claude/agents/references/ref-iccrt-reference.md",
+    ".claude/agents/references/ref-icu-reference.md",
+    ".claude/agents/references/ref-idna-reference.md",
+    ".claude/agents/references/ref-imagecodecs-reference.md",
+    ".claude/agents/references/ref-imageio-reference.md",
+    ".claude/agents/references/ref-imagesize-reference.md",
+    ".claude/agents/references/ref-importlib-metadata-reference.md",
+    ".claude/agents/references/ref-importlibmetadata-reference.md",
+    ".claude/agents/references/ref-incremental-reference.md",
+    ".claude/agents/references/ref-inflection-reference.md",
+    ".claude/agents/references/ref-iniconfig-reference.md",
+    ".claude/agents/references/ref-intake-reference.md",
+    ".claude/agents/references/ref-intel-openmp-reference.md",
+    ".claude/agents/references/ref-intervaltree-reference.md",
+    ".claude/agents/references/ref-ipykernel-reference.md",
+    ".claude/agents/references/ref-ipython-reference.md",
+    ".claude/agents/references/ref-ipythongenutils-reference.md",
+    ".claude/agents/references/ref-ipywidgets-reference.md",
+    ".claude/agents/references/ref-isort-reference.md",
+    ".claude/agents/references/ref-itemadapter-reference.md",
+    ".claude/agents/references/ref-itemloaders-reference.md",
+    ".claude/agents/references/ref-itsdangerous-reference.md",
+    ".claude/agents/references/ref-jdcal-reference.md",
+    ".claude/agents/references/ref-jedi-reference.md",
+    ".claude/agents/references/ref-jellyfish-reference.md",
+    ".claude/agents/references/ref-jinja2-reference.md",
+    ".claude/agents/references/ref-jinja2-time-reference.md",
+    ".claude/agents/references/ref-jmespath-reference.md",
+    ".claude/agents/references/ref-joblib-reference.md",
+    ".claude/agents/references/ref-jpeg-reference.md",
+    ".claude/agents/references/ref-jq-reference.md",
+    ".claude/agents/references/ref-json5-reference.md",
+    ".claude/agents/references/ref-jsonpatch-reference.md",
+    ".claude/agents/references/ref-jsonpointer-reference.md",
+    ".claude/agents/references/ref-jsonschema-reference.md",
+    ".claude/agents/references/ref-jupyterclient-reference.md",
+    ".claude/agents/references/ref-jupyterconsole-reference.md",
+    ".claude/agents/references/ref-jupytercore-reference.md",
+    ".claude/agents/references/ref-jupyterserver-reference.md",
+    ".claude/agents/references/ref-jupyterlab-reference.md",
+    ".claude/agents/references/ref-jupyterlabpygments-reference.md",
+    ".claude/agents/references/ref-jupyterlabserver-reference.md",
+    ".claude/agents/references/ref-jupyterlabwidgets-reference.md",
+    ".claude/agents/references/ref-kealib-reference.md",
+    ".claude/agents/references/ref-keyring-reference.md",
+    ".claude/agents/references/ref-kiwisolver-reference.md",
+    ".claude/agents/references/ref-krb5-reference.md",
+    ".claude/agents/references/ref-lazy-object-proxy-reference.md",
+    ".claude/agents/references/ref-lcms2-reference.md",
+    ".claude/agents/references/ref-lerc-reference.md",
+    ".claude/agents/references/ref-libaec-reference.md",
+    ".claude/agents/references/ref-libarchive-reference.md",
+    ".claude/agents/references/ref-libboost-reference.md",
+    ".claude/agents/references/ref-libbrotlicommon-reference.md",
+    ".claude/agents/references/ref-libbrotlidec-reference.md",
+    ".claude/agents/references/ref-libbrotlienc-reference.md",
+    ".claude/agents/references/ref-libcurl-reference.md",
+    ".claude/agents/references/ref-libdeflate-reference.md",
+    ".claude/agents/references/ref-libexpat-reference.md",
+    ".claude/agents/references/ref-libgdal-reference.md",
+    ".claude/agents/references/ref-libiconv-reference.md",
+    ".claude/agents/references/ref-liblief-reference.md",
+    ".claude/agents/references/ref-libnetcdf-reference.md",
+    ".claude/agents/references/ref-libpng-reference.md",
+    ".claude/agents/references/ref-libpq-reference.md",
+    ".claude/agents/references/ref-libprotobuf-reference.md",
+    ".claude/agents/references/ref-libsodium-reference.md",
+    ".claude/agents/references/ref-libspatialindex-reference.md",
+    ".claude/agents/references/ref-libspatialite-reference.md",
+    ".claude/agents/references/ref-libssh2-reference.md",
+    ".claude/agents/references/ref-libthrift-reference.md",
+    ".claude/agents/references/ref-libtiff-reference.md",
+    ".claude/agents/references/ref-libwebp-reference.md",
+    ".claude/agents/references/ref-libwebp-base-reference.md",
+    ".claude/agents/references/ref-libxml2-reference.md",
+    ".claude/agents/references/ref-libxslt-reference.md",
+    ".claude/agents/references/ref-libzip-reference.md",
+    ".claude/agents/references/ref-libzopfli-reference.md",
+    ".claude/agents/references/ref-llvmlite-reference.md",
+    ".claude/agents/references/ref-locket-reference.md",
+    ".claude/agents/references/ref-lxml-reference.md",
+    ".claude/agents/references/ref-lz4-reference.md",
+    ".claude/agents/references/ref-lz4-c-reference.md",
+    ".claude/agents/references/ref-lzo-reference.md",
+    ".claude/agents/references/ref-m2-msys2-runtime-reference.md",
+    ".claude/agents/references/ref-m2-patch-reference.md",
+    ".claude/agents/references/ref-m2w64-expat-reference.md",
+    ".claude/agents/references/ref-m2w64-gcc-libgfortran-reference.md",
+    ".claude/agents/references/ref-m2w64-gcc-libs-reference.md",
+    ".claude/agents/references/ref-m2w64-gcc-libs-core-reference.md",
+    ".claude/agents/references/ref-m2w64-gettext-reference.md",
+    ".claude/agents/references/ref-m2w64-gmp-reference.md",
+    ".claude/agents/references/ref-m2w64-libiconv-reference.md",
+    ".claude/agents/references/ref-m2w64-libwinpthread-git-reference.md",
+    ".claude/agents/references/ref-m2w64-xz-reference.md",
+    ".claude/agents/references/ref-mapclassify-reference.md",
+    ".claude/agents/references/ref-markdown-reference.md",
+    ".claude/agents/references/ref-markupsafe-reference.md",
+    ".claude/agents/references/ref-matplotlib-base-reference.md",
+    ".claude/agents/references/ref-matplotlib-inline-reference.md",
+    ".claude/agents/references/ref-mccabe-reference.md",
+    ".claude/agents/references/ref-memoryprofiler-reference.md",
+    ".claude/agents/references/ref-menuinst-reference.md",
+    ".claude/agents/references/ref-mistune-reference.md",
+    ".claude/agents/references/ref-mkl-reference.md",
+    ".claude/agents/references/ref-mkl-service-reference.md",
+    ".claude/agents/references/ref-mklfft-reference.md",
+    ".claude/agents/references/ref-mklrandom-reference.md",
+    ".claude/agents/references/ref-mock-reference.md",
+    ".claude/agents/references/ref-mpmath-reference.md",
+    ".claude/agents/references/ref-msgpack-python-reference.md",
+    ".claude/agents/references/ref-msys2-conda-epoch-reference.md",
+    ".claude/agents/references/ref-multipledispatch-reference.md",
+    ".claude/agents/references/ref-multiprocess-reference.md",
+    ".claude/agents/references/ref-multitasking-reference.md",
+    ".claude/agents/references/ref-munch-reference.md",
+    ".claude/agents/references/ref-munkres-reference.md",
+    ".claude/agents/references/ref-mypyextensions-reference.md",
+    ".claude/agents/references/ref-navigator-updater-reference.md",
+    ".claude/agents/references/ref-nbclassic-reference.md",
+    ".claude/agents/references/ref-nbclient-reference.md",
+    ".claude/agents/references/ref-nbconvert-reference.md",
+    ".claude/agents/references/ref-nbformat-reference.md",
+    ".claude/agents/references/ref-nest-asyncio-reference.md",
+    ".claude/agents/references/ref-networkx-reference.md",
+    ".claude/agents/references/ref-nltk-reference.md",
+    ".claude/agents/references/ref-nose-reference.md",
+    ".claude/agents/references/ref-notebook-reference.md",
+    ".claude/agents/references/ref-numba-reference.md",
+    ".claude/agents/references/ref-numdifftools-reference.md",
+    ".claude/agents/references/ref-numexpr-reference.md",
+    ".claude/agents/references/ref-numpy-base-reference.md",
+    ".claude/agents/references/ref-numpydoc-reference.md",
+    ".claude/agents/references/ref-olefile-reference.md",
+    ".claude/agents/references/ref-openjpeg-reference.md",
+    ".claude/agents/references/ref-openpyxl-reference.md",
+    ".claude/agents/references/ref-openssl-reference.md",
+    ".claude/agents/references/ref-osqp-reference.md",
+    ".claude/agents/references/ref-packaging-reference.md",
+    ".claude/agents/references/ref-pandocfilters-reference.md",
+    ".claude/agents/references/ref-panel-reference.md",
+    ".claude/agents/references/ref-param-reference.md",
+    ".claude/agents/references/ref-paramiko-reference.md",
+    ".claude/agents/references/ref-parsel-reference.md",
+    ".claude/agents/references/ref-parso-reference.md",
+    ".claude/agents/references/ref-partd-reference.md",
+    ".claude/agents/references/ref-pathlib-reference.md",
+    ".claude/agents/references/ref-pathspec-reference.md",
+    ".claude/agents/references/ref-patsy-reference.md",
+    ".claude/agents/references/ref-pep8-reference.md",
+    ".claude/agents/references/ref-pexpect-reference.md",
+    ".claude/agents/references/ref-pickleshare-reference.md",
+    ".claude/agents/references/ref-pillow-reference.md",
+    ".claude/agents/references/ref-pip-reference.md",
+    ".claude/agents/references/ref-pkce-reference.md",
+    ".claude/agents/references/ref-pkginfo-reference.md",
+    ".claude/agents/references/ref-platformdirs-reference.md",
+    ".claude/agents/references/ref-pluggy-reference.md",
+    ".claude/agents/references/ref-powerlaw-reference.md",
+    ".claude/agents/references/ref-powershellshortcut-reference.md",
+    ".claude/agents/references/ref-poyo-reference.md",
+    ".claude/agents/references/ref-proj-reference.md",
+    ".claude/agents/references/ref-prometheusclient-reference.md",
+    ".claude/agents/references/ref-prompt-toolkit-reference.md",
+    ".claude/agents/references/ref-prompttoolkit-reference.md",
+    ".claude/agents/references/ref-property-cached-reference.md",
+    ".claude/agents/references/ref-protego-reference.md",
+    ".claude/agents/references/ref-psutil-reference.md",
+    ".claude/agents/references/ref-psycopg2-reference.md",
+    ".claude/agents/references/ref-ptyprocess-reference.md",
+    ".claude/agents/references/ref-pulp-reference.md",
+    ".claude/agents/references/ref-py-reference.md",
+    ".claude/agents/references/ref-py-lief-reference.md",
+    ".claude/agents/references/ref-pyarrow-reference.md",
+    ".claude/agents/references/ref-pyasn1-reference.md",
+    ".claude/agents/references/ref-pyasn1-modules-reference.md",
+    ".claude/agents/references/ref-pycodestyle-reference.md",
+    ".claude/agents/references/ref-pycosat-reference.md",
+    ".claude/agents/references/ref-pycparser-reference.md",
+    ".claude/agents/references/ref-pyct-reference.md",
+    ".claude/agents/references/ref-pycurl-reference.md",
+    ".claude/agents/references/ref-pydantic-reference.md",
+    ".claude/agents/references/ref-pydispatcher-reference.md",
+    ".claude/agents/references/ref-pydocstyle-reference.md",
+    ".claude/agents/references/ref-pyerfa-reference.md",
+    ".claude/agents/references/ref-pyflakes-reference.md",
+    ".claude/agents/references/ref-pyflux-reference.md",
+    ".claude/agents/references/ref-pygments-reference.md",
+    ".claude/agents/references/ref-pyhamcrest-reference.md",
+    ".claude/agents/references/ref-pyjwt-reference.md",
+    ".claude/agents/references/ref-pylint-reference.md",
+    ".claude/agents/references/ref-pyls-spyder-reference.md",
+    ".claude/agents/references/ref-pynacl-reference.md",
+    ".claude/agents/references/ref-pyodbc-reference.md",
+    ".claude/agents/references/ref-pyogrio-reference.md",
+    ".claude/agents/references/ref-pyopenssl-reference.md",
+    ".claude/agents/references/ref-pyparsing-reference.md",
+    ".claude/agents/references/ref-pyprind-reference.md",
+    ".claude/agents/references/ref-pyproj-reference.md",
+    ".claude/agents/references/ref-pyqt-reference.md",
+    ".claude/agents/references/ref-pyrsistent-reference.md",
+    ".claude/agents/references/ref-pysocks-reference.md",
+    ".claude/agents/references/ref-pytables-reference.md",
+    ".claude/agents/references/ref-pytest-reference.md",
+    ".claude/agents/references/ref-python-reference.md",
+    ".claude/agents/references/ref-python-dateutil-reference.md",
+    ".claude/agents/references/ref-python-dotenv-reference.md",
+    ".claude/agents/references/ref-python-fastjsonschema-reference.md",
+    ".claude/agents/references/ref-python-libarchive-c-reference.md",
+    ".claude/agents/references/ref-python-lsp-black-reference.md",
+    ".claude/agents/references/ref-python-lsp-jsonrpc-reference.md",
+    ".claude/agents/references/ref-python-lsp-server-reference.md",
+    ".claude/agents/references/ref-python-slugify-reference.md",
+    ".claude/agents/references/ref-python-snappy-reference.md",
+    ".claude/agents/references/ref-pythonabi-reference.md",
+    ".claude/agents/references/ref-pytz-reference.md",
+    ".claude/agents/references/ref-pyusda-reference.md",
+    ".claude/agents/references/ref-pyvizcomms-reference.md",
+    ".claude/agents/references/ref-pywavelets-reference.md",
+    ".claude/agents/references/ref-pywin32-reference.md",
+    ".claude/agents/references/ref-pywin32-ctypes-reference.md",
+    ".claude/agents/references/ref-pywinpty-reference.md",
+    ".claude/agents/references/ref-pyyaml-reference.md",
+    ".claude/agents/references/ref-pyzmq-reference.md",
+    ".claude/agents/references/ref-qdarkstyle-reference.md",
+    ".claude/agents/references/ref-qdldl-reference.md",
+    ".claude/agents/references/ref-qstylizer-reference.md",
+    ".claude/agents/references/ref-qt-reference.md",
+    ".claude/agents/references/ref-qtawesome-reference.md",
+    ".claude/agents/references/ref-qtconsole-reference.md",
+    ".claude/agents/references/ref-qtpy-reference.md",
+    ".claude/agents/references/ref-queuelib-reference.md",
+    ".claude/agents/references/ref-random-dict-reference.md",
+    ".claude/agents/references/ref-randomdict-reference.md",
+    ".claude/agents/references/ref-re2-reference.md",
+    ".claude/agents/references/ref-regex-reference.md",
+    ".claude/agents/references/ref-requests-reference.md",
+    ".claude/agents/references/ref-requests-file-reference.md",
+    ".claude/agents/references/ref-retrying-reference.md",
+    ".claude/agents/references/ref-rope-reference.md",
+    ".claude/agents/references/ref-rtree-reference.md",
+    ".claude/agents/references/ref-ruamelyaml-reference.md",
+    ".claude/agents/references/ref-ruamelyamlclib-reference.md",
+    ".claude/agents/references/ref-s3transfer-reference.md",
+    ".claude/agents/references/ref-scikit-image-reference.md",
+    ".claude/agents/references/ref-scikit-learn-reference.md",
+    ".claude/agents/references/ref-scikit-learn-intelex-reference.md",
+    ".claude/agents/references/ref-scipy-reference.md",
+    ".claude/agents/references/ref-scrapy-reference.md",
+    ".claude/agents/references/ref-scs-reference.md",
+    ".claude/agents/references/ref-seaborn-reference.md",
+    ".claude/agents/references/ref-semver-reference.md",
+    ".claude/agents/references/ref-send2trash-reference.md",
+    ".claude/agents/references/ref-serviceidentity-reference.md",
+    ".claude/agents/references/ref-setuptools-reference.md",
+    ".claude/agents/references/ref-shapely-reference.md",
+    ".claude/agents/references/ref-sip-reference.md",
+    ".claude/agents/references/ref-six-reference.md",
+    ".claude/agents/references/ref-smartopen-reference.md",
+    ".claude/agents/references/ref-snappy-reference.md",
+    ".claude/agents/references/ref-sniffio-reference.md",
+    ".claude/agents/references/ref-snowballstemmer-reference.md",
+    ".claude/agents/references/ref-sortedcollections-reference.md",
+    ".claude/agents/references/ref-sortedcontainers-reference.md",
+    ".claude/agents/references/ref-soupsieve-reference.md",
+    ".claude/agents/references/ref-sphinx-reference.md",
+    ".claude/agents/references/ref-sphinxcontrib-applehelp-reference.md",
+    ".claude/agents/references/ref-sphinxcontrib-devhelp-reference.md",
+    ".claude/agents/references/ref-sphinxcontrib-htmlhelp-reference.md",
+    ".claude/agents/references/ref-sphinxcontrib-jsmath-reference.md",
+    ".claude/agents/references/ref-sphinxcontrib-qthelp-reference.md",
+    ".claude/agents/references/ref-sphinxcontrib-serializinghtml-reference.md",
+    ".claude/agents/references/ref-spyder-reference.md",
+    ".claude/agents/references/ref-spyder-kernels-reference.md",
+    ".claude/agents/references/ref-sqlalchemy-reference.md",
+    ".claude/agents/references/ref-statsmodels-reference.md",
+    ".claude/agents/references/ref-sympy-reference.md",
+    ".claude/agents/references/ref-tabulate-reference.md",
+    ".claude/agents/references/ref-tbb-reference.md",
+    ".claude/agents/references/ref-tbb4py-reference.md",
+    ".claude/agents/references/ref-tblib-reference.md",
+    ".claude/agents/references/ref-tenacity-reference.md",
+    ".claude/agents/references/ref-terminado-reference.md",
+    ".claude/agents/references/ref-testpath-reference.md",
+    ".claude/agents/references/ref-text-unidecode-reference.md",
+    ".claude/agents/references/ref-textdistance-reference.md",
+    ".claude/agents/references/ref-threadpoolctl-reference.md",
+    ".claude/agents/references/ref-three-merge-reference.md",
+    ".claude/agents/references/ref-tifffile-reference.md",
+    ".claude/agents/references/ref-tiledb-reference.md",
+    ".claude/agents/references/ref-tinycss-reference.md",
+    ".claude/agents/references/ref-tk-reference.md",
+    ".claude/agents/references/ref-tldextract-reference.md",
+    ".claude/agents/references/ref-toml-reference.md",
+    ".claude/agents/references/ref-tomli-reference.md",
+    ".claude/agents/references/ref-tomlkit-reference.md",
+    ".claude/agents/references/ref-toolz-reference.md",
+    ".claude/agents/references/ref-tornado-reference.md",
+    ".claude/agents/references/ref-tqdm-reference.md",
+    ".claude/agents/references/ref-traitlets-reference.md",
+    ".claude/agents/references/ref-twisted-reference.md",
+    ".claude/agents/references/ref-twisted-iocpsupport-reference.md",
+    ".claude/agents/references/ref-typing-extensions-reference.md",
+    ".claude/agents/references/ref-typingextensions-reference.md",
+    ".claude/agents/references/ref-tzdata-reference.md",
+    ".claude/agents/references/ref-ujson-reference.md",
+    ".claude/agents/references/ref-unidecode-reference.md",
+    ".claude/agents/references/ref-urllib3-reference.md",
+    ".claude/agents/references/ref-utf8proc-reference.md",
+    ".claude/agents/references/ref-vc-reference.md",
+    ".claude/agents/references/ref-vs2015runtime-reference.md",
+    ".claude/agents/references/ref-w3lib-reference.md",
+    ".claude/agents/references/ref-watchdog-reference.md",
+    ".claude/agents/references/ref-wcwidth-reference.md",
+    ".claude/agents/references/ref-webencodings-reference.md",
+    ".claude/agents/references/ref-websocket-client-reference.md",
+    ".claude/agents/references/ref-werkzeug-reference.md",
+    ".claude/agents/references/ref-wheel-reference.md",
+    ".claude/agents/references/ref-widgetsnbextension-reference.md",
+    ".claude/agents/references/ref-wininetpton-reference.md",
+    ".claude/agents/references/ref-winunicodeconsole-reference.md",
+    ".claude/agents/references/ref-wincertstore-reference.md",
+    ".claude/agents/references/ref-winpty-reference.md",
+    ".claude/agents/references/ref-wrapt-reference.md",
+    ".claude/agents/references/ref-xarray-reference.md",
+    ".claude/agents/references/ref-xerces-c-reference.md",
+    ".claude/agents/references/ref-xlrd-reference.md",
+    ".claude/agents/references/ref-xlsxwriter-reference.md",
+    ".claude/agents/references/ref-xlwings-reference.md",
+    ".claude/agents/references/ref-xyzservices-reference.md",
+    ".claude/agents/references/ref-xz-reference.md",
+    ".claude/agents/references/ref-yaml-reference.md",
+    ".claude/agents/references/ref-yapf-reference.md",
+    ".claude/agents/references/ref-yfinance-reference.md",
+    ".claude/agents/references/ref-zeromq-reference.md",
+    ".claude/agents/references/ref-zfp-reference.md",
+    ".claude/agents/references/ref-zict-reference.md",
+    ".claude/agents/references/ref-zipp-reference.md",
+    ".claude/agents/references/ref-zlib-reference.md",
+    ".claude/agents/references/ref-zope-reference.md",
+    ".claude/agents/references/ref-zopeinterface-reference.md",
+    ".claude/agents/references/ref-zstandard-reference.md",
+    ".claude/agents/references/ref-zstd-reference.md",
+    ".claude/agents/references/code-hygiene-rules.reference.md",
+    ".claude/agents/references/unix-philosophy-mapping.reference.md",
+    ".claude/agents/references/security-vulnerability-watch.reference.md",
+    ".claude/agents/references/security-vulnerability-watch.json",
+    ".claude/agents/references/security-linux-hardening.reference.md",
+    ".claude/agents/references/security-macos-hardening.reference.md",
+    ".claude/agents/references/security-windows-hardening.reference.md",
+    ".claude/agents/references/ai-bad-habits-watch.reference.md",
+    ".claude/agents/references/framework-watch.reference.md",
+    ".claude/agents/references/adjacent-repos.md",
+    ".claude/agents/references/github-workflows-merge.reference.md",
+    ".claude/agents/references/work-summary-spec.reference.md",
+    ".claude/agents/references/work-summary-tooling.reference.md",
+    ".claude/agents/references/work-summary-backfill.reference.md",
+    ".claude/agents/references/parallelization.reference.md",
+    ".claude/agents/crisis-credit-allocation-expert.md",
+    ".claude/agents/fed-response-dag-expert.md",
+    ".claude/agents/prairie-prosperity-expert.md",
+    ".claude/agents/sugarscape-expert.md",
+    ".claude/agents/visualize-energy-data-expert.md",
+    ".claude/CLAUDE.md",
+    ".claude/agents/team-builder.md",
+    ".claude/agents/SETUP-REQUIRED.md",
+    ".claude/agents/content-enricher.md",
+    ".claude/agents/references/runtime-handoffs.json",
+    ".claude/agents/references/pipeline-graph.md",
+    ".claude/agents/references/pipeline-graph.svg",
+    ".claude/agents/references/pipeline-handoffs.svg"
+  ],
+  "manual_required": 1490,
+  "template_hashes": {
+    "universal/orchestrator.template.md": "ee34760e1f596c17",
+    "universal/navigator.template.md": "003a30ed545c0523",
+    "universal/security.template.md": "ae6475b6df0d1f4e",
+    "universal/code-hygiene.template.md": "5212068c8a00a608",
+    "universal/adversarial.template.md": "54bb7645fbc898a0",
+    "universal/conflict-auditor.template.md": "e25b928260b0e41f",
+    "universal/conflict-resolution.template.md": "ca76a015485079e6",
+    "universal/cleanup.template.md": "bf795b64968349f6",
+    "universal/agent-updater.template.md": "c9636a2efa322a6d",
+    "universal/agent-refactor.template.md": "a9717cc56c35f4ac",
+    "universal/repo-liaison.template.md": "f3ab2dffbbbb29ff",
+    "universal/git-operations.template.md": "82546b5e807d9c98",
+    "domain/work-summarizer.template.md": "c8687de2c1c7761f",
+    "domain/primary-producer.template.md": "c128e8f2fb52885f",
+    "domain/quality-auditor.template.md": "ee64d85aeb76a593",
+    "domain/cohesion-repairer.template.md": "a2c3b4844110b04a",
+    "domain/style-guardian.template.md": "919e2e8d6cd90721",
+    "domain/technical-validator.template.md": "63e5171f48e91180",
+    "domain/format-converter.template.md": "ecf8c801f1d66dab",
+    "domain/reference-manager.template.md": "f7538df16abbbba8",
+    "domain/output-compiler.template.md": "fd90f3a13765386a",
+    "domain/visual-designer.template.md": "cae39ee7b6d167f4",
+    "domain/tool-doc-researcher.template.md": "438a7b161ae728c0",
+    "domain/tool-database.doc.template.md": "a8c87030930380d4",
+    "domain/tool-reference.template.md": "5ce5638b7094cc86",
+    "domain/code-hygiene-rules-reference.template.md": "64dd0cd05107784f",
+    "domain/unix-philosophy-mapping-reference.template.md": "b086c16596a3030b",
+    "universal/security-vulnerability-watch.reference.template.md": "1680e6cfd2a72275",
+    "universal/security-vulnerability-watch.json.template": "ebcec1b04ad46caa",
+    "universal/security-linux-hardening.reference.template.md": "622535f7bfa41de6",
+    "universal/security-macos-hardening.reference.template.md": "1333cb343a3e33cf",
+    "universal/security-windows-hardening.reference.template.md": "ac81a0b5b583aa6d",
+    "universal/ai-bad-habits-watch.reference.template.md": "690a289b3fdbdf9e",
+    "universal/framework-watch.reference.template.md": "7e895e4a5ccc6540",
+    "universal/adjacent-repos.reference.template.md": "d5f6783fe18f21c6",
+    "universal/github-workflows-merge.reference.template.md": "4b5d6066a338ae74",
+    "universal/work-summary-spec.reference.template.md": "d29ca7e680ad715d",
+    "universal/work-summary-tooling.reference.template.md": "62e643b1a9711af6",
+    "universal/work-summary-backfill.reference.template.md": "5730bac043dc2874",
+    "universal/parallelization.reference.template.md": "2c872341050a7781",
+    "workstream-expert.template.md": "13161f3a3cdf1789",
+    "copilot-instructions.template.md": "9c56d724f06a9549",
+    "builder/team-builder-claude.template.md": "1fa8401d6258d9b7",
+    "domain/content-enricher.template.md": "d7e6e4a50dcef1c7"
+  },
+  "output_files_map": [
+    {
+      "path": "orchestrator.agent.md",
+      "template": "universal/orchestrator.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "navigator.agent.md",
+      "template": "universal/navigator.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "security.agent.md",
+      "template": "universal/security.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "code-hygiene.agent.md",
+      "template": "universal/code-hygiene.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "adversarial.agent.md",
+      "template": "universal/adversarial.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "conflict-auditor.agent.md",
+      "template": "universal/conflict-auditor.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "conflict-resolution.agent.md",
+      "template": "universal/conflict-resolution.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "cleanup.agent.md",
+      "template": "universal/cleanup.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "agent-updater.agent.md",
+      "template": "universal/agent-updater.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "agent-refactor.agent.md",
+      "template": "universal/agent-refactor.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "repo-liaison.agent.md",
+      "template": "universal/repo-liaison.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "git-operations.agent.md",
+      "template": "universal/git-operations.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "work-summarizer.agent.md",
+      "template": "domain/work-summarizer.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "primary-producer.agent.md",
+      "template": "domain/primary-producer.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "quality-auditor.agent.md",
+      "template": "domain/quality-auditor.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "cohesion-repairer.agent.md",
+      "template": "domain/cohesion-repairer.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "style-guardian.agent.md",
+      "template": "domain/style-guardian.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "technical-validator.agent.md",
+      "template": "domain/technical-validator.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "format-converter.agent.md",
+      "template": "domain/format-converter.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "reference-manager.agent.md",
+      "template": "domain/reference-manager.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "output-compiler.agent.md",
+      "template": "domain/output-compiler.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "visual-designer.agent.md",
+      "template": "domain/visual-designer.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "tool-doc-researcher.agent.md",
+      "template": "domain/tool-doc-researcher.template.md",
+      "type": "agent",
+      "component_slug": null
+    },
+    {
+      "path": "../skills/tool-sqlite.md",
+      "template": "domain/tool-database.doc.template.md",
+      "fallback_template": "domain/tool-specific.doc.template.md",
+      "type": "skill",
+      "component_slug": null,
+      "tool_slug": "tool-sqlite"
+    },
+    {
+      "path": "references/ref-jupyter-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-jupyter"
+    },
+    {
+      "path": "references/ref-pandas-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pandas"
+    },
+    {
+      "path": "references/ref-numpy-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-numpy"
+    },
+    {
+      "path": "references/ref-matplotlib-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-matplotlib"
+    },
+    {
+      "path": "references/ref-plotly-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-plotly"
+    },
+    {
+      "path": "references/ref-pandas-datareader-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pandas-datareader"
+    },
+    {
+      "path": "references/ref-linearmodels-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-linearmodels"
+    },
+    {
+      "path": "references/ref-anacondadepends-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-anacondadepends"
+    },
+    {
+      "path": "references/ref-ipywjlabnbextconf-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-ipywjlabnbextconf"
+    },
+    {
+      "path": "references/ref-alabaster-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-alabaster"
+    },
+    {
+      "path": "references/ref-anaconda-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-anaconda"
+    },
+    {
+      "path": "references/ref-anaconda-anon-usage-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-anaconda-anon-usage"
+    },
+    {
+      "path": "references/ref-anaconda-client-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-anaconda-client"
+    },
+    {
+      "path": "references/ref-anaconda-cloud-auth-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-anaconda-cloud-auth"
+    },
+    {
+      "path": "references/ref-anaconda-navigator-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-anaconda-navigator"
+    },
+    {
+      "path": "references/ref-anaconda-project-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-anaconda-project"
+    },
+    {
+      "path": "references/ref-ansi2html-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-ansi2html"
+    },
+    {
+      "path": "references/ref-anyio-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-anyio"
+    },
+    {
+      "path": "references/ref-appdirs-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-appdirs"
+    },
+    {
+      "path": "references/ref-arch-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-arch"
+    },
+    {
+      "path": "references/ref-argon2-cffi-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-argon2-cffi"
+    },
+    {
+      "path": "references/ref-argon2-cffi-bindings-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-argon2-cffi-bindings"
+    },
+    {
+      "path": "references/ref-arrow-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-arrow"
+    },
+    {
+      "path": "references/ref-arrow-cpp-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-arrow-cpp"
+    },
+    {
+      "path": "references/ref-astroid-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-astroid"
+    },
+    {
+      "path": "references/ref-astropy-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-astropy"
+    },
+    {
+      "path": "references/ref-atomicwrites-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-atomicwrites"
+    },
+    {
+      "path": "references/ref-attrs-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-attrs"
+    },
+    {
+      "path": "references/ref-automat-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-automat"
+    },
+    {
+      "path": "references/ref-autopep8-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-autopep8"
+    },
+    {
+      "path": "references/ref-aws-c-common-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-aws-c-common"
+    },
+    {
+      "path": "references/ref-aws-c-event-stream-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-aws-c-event-stream"
+    },
+    {
+      "path": "references/ref-aws-checksums-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-aws-checksums"
+    },
+    {
+      "path": "references/ref-aws-sdk-cpp-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-aws-sdk-cpp"
+    },
+    {
+      "path": "references/ref-babel-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-babel"
+    },
+    {
+      "path": "references/ref-backcall-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-backcall"
+    },
+    {
+      "path": "references/ref-backports-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-backports"
+    },
+    {
+      "path": "references/ref-backportsfunctoolslrucache-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-backportsfunctoolslrucache"
+    },
+    {
+      "path": "references/ref-backportstempfile-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-backportstempfile"
+    },
+    {
+      "path": "references/ref-backportsweakref-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-backportsweakref"
+    },
+    {
+      "path": "references/ref-bcrypt-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-bcrypt"
+    },
+    {
+      "path": "references/ref-beautifulsoup4-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-beautifulsoup4"
+    },
+    {
+      "path": "references/ref-binaryornot-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-binaryornot"
+    },
+    {
+      "path": "references/ref-bitarray-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-bitarray"
+    },
+    {
+      "path": "references/ref-bkcharts-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-bkcharts"
+    },
+    {
+      "path": "references/ref-black-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-black"
+    },
+    {
+      "path": "references/ref-blas-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-blas"
+    },
+    {
+      "path": "references/ref-bleach-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-bleach"
+    },
+    {
+      "path": "references/ref-blosc-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-blosc"
+    },
+    {
+      "path": "references/ref-bokeh-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-bokeh"
+    },
+    {
+      "path": "references/ref-boltons-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-boltons"
+    },
+    {
+      "path": "references/ref-boost-cpp-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-boost-cpp"
+    },
+    {
+      "path": "references/ref-boto3-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-boto3"
+    },
+    {
+      "path": "references/ref-botocore-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-botocore"
+    },
+    {
+      "path": "references/ref-bottleneck-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-bottleneck"
+    },
+    {
+      "path": "references/ref-branca-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-branca"
+    },
+    {
+      "path": "references/ref-brotli-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-brotli"
+    },
+    {
+      "path": "references/ref-brotli-bin-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-brotli-bin"
+    },
+    {
+      "path": "references/ref-brotlipy-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-brotlipy"
+    },
+    {
+      "path": "references/ref-bt-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-bt"
+    },
+    {
+      "path": "references/ref-bzip2-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-bzip2"
+    },
+    {
+      "path": "references/ref-c-ares-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-c-ares"
+    },
+    {
+      "path": "references/ref-ca-certificates-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-ca-certificates"
+    },
+    {
+      "path": "references/ref-certifi-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-certifi"
+    },
+    {
+      "path": "references/ref-cffi-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-cffi"
+    },
+    {
+      "path": "references/ref-cfitsio-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-cfitsio"
+    },
+    {
+      "path": "references/ref-chardet-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-chardet"
+    },
+    {
+      "path": "references/ref-charls-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-charls"
+    },
+    {
+      "path": "references/ref-charset-normalizer-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-charset-normalizer"
+    },
+    {
+      "path": "references/ref-click-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-click"
+    },
+    {
+      "path": "references/ref-click-plugins-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-click-plugins"
+    },
+    {
+      "path": "references/ref-cligj-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-cligj"
+    },
+    {
+      "path": "references/ref-cloudpickle-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-cloudpickle"
+    },
+    {
+      "path": "references/ref-clyent-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-clyent"
+    },
+    {
+      "path": "references/ref-colorama-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-colorama"
+    },
+    {
+      "path": "references/ref-colorcet-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-colorcet"
+    },
+    {
+      "path": "references/ref-comtypes-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-comtypes"
+    },
+    {
+      "path": "references/ref-conda-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-conda"
+    },
+    {
+      "path": "references/ref-conda-build-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-conda-build"
+    },
+    {
+      "path": "references/ref-conda-content-trust-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-conda-content-trust"
+    },
+    {
+      "path": "references/ref-conda-env-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-conda-env"
+    },
+    {
+      "path": "references/ref-conda-pack-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-conda-pack"
+    },
+    {
+      "path": "references/ref-conda-package-handling-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-conda-package-handling"
+    },
+    {
+      "path": "references/ref-conda-package-streaming-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-conda-package-streaming"
+    },
+    {
+      "path": "references/ref-conda-repo-cli-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-conda-repo-cli"
+    },
+    {
+      "path": "references/ref-conda-token-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-conda-token"
+    },
+    {
+      "path": "references/ref-conda-verify-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-conda-verify"
+    },
+    {
+      "path": "references/ref-config-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-config"
+    },
+    {
+      "path": "references/ref-consoleshortcut-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-consoleshortcut"
+    },
+    {
+      "path": "references/ref-constantly-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-constantly"
+    },
+    {
+      "path": "references/ref-cookiecutter-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-cookiecutter"
+    },
+    {
+      "path": "references/ref-cryptography-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-cryptography"
+    },
+    {
+      "path": "references/ref-cssselect-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-cssselect"
+    },
+    {
+      "path": "references/ref-curl-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-curl"
+    },
+    {
+      "path": "references/ref-cvxpy-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-cvxpy"
+    },
+    {
+      "path": "references/ref-cycler-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-cycler"
+    },
+    {
+      "path": "references/ref-cython-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-cython"
+    },
+    {
+      "path": "references/ref-cytoolz-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-cytoolz"
+    },
+    {
+      "path": "references/ref-daal4py-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-daal4py"
+    },
+    {
+      "path": "references/ref-dal-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-dal"
+    },
+    {
+      "path": "references/ref-dash-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-dash"
+    },
+    {
+      "path": "references/ref-dash-core-components-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-dash-core-components"
+    },
+    {
+      "path": "references/ref-dash-html-components-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-dash-html-components"
+    },
+    {
+      "path": "references/ref-dash-table-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-dash-table"
+    },
+    {
+      "path": "references/ref-dask-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-dask"
+    },
+    {
+      "path": "references/ref-dask-core-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-dask-core"
+    },
+    {
+      "path": "references/ref-dataclasses-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-dataclasses"
+    },
+    {
+      "path": "references/ref-datashader-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-datashader"
+    },
+    {
+      "path": "references/ref-datashape-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-datashape"
+    },
+    {
+      "path": "references/ref-debugpy-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-debugpy"
+    },
+    {
+      "path": "references/ref-decorator-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-decorator"
+    },
+    {
+      "path": "references/ref-defusedxml-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-defusedxml"
+    },
+    {
+      "path": "references/ref-diff-match-patch-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-diff-match-patch"
+    },
+    {
+      "path": "references/ref-dill-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-dill"
+    },
+    {
+      "path": "references/ref-distributed-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-distributed"
+    },
+    {
+      "path": "references/ref-docutils-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-docutils"
+    },
+    {
+      "path": "references/ref-ecos-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-ecos"
+    },
+    {
+      "path": "references/ref-entrypoints-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-entrypoints"
+    },
+    {
+      "path": "references/ref-etxmlfile-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-etxmlfile"
+    },
+    {
+      "path": "references/ref-expat-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-expat"
+    },
+    {
+      "path": "references/ref-ffn-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-ffn"
+    },
+    {
+      "path": "references/ref-fftw-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-fftw"
+    },
+    {
+      "path": "references/ref-filelock-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-filelock"
+    },
+    {
+      "path": "references/ref-fiona-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-fiona"
+    },
+    {
+      "path": "references/ref-flake8-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-flake8"
+    },
+    {
+      "path": "references/ref-flask-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-flask"
+    },
+    {
+      "path": "references/ref-folium-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-folium"
+    },
+    {
+      "path": "references/ref-fonttools-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-fonttools"
+    },
+    {
+      "path": "references/ref-freetype-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-freetype"
+    },
+    {
+      "path": "references/ref-freexl-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-freexl"
+    },
+    {
+      "path": "references/ref-frozendict-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-frozendict"
+    },
+    {
+      "path": "references/ref-fsspec-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-fsspec"
+    },
+    {
+      "path": "references/ref-future-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-future"
+    },
+    {
+      "path": "references/ref-gdal-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-gdal"
+    },
+    {
+      "path": "references/ref-gensim-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-gensim"
+    },
+    {
+      "path": "references/ref-geographiclib-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-geographiclib"
+    },
+    {
+      "path": "references/ref-geopandas-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-geopandas"
+    },
+    {
+      "path": "references/ref-geopandas-base-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-geopandas-base"
+    },
+    {
+      "path": "references/ref-geopy-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-geopy"
+    },
+    {
+      "path": "references/ref-geos-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-geos"
+    },
+    {
+      "path": "references/ref-geotiff-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-geotiff"
+    },
+    {
+      "path": "references/ref-gflags-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-gflags"
+    },
+    {
+      "path": "references/ref-giflib-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-giflib"
+    },
+    {
+      "path": "references/ref-glob2-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-glob2"
+    },
+    {
+      "path": "references/ref-glog-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-glog"
+    },
+    {
+      "path": "references/ref-greenlet-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-greenlet"
+    },
+    {
+      "path": "references/ref-h5py-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-h5py"
+    },
+    {
+      "path": "references/ref-hdf4-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-hdf4"
+    },
+    {
+      "path": "references/ref-hdf5-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-hdf5"
+    },
+    {
+      "path": "references/ref-heapdict-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-heapdict"
+    },
+    {
+      "path": "references/ref-holoviews-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-holoviews"
+    },
+    {
+      "path": "references/ref-html5lib-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-html5lib"
+    },
+    {
+      "path": "references/ref-hvplot-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-hvplot"
+    },
+    {
+      "path": "references/ref-hyperlink-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-hyperlink"
+    },
+    {
+      "path": "references/ref-iccrt-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-iccrt"
+    },
+    {
+      "path": "references/ref-icu-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-icu"
+    },
+    {
+      "path": "references/ref-idna-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-idna"
+    },
+    {
+      "path": "references/ref-imagecodecs-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-imagecodecs"
+    },
+    {
+      "path": "references/ref-imageio-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-imageio"
+    },
+    {
+      "path": "references/ref-imagesize-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-imagesize"
+    },
+    {
+      "path": "references/ref-importlib-metadata-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-importlib-metadata"
+    },
+    {
+      "path": "references/ref-importlibmetadata-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-importlibmetadata"
+    },
+    {
+      "path": "references/ref-incremental-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-incremental"
+    },
+    {
+      "path": "references/ref-inflection-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-inflection"
+    },
+    {
+      "path": "references/ref-iniconfig-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-iniconfig"
+    },
+    {
+      "path": "references/ref-intake-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-intake"
+    },
+    {
+      "path": "references/ref-intel-openmp-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-intel-openmp"
+    },
+    {
+      "path": "references/ref-intervaltree-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-intervaltree"
+    },
+    {
+      "path": "references/ref-ipykernel-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-ipykernel"
+    },
+    {
+      "path": "references/ref-ipython-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-ipython"
+    },
+    {
+      "path": "references/ref-ipythongenutils-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-ipythongenutils"
+    },
+    {
+      "path": "references/ref-ipywidgets-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-ipywidgets"
+    },
+    {
+      "path": "references/ref-isort-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-isort"
+    },
+    {
+      "path": "references/ref-itemadapter-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-itemadapter"
+    },
+    {
+      "path": "references/ref-itemloaders-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-itemloaders"
+    },
+    {
+      "path": "references/ref-itsdangerous-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-itsdangerous"
+    },
+    {
+      "path": "references/ref-jdcal-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-jdcal"
+    },
+    {
+      "path": "references/ref-jedi-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-jedi"
+    },
+    {
+      "path": "references/ref-jellyfish-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-jellyfish"
+    },
+    {
+      "path": "references/ref-jinja2-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-jinja2"
+    },
+    {
+      "path": "references/ref-jinja2-time-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-jinja2-time"
+    },
+    {
+      "path": "references/ref-jmespath-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-jmespath"
+    },
+    {
+      "path": "references/ref-joblib-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-joblib"
+    },
+    {
+      "path": "references/ref-jpeg-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-jpeg"
+    },
+    {
+      "path": "references/ref-jq-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-jq"
+    },
+    {
+      "path": "references/ref-json5-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-json5"
+    },
+    {
+      "path": "references/ref-jsonpatch-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-jsonpatch"
+    },
+    {
+      "path": "references/ref-jsonpointer-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-jsonpointer"
+    },
+    {
+      "path": "references/ref-jsonschema-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-jsonschema"
+    },
+    {
+      "path": "references/ref-jupyterclient-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-jupyterclient"
+    },
+    {
+      "path": "references/ref-jupyterconsole-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-jupyterconsole"
+    },
+    {
+      "path": "references/ref-jupytercore-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-jupytercore"
+    },
+    {
+      "path": "references/ref-jupyterserver-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-jupyterserver"
+    },
+    {
+      "path": "references/ref-jupyterlab-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-jupyterlab"
+    },
+    {
+      "path": "references/ref-jupyterlabpygments-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-jupyterlabpygments"
+    },
+    {
+      "path": "references/ref-jupyterlabserver-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-jupyterlabserver"
+    },
+    {
+      "path": "references/ref-jupyterlabwidgets-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-jupyterlabwidgets"
+    },
+    {
+      "path": "references/ref-kealib-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-kealib"
+    },
+    {
+      "path": "references/ref-keyring-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-keyring"
+    },
+    {
+      "path": "references/ref-kiwisolver-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-kiwisolver"
+    },
+    {
+      "path": "references/ref-krb5-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-krb5"
+    },
+    {
+      "path": "references/ref-lazy-object-proxy-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-lazy-object-proxy"
+    },
+    {
+      "path": "references/ref-lcms2-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-lcms2"
+    },
+    {
+      "path": "references/ref-lerc-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-lerc"
+    },
+    {
+      "path": "references/ref-libaec-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libaec"
+    },
+    {
+      "path": "references/ref-libarchive-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libarchive"
+    },
+    {
+      "path": "references/ref-libboost-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libboost"
+    },
+    {
+      "path": "references/ref-libbrotlicommon-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libbrotlicommon"
+    },
+    {
+      "path": "references/ref-libbrotlidec-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libbrotlidec"
+    },
+    {
+      "path": "references/ref-libbrotlienc-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libbrotlienc"
+    },
+    {
+      "path": "references/ref-libcurl-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libcurl"
+    },
+    {
+      "path": "references/ref-libdeflate-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libdeflate"
+    },
+    {
+      "path": "references/ref-libexpat-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libexpat"
+    },
+    {
+      "path": "references/ref-libgdal-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libgdal"
+    },
+    {
+      "path": "references/ref-libiconv-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libiconv"
+    },
+    {
+      "path": "references/ref-liblief-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-liblief"
+    },
+    {
+      "path": "references/ref-libnetcdf-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libnetcdf"
+    },
+    {
+      "path": "references/ref-libpng-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libpng"
+    },
+    {
+      "path": "references/ref-libpq-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libpq"
+    },
+    {
+      "path": "references/ref-libprotobuf-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libprotobuf"
+    },
+    {
+      "path": "references/ref-libsodium-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libsodium"
+    },
+    {
+      "path": "references/ref-libspatialindex-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libspatialindex"
+    },
+    {
+      "path": "references/ref-libspatialite-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libspatialite"
+    },
+    {
+      "path": "references/ref-libssh2-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libssh2"
+    },
+    {
+      "path": "references/ref-libthrift-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libthrift"
+    },
+    {
+      "path": "references/ref-libtiff-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libtiff"
+    },
+    {
+      "path": "references/ref-libwebp-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libwebp"
+    },
+    {
+      "path": "references/ref-libwebp-base-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libwebp-base"
+    },
+    {
+      "path": "references/ref-libxml2-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libxml2"
+    },
+    {
+      "path": "references/ref-libxslt-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libxslt"
+    },
+    {
+      "path": "references/ref-libzip-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libzip"
+    },
+    {
+      "path": "references/ref-libzopfli-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-libzopfli"
+    },
+    {
+      "path": "references/ref-llvmlite-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-llvmlite"
+    },
+    {
+      "path": "references/ref-locket-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-locket"
+    },
+    {
+      "path": "references/ref-lxml-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-lxml"
+    },
+    {
+      "path": "references/ref-lz4-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-lz4"
+    },
+    {
+      "path": "references/ref-lz4-c-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-lz4-c"
+    },
+    {
+      "path": "references/ref-lzo-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-lzo"
+    },
+    {
+      "path": "references/ref-m2-msys2-runtime-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-m2-msys2-runtime"
+    },
+    {
+      "path": "references/ref-m2-patch-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-m2-patch"
+    },
+    {
+      "path": "references/ref-m2w64-expat-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-m2w64-expat"
+    },
+    {
+      "path": "references/ref-m2w64-gcc-libgfortran-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-m2w64-gcc-libgfortran"
+    },
+    {
+      "path": "references/ref-m2w64-gcc-libs-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-m2w64-gcc-libs"
+    },
+    {
+      "path": "references/ref-m2w64-gcc-libs-core-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-m2w64-gcc-libs-core"
+    },
+    {
+      "path": "references/ref-m2w64-gettext-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-m2w64-gettext"
+    },
+    {
+      "path": "references/ref-m2w64-gmp-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-m2w64-gmp"
+    },
+    {
+      "path": "references/ref-m2w64-libiconv-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-m2w64-libiconv"
+    },
+    {
+      "path": "references/ref-m2w64-libwinpthread-git-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-m2w64-libwinpthread-git"
+    },
+    {
+      "path": "references/ref-m2w64-xz-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-m2w64-xz"
+    },
+    {
+      "path": "references/ref-mapclassify-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-mapclassify"
+    },
+    {
+      "path": "references/ref-markdown-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-markdown"
+    },
+    {
+      "path": "references/ref-markupsafe-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-markupsafe"
+    },
+    {
+      "path": "references/ref-matplotlib-base-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-matplotlib-base"
+    },
+    {
+      "path": "references/ref-matplotlib-inline-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-matplotlib-inline"
+    },
+    {
+      "path": "references/ref-mccabe-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-mccabe"
+    },
+    {
+      "path": "references/ref-memoryprofiler-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-memoryprofiler"
+    },
+    {
+      "path": "references/ref-menuinst-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-menuinst"
+    },
+    {
+      "path": "references/ref-mistune-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-mistune"
+    },
+    {
+      "path": "references/ref-mkl-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-mkl"
+    },
+    {
+      "path": "references/ref-mkl-service-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-mkl-service"
+    },
+    {
+      "path": "references/ref-mklfft-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-mklfft"
+    },
+    {
+      "path": "references/ref-mklrandom-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-mklrandom"
+    },
+    {
+      "path": "references/ref-mock-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-mock"
+    },
+    {
+      "path": "references/ref-mpmath-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-mpmath"
+    },
+    {
+      "path": "references/ref-msgpack-python-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-msgpack-python"
+    },
+    {
+      "path": "references/ref-msys2-conda-epoch-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-msys2-conda-epoch"
+    },
+    {
+      "path": "references/ref-multipledispatch-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-multipledispatch"
+    },
+    {
+      "path": "references/ref-multiprocess-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-multiprocess"
+    },
+    {
+      "path": "references/ref-multitasking-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-multitasking"
+    },
+    {
+      "path": "references/ref-munch-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-munch"
+    },
+    {
+      "path": "references/ref-munkres-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-munkres"
+    },
+    {
+      "path": "references/ref-mypyextensions-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-mypyextensions"
+    },
+    {
+      "path": "references/ref-navigator-updater-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-navigator-updater"
+    },
+    {
+      "path": "references/ref-nbclassic-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-nbclassic"
+    },
+    {
+      "path": "references/ref-nbclient-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-nbclient"
+    },
+    {
+      "path": "references/ref-nbconvert-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-nbconvert"
+    },
+    {
+      "path": "references/ref-nbformat-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-nbformat"
+    },
+    {
+      "path": "references/ref-nest-asyncio-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-nest-asyncio"
+    },
+    {
+      "path": "references/ref-networkx-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-networkx"
+    },
+    {
+      "path": "references/ref-nltk-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-nltk"
+    },
+    {
+      "path": "references/ref-nose-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-nose"
+    },
+    {
+      "path": "references/ref-notebook-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-notebook"
+    },
+    {
+      "path": "references/ref-numba-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-numba"
+    },
+    {
+      "path": "references/ref-numdifftools-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-numdifftools"
+    },
+    {
+      "path": "references/ref-numexpr-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-numexpr"
+    },
+    {
+      "path": "references/ref-numpy-base-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-numpy-base"
+    },
+    {
+      "path": "references/ref-numpydoc-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-numpydoc"
+    },
+    {
+      "path": "references/ref-olefile-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-olefile"
+    },
+    {
+      "path": "references/ref-openjpeg-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-openjpeg"
+    },
+    {
+      "path": "references/ref-openpyxl-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-openpyxl"
+    },
+    {
+      "path": "references/ref-openssl-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-openssl"
+    },
+    {
+      "path": "references/ref-osqp-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-osqp"
+    },
+    {
+      "path": "references/ref-packaging-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-packaging"
+    },
+    {
+      "path": "references/ref-pandocfilters-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pandocfilters"
+    },
+    {
+      "path": "references/ref-panel-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-panel"
+    },
+    {
+      "path": "references/ref-param-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-param"
+    },
+    {
+      "path": "references/ref-paramiko-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-paramiko"
+    },
+    {
+      "path": "references/ref-parsel-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-parsel"
+    },
+    {
+      "path": "references/ref-parso-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-parso"
+    },
+    {
+      "path": "references/ref-partd-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-partd"
+    },
+    {
+      "path": "references/ref-pathlib-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pathlib"
+    },
+    {
+      "path": "references/ref-pathspec-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pathspec"
+    },
+    {
+      "path": "references/ref-patsy-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-patsy"
+    },
+    {
+      "path": "references/ref-pep8-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pep8"
+    },
+    {
+      "path": "references/ref-pexpect-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pexpect"
+    },
+    {
+      "path": "references/ref-pickleshare-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pickleshare"
+    },
+    {
+      "path": "references/ref-pillow-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pillow"
+    },
+    {
+      "path": "references/ref-pip-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pip"
+    },
+    {
+      "path": "references/ref-pkce-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pkce"
+    },
+    {
+      "path": "references/ref-pkginfo-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pkginfo"
+    },
+    {
+      "path": "references/ref-platformdirs-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-platformdirs"
+    },
+    {
+      "path": "references/ref-pluggy-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pluggy"
+    },
+    {
+      "path": "references/ref-powerlaw-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-powerlaw"
+    },
+    {
+      "path": "references/ref-powershellshortcut-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-powershellshortcut"
+    },
+    {
+      "path": "references/ref-poyo-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-poyo"
+    },
+    {
+      "path": "references/ref-proj-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-proj"
+    },
+    {
+      "path": "references/ref-prometheusclient-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-prometheusclient"
+    },
+    {
+      "path": "references/ref-prompt-toolkit-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-prompt-toolkit"
+    },
+    {
+      "path": "references/ref-prompttoolkit-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-prompttoolkit"
+    },
+    {
+      "path": "references/ref-property-cached-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-property-cached"
+    },
+    {
+      "path": "references/ref-protego-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-protego"
+    },
+    {
+      "path": "references/ref-psutil-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-psutil"
+    },
+    {
+      "path": "references/ref-psycopg2-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-psycopg2"
+    },
+    {
+      "path": "references/ref-ptyprocess-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-ptyprocess"
+    },
+    {
+      "path": "references/ref-pulp-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pulp"
+    },
+    {
+      "path": "references/ref-py-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-py"
+    },
+    {
+      "path": "references/ref-py-lief-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-py-lief"
+    },
+    {
+      "path": "references/ref-pyarrow-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyarrow"
+    },
+    {
+      "path": "references/ref-pyasn1-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyasn1"
+    },
+    {
+      "path": "references/ref-pyasn1-modules-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyasn1-modules"
+    },
+    {
+      "path": "references/ref-pycodestyle-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pycodestyle"
+    },
+    {
+      "path": "references/ref-pycosat-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pycosat"
+    },
+    {
+      "path": "references/ref-pycparser-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pycparser"
+    },
+    {
+      "path": "references/ref-pyct-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyct"
+    },
+    {
+      "path": "references/ref-pycurl-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pycurl"
+    },
+    {
+      "path": "references/ref-pydantic-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pydantic"
+    },
+    {
+      "path": "references/ref-pydispatcher-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pydispatcher"
+    },
+    {
+      "path": "references/ref-pydocstyle-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pydocstyle"
+    },
+    {
+      "path": "references/ref-pyerfa-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyerfa"
+    },
+    {
+      "path": "references/ref-pyflakes-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyflakes"
+    },
+    {
+      "path": "references/ref-pyflux-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyflux"
+    },
+    {
+      "path": "references/ref-pygments-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pygments"
+    },
+    {
+      "path": "references/ref-pyhamcrest-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyhamcrest"
+    },
+    {
+      "path": "references/ref-pyjwt-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyjwt"
+    },
+    {
+      "path": "references/ref-pylint-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pylint"
+    },
+    {
+      "path": "references/ref-pyls-spyder-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyls-spyder"
+    },
+    {
+      "path": "references/ref-pynacl-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pynacl"
+    },
+    {
+      "path": "references/ref-pyodbc-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyodbc"
+    },
+    {
+      "path": "references/ref-pyogrio-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyogrio"
+    },
+    {
+      "path": "references/ref-pyopenssl-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyopenssl"
+    },
+    {
+      "path": "references/ref-pyparsing-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyparsing"
+    },
+    {
+      "path": "references/ref-pyprind-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyprind"
+    },
+    {
+      "path": "references/ref-pyproj-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyproj"
+    },
+    {
+      "path": "references/ref-pyqt-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyqt"
+    },
+    {
+      "path": "references/ref-pyrsistent-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyrsistent"
+    },
+    {
+      "path": "references/ref-pysocks-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pysocks"
+    },
+    {
+      "path": "references/ref-pytables-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pytables"
+    },
+    {
+      "path": "references/ref-pytest-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pytest"
+    },
+    {
+      "path": "references/ref-python-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-python"
+    },
+    {
+      "path": "references/ref-python-dateutil-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-python-dateutil"
+    },
+    {
+      "path": "references/ref-python-dotenv-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-python-dotenv"
+    },
+    {
+      "path": "references/ref-python-fastjsonschema-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-python-fastjsonschema"
+    },
+    {
+      "path": "references/ref-python-libarchive-c-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-python-libarchive-c"
+    },
+    {
+      "path": "references/ref-python-lsp-black-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-python-lsp-black"
+    },
+    {
+      "path": "references/ref-python-lsp-jsonrpc-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-python-lsp-jsonrpc"
+    },
+    {
+      "path": "references/ref-python-lsp-server-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-python-lsp-server"
+    },
+    {
+      "path": "references/ref-python-slugify-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-python-slugify"
+    },
+    {
+      "path": "references/ref-python-snappy-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-python-snappy"
+    },
+    {
+      "path": "references/ref-pythonabi-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pythonabi"
+    },
+    {
+      "path": "references/ref-pytz-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pytz"
+    },
+    {
+      "path": "references/ref-pyusda-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyusda"
+    },
+    {
+      "path": "references/ref-pyvizcomms-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyvizcomms"
+    },
+    {
+      "path": "references/ref-pywavelets-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pywavelets"
+    },
+    {
+      "path": "references/ref-pywin32-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pywin32"
+    },
+    {
+      "path": "references/ref-pywin32-ctypes-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pywin32-ctypes"
+    },
+    {
+      "path": "references/ref-pywinpty-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pywinpty"
+    },
+    {
+      "path": "references/ref-pyyaml-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyyaml"
+    },
+    {
+      "path": "references/ref-pyzmq-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-pyzmq"
+    },
+    {
+      "path": "references/ref-qdarkstyle-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-qdarkstyle"
+    },
+    {
+      "path": "references/ref-qdldl-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-qdldl"
+    },
+    {
+      "path": "references/ref-qstylizer-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-qstylizer"
+    },
+    {
+      "path": "references/ref-qt-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-qt"
+    },
+    {
+      "path": "references/ref-qtawesome-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-qtawesome"
+    },
+    {
+      "path": "references/ref-qtconsole-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-qtconsole"
+    },
+    {
+      "path": "references/ref-qtpy-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-qtpy"
+    },
+    {
+      "path": "references/ref-queuelib-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-queuelib"
+    },
+    {
+      "path": "references/ref-random-dict-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-random-dict"
+    },
+    {
+      "path": "references/ref-randomdict-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-randomdict"
+    },
+    {
+      "path": "references/ref-re2-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-re2"
+    },
+    {
+      "path": "references/ref-regex-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-regex"
+    },
+    {
+      "path": "references/ref-requests-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-requests"
+    },
+    {
+      "path": "references/ref-requests-file-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-requests-file"
+    },
+    {
+      "path": "references/ref-retrying-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-retrying"
+    },
+    {
+      "path": "references/ref-rope-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-rope"
+    },
+    {
+      "path": "references/ref-rtree-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-rtree"
+    },
+    {
+      "path": "references/ref-ruamelyaml-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-ruamelyaml"
+    },
+    {
+      "path": "references/ref-ruamelyamlclib-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-ruamelyamlclib"
+    },
+    {
+      "path": "references/ref-ruamelyaml-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-ruamelyaml"
+    },
+    {
+      "path": "references/ref-s3transfer-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-s3transfer"
+    },
+    {
+      "path": "references/ref-scikit-image-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-scikit-image"
+    },
+    {
+      "path": "references/ref-scikit-learn-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-scikit-learn"
+    },
+    {
+      "path": "references/ref-scikit-learn-intelex-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-scikit-learn-intelex"
+    },
+    {
+      "path": "references/ref-scipy-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-scipy"
+    },
+    {
+      "path": "references/ref-scrapy-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-scrapy"
+    },
+    {
+      "path": "references/ref-scs-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-scs"
+    },
+    {
+      "path": "references/ref-seaborn-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-seaborn"
+    },
+    {
+      "path": "references/ref-semver-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-semver"
+    },
+    {
+      "path": "references/ref-send2trash-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-send2trash"
+    },
+    {
+      "path": "references/ref-serviceidentity-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-serviceidentity"
+    },
+    {
+      "path": "references/ref-setuptools-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-setuptools"
+    },
+    {
+      "path": "references/ref-shapely-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-shapely"
+    },
+    {
+      "path": "references/ref-sip-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-sip"
+    },
+    {
+      "path": "references/ref-six-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-six"
+    },
+    {
+      "path": "references/ref-smartopen-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-smartopen"
+    },
+    {
+      "path": "references/ref-snappy-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-snappy"
+    },
+    {
+      "path": "references/ref-sniffio-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-sniffio"
+    },
+    {
+      "path": "references/ref-snowballstemmer-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-snowballstemmer"
+    },
+    {
+      "path": "references/ref-sortedcollections-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-sortedcollections"
+    },
+    {
+      "path": "references/ref-sortedcontainers-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-sortedcontainers"
+    },
+    {
+      "path": "references/ref-soupsieve-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-soupsieve"
+    },
+    {
+      "path": "references/ref-sphinx-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-sphinx"
+    },
+    {
+      "path": "references/ref-sphinxcontrib-applehelp-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-sphinxcontrib-applehelp"
+    },
+    {
+      "path": "references/ref-sphinxcontrib-devhelp-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-sphinxcontrib-devhelp"
+    },
+    {
+      "path": "references/ref-sphinxcontrib-htmlhelp-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-sphinxcontrib-htmlhelp"
+    },
+    {
+      "path": "references/ref-sphinxcontrib-jsmath-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-sphinxcontrib-jsmath"
+    },
+    {
+      "path": "references/ref-sphinxcontrib-qthelp-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-sphinxcontrib-qthelp"
+    },
+    {
+      "path": "references/ref-sphinxcontrib-serializinghtml-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-sphinxcontrib-serializinghtml"
+    },
+    {
+      "path": "references/ref-spyder-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-spyder"
+    },
+    {
+      "path": "references/ref-spyder-kernels-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-spyder-kernels"
+    },
+    {
+      "path": "references/ref-sqlalchemy-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-sqlalchemy"
+    },
+    {
+      "path": "references/ref-statsmodels-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-statsmodels"
+    },
+    {
+      "path": "references/ref-sympy-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-sympy"
+    },
+    {
+      "path": "references/ref-tabulate-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-tabulate"
+    },
+    {
+      "path": "references/ref-tbb-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-tbb"
+    },
+    {
+      "path": "references/ref-tbb4py-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-tbb4py"
+    },
+    {
+      "path": "references/ref-tblib-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-tblib"
+    },
+    {
+      "path": "references/ref-tenacity-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-tenacity"
+    },
+    {
+      "path": "references/ref-terminado-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-terminado"
+    },
+    {
+      "path": "references/ref-testpath-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-testpath"
+    },
+    {
+      "path": "references/ref-text-unidecode-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-text-unidecode"
+    },
+    {
+      "path": "references/ref-textdistance-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-textdistance"
+    },
+    {
+      "path": "references/ref-threadpoolctl-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-threadpoolctl"
+    },
+    {
+      "path": "references/ref-three-merge-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-three-merge"
+    },
+    {
+      "path": "references/ref-tifffile-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-tifffile"
+    },
+    {
+      "path": "references/ref-tiledb-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-tiledb"
+    },
+    {
+      "path": "references/ref-tinycss-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-tinycss"
+    },
+    {
+      "path": "references/ref-tk-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-tk"
+    },
+    {
+      "path": "references/ref-tldextract-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-tldextract"
+    },
+    {
+      "path": "references/ref-toml-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-toml"
+    },
+    {
+      "path": "references/ref-tomli-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-tomli"
+    },
+    {
+      "path": "references/ref-tomlkit-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-tomlkit"
+    },
+    {
+      "path": "references/ref-toolz-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-toolz"
+    },
+    {
+      "path": "references/ref-tornado-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-tornado"
+    },
+    {
+      "path": "references/ref-tqdm-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-tqdm"
+    },
+    {
+      "path": "references/ref-traitlets-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-traitlets"
+    },
+    {
+      "path": "references/ref-twisted-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-twisted"
+    },
+    {
+      "path": "references/ref-twisted-iocpsupport-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-twisted-iocpsupport"
+    },
+    {
+      "path": "references/ref-typing-extensions-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-typing-extensions"
+    },
+    {
+      "path": "references/ref-typingextensions-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-typingextensions"
+    },
+    {
+      "path": "references/ref-tzdata-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-tzdata"
+    },
+    {
+      "path": "references/ref-ujson-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-ujson"
+    },
+    {
+      "path": "references/ref-unidecode-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-unidecode"
+    },
+    {
+      "path": "references/ref-urllib3-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-urllib3"
+    },
+    {
+      "path": "references/ref-utf8proc-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-utf8proc"
+    },
+    {
+      "path": "references/ref-vc-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-vc"
+    },
+    {
+      "path": "references/ref-vs2015runtime-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-vs2015runtime"
+    },
+    {
+      "path": "references/ref-w3lib-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-w3lib"
+    },
+    {
+      "path": "references/ref-watchdog-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-watchdog"
+    },
+    {
+      "path": "references/ref-wcwidth-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-wcwidth"
+    },
+    {
+      "path": "references/ref-webencodings-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-webencodings"
+    },
+    {
+      "path": "references/ref-websocket-client-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-websocket-client"
+    },
+    {
+      "path": "references/ref-werkzeug-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-werkzeug"
+    },
+    {
+      "path": "references/ref-wheel-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-wheel"
+    },
+    {
+      "path": "references/ref-widgetsnbextension-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-widgetsnbextension"
+    },
+    {
+      "path": "references/ref-wininetpton-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-wininetpton"
+    },
+    {
+      "path": "references/ref-winunicodeconsole-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-winunicodeconsole"
+    },
+    {
+      "path": "references/ref-wincertstore-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-wincertstore"
+    },
+    {
+      "path": "references/ref-winpty-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-winpty"
+    },
+    {
+      "path": "references/ref-wrapt-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-wrapt"
+    },
+    {
+      "path": "references/ref-xarray-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-xarray"
+    },
+    {
+      "path": "references/ref-xerces-c-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-xerces-c"
+    },
+    {
+      "path": "references/ref-xlrd-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-xlrd"
+    },
+    {
+      "path": "references/ref-xlsxwriter-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-xlsxwriter"
+    },
+    {
+      "path": "references/ref-xlwings-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-xlwings"
+    },
+    {
+      "path": "references/ref-xyzservices-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-xyzservices"
+    },
+    {
+      "path": "references/ref-xz-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-xz"
+    },
+    {
+      "path": "references/ref-yaml-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-yaml"
+    },
+    {
+      "path": "references/ref-yapf-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-yapf"
+    },
+    {
+      "path": "references/ref-yfinance-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-yfinance"
+    },
+    {
+      "path": "references/ref-zeromq-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-zeromq"
+    },
+    {
+      "path": "references/ref-zfp-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-zfp"
+    },
+    {
+      "path": "references/ref-zict-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-zict"
+    },
+    {
+      "path": "references/ref-zipp-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-zipp"
+    },
+    {
+      "path": "references/ref-zlib-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-zlib"
+    },
+    {
+      "path": "references/ref-zope-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-zope"
+    },
+    {
+      "path": "references/ref-zopeinterface-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-zopeinterface"
+    },
+    {
+      "path": "references/ref-zstandard-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-zstandard"
+    },
+    {
+      "path": "references/ref-zstd-reference.md",
+      "template": "domain/tool-reference.template.md",
+      "type": "reference",
+      "component_slug": null,
+      "tool_slug": "ref-zstd"
+    },
+    {
+      "path": "references/code-hygiene-rules.reference.md",
+      "template": "domain/code-hygiene-rules-reference.template.md",
+      "type": "reference",
+      "component_slug": null
+    },
+    {
+      "path": "references/unix-philosophy-mapping.reference.md",
+      "template": "domain/unix-philosophy-mapping-reference.template.md",
+      "type": "reference",
+      "component_slug": null
+    },
+    {
+      "path": "references/security-vulnerability-watch.reference.md",
+      "template": "universal/security-vulnerability-watch.reference.template.md",
+      "type": "artifact",
+      "component_slug": null
+    },
+    {
+      "path": "references/security-vulnerability-watch.json",
+      "template": "universal/security-vulnerability-watch.json.template",
+      "type": "artifact",
+      "component_slug": null
+    },
+    {
+      "path": "references/security-linux-hardening.reference.md",
+      "template": "universal/security-linux-hardening.reference.template.md",
+      "type": "reference",
+      "component_slug": null
+    },
+    {
+      "path": "references/security-macos-hardening.reference.md",
+      "template": "universal/security-macos-hardening.reference.template.md",
+      "type": "reference",
+      "component_slug": null
+    },
+    {
+      "path": "references/security-windows-hardening.reference.md",
+      "template": "universal/security-windows-hardening.reference.template.md",
+      "type": "reference",
+      "component_slug": null
+    },
+    {
+      "path": "references/ai-bad-habits-watch.reference.md",
+      "template": "universal/ai-bad-habits-watch.reference.template.md",
+      "type": "artifact",
+      "component_slug": null
+    },
+    {
+      "path": "references/framework-watch.reference.md",
+      "template": "universal/framework-watch.reference.template.md",
+      "type": "artifact",
+      "component_slug": null
+    },
+    {
+      "path": "references/adjacent-repos.md",
+      "template": "universal/adjacent-repos.reference.template.md",
+      "type": "artifact",
+      "component_slug": null
+    },
+    {
+      "path": "references/github-workflows-merge.reference.md",
+      "template": "universal/github-workflows-merge.reference.template.md",
+      "type": "reference",
+      "component_slug": null
+    },
+    {
+      "path": "references/work-summary-spec.reference.md",
+      "template": "universal/work-summary-spec.reference.template.md",
+      "type": "reference",
+      "component_slug": null
+    },
+    {
+      "path": "references/work-summary-tooling.reference.md",
+      "template": "universal/work-summary-tooling.reference.template.md",
+      "type": "reference",
+      "component_slug": null
+    },
+    {
+      "path": "references/work-summary-backfill.reference.md",
+      "template": "universal/work-summary-backfill.reference.template.md",
+      "type": "reference",
+      "component_slug": null
+    },
+    {
+      "path": "references/parallelization.reference.md",
+      "template": "universal/parallelization.reference.template.md",
+      "type": "reference",
+      "component_slug": null
+    },
+    {
+      "path": "crisis-credit-allocation-expert.agent.md",
+      "template": "workstream-expert.template.md",
+      "type": "agent",
+      "component_slug": "crisis-credit-allocation"
+    },
+    {
+      "path": "fed-response-dag-expert.agent.md",
+      "template": "workstream-expert.template.md",
+      "type": "agent",
+      "component_slug": "fed-response-dag"
+    },
+    {
+      "path": "prairie-prosperity-expert.agent.md",
+      "template": "workstream-expert.template.md",
+      "type": "agent",
+      "component_slug": "prairie-prosperity"
+    },
+    {
+      "path": "sugarscape-expert.agent.md",
+      "template": "workstream-expert.template.md",
+      "type": "agent",
+      "component_slug": "sugarscape"
+    },
+    {
+      "path": "visualize-energy-data-expert.agent.md",
+      "template": "workstream-expert.template.md",
+      "type": "agent",
+      "component_slug": "visualize-energy-data"
+    },
+    {
+      "path": "../CLAUDE.md",
+      "template": "copilot-instructions.template.md",
+      "type": "instructions",
+      "component_slug": null
+    },
+    {
+      "path": "team-builder.agent.md",
+      "template": "builder/team-builder-claude.template.md",
+      "type": "builder",
+      "component_slug": null
+    },
+    {
+      "path": "SETUP-REQUIRED.md",
+      "template": "",
+      "type": "setup-required",
+      "component_slug": null
+    },
+    {
+      "path": "references/pipeline-graph.md",
+      "template": "",
+      "type": "graph",
+      "component_slug": null
+    },
+    {
+      "path": "references/pipeline-graph.svg",
+      "template": "",
+      "type": "graph-svg",
+      "component_slug": null
+    },
+    {
+      "path": "references/pipeline-handoffs.svg",
+      "template": "",
+      "type": "graph-svg",
+      "component_slug": null
+    },
+    {
+      "path": "content-enricher.agent.md",
+      "template": "domain/content-enricher.template.md",
+      "type": "agent",
+      "component_slug": null
+    }
+  ],
+  "agent_slug_list": [
+    "orchestrator",
+    "navigator",
+    "security",
+    "code-hygiene",
+    "adversarial",
+    "conflict-auditor",
+    "conflict-resolution",
+    "cleanup",
+    "agent-updater",
+    "agent-refactor",
+    "repo-liaison",
+    "git-operations",
+    "work-summarizer",
+    "primary-producer",
+    "quality-auditor",
+    "cohesion-repairer",
+    "style-guardian",
+    "technical-validator",
+    "format-converter",
+    "reference-manager",
+    "output-compiler",
+    "visual-designer",
+    "tool-doc-researcher",
+    "crisis-credit-allocation-expert",
+    "fed-response-dag-expert",
+    "prairie-prosperity-expert",
+    "sugarscape-expert",
+    "visualize-energy-data-expert"
+  ],
+  "governance_agents": [
+    "navigator",
+    "security",
+    "code-hygiene",
+    "adversarial",
+    "conflict-auditor",
+    "conflict-resolution",
+    "cleanup",
+    "agent-updater",
+    "agent-refactor",
+    "repo-liaison",
+    "git-operations"
+  ],
+  "manifest_fingerprint": "c7565be2c3cb0fd9",
+  "fingerprint_algo_version": 1,
+  "file_hashes": {
+    "orchestrator.md": "b1c2cffa00e2df79",
+    "navigator.md": "2ae88242474980fc",
+    "security.md": "3690d049ae6d495d",
+    "code-hygiene.md": "7fd9915d1b5c0d85",
+    "adversarial.md": "40ea9219f5dd3d7b",
+    "conflict-auditor.md": "296209d8da8b5b78",
+    "conflict-resolution.md": "43b42d4cf080f3b9",
+    "cleanup.md": "addbeed838def5c9",
+    "agent-updater.md": "19b16799d855c4e2",
+    "agent-refactor.md": "38ef30abf6eeb4e7",
+    "repo-liaison.md": "df958f61e432f357",
+    "git-operations.md": "6fdb1cb3fc9ed15c",
+    "work-summarizer.md": "e5f50d7a01949183",
+    "primary-producer.md": "8c1a772ff888f90b",
+    "quality-auditor.md": "ade109f7bd8849dc",
+    "cohesion-repairer.md": "1646886bc32f94e1",
+    "style-guardian.md": "e0f523353a742067",
+    "technical-validator.md": "95e2b179d53b7557",
+    "format-converter.md": "a89aacefb8616a1d",
+    "reference-manager.md": "51a35d99271711c1",
+    "output-compiler.md": "ac71cfb04fca69d7",
+    "visual-designer.md": "9c7654c3a3570b1a",
+    "tool-doc-researcher.md": "208dde9ef0a19285",
+    "../skills/tool-sqlite.md": "32b624a36732a37d",
+    "references/ref-jupyter-reference.md": "89b3015b837221fa",
+    "references/ref-pandas-reference.md": "dd494253dd9816fb",
+    "references/ref-numpy-reference.md": "c86a136ca778c7f4",
+    "references/ref-matplotlib-reference.md": "4b14a5c8b149cc67",
+    "references/ref-plotly-reference.md": "53deb68153a34173",
+    "references/ref-pandas-datareader-reference.md": "9f8a00001f1ea5bd",
+    "references/ref-linearmodels-reference.md": "6e680431e5c5c3a3",
+    "references/ref-anacondadepends-reference.md": "65f05851fbbf7e5e",
+    "references/ref-ipywjlabnbextconf-reference.md": "bd55e3699cd1441c",
+    "references/ref-alabaster-reference.md": "7767796aebdaf2c7",
+    "references/ref-anaconda-reference.md": "cb6e13d08e2b5477",
+    "references/ref-anaconda-anon-usage-reference.md": "fc205fc631cd8b7d",
+    "references/ref-anaconda-client-reference.md": "5d49100224935cbf",
+    "references/ref-anaconda-cloud-auth-reference.md": "42a33966ecf16d3a",
+    "references/ref-anaconda-navigator-reference.md": "993e600a50db0dfb",
+    "references/ref-anaconda-project-reference.md": "ef93318386b1c3c8",
+    "references/ref-ansi2html-reference.md": "279baa5ee8736034",
+    "references/ref-anyio-reference.md": "69ff0d096696a4e9",
+    "references/ref-appdirs-reference.md": "4b0a70dbadf1460d",
+    "references/ref-arch-reference.md": "760d722844e08dfb",
+    "references/ref-argon2-cffi-reference.md": "c1ad7b120e828ba6",
+    "references/ref-argon2-cffi-bindings-reference.md": "c58786619162feb9",
+    "references/ref-arrow-reference.md": "e136e30781dae1d3",
+    "references/ref-arrow-cpp-reference.md": "ef1714ebb24205a9",
+    "references/ref-astroid-reference.md": "261de860ebdc0dd6",
+    "references/ref-astropy-reference.md": "c959cd8fd39070a7",
+    "references/ref-atomicwrites-reference.md": "a9b4f42a638eb202",
+    "references/ref-attrs-reference.md": "953a158747b6aa02",
+    "references/ref-automat-reference.md": "4eb14f79d2e06d43",
+    "references/ref-autopep8-reference.md": "1283fa704c829daa",
+    "references/ref-aws-c-common-reference.md": "6e74a0f3e5452423",
+    "references/ref-aws-c-event-stream-reference.md": "3d626239634a17d4",
+    "references/ref-aws-checksums-reference.md": "84cd30a7df07b342",
+    "references/ref-aws-sdk-cpp-reference.md": "70362cd37ab9e8b2",
+    "references/ref-babel-reference.md": "3944f243af7f68aa",
+    "references/ref-backcall-reference.md": "e149905dc54f03b7",
+    "references/ref-backports-reference.md": "d882d79cab6993e2",
+    "references/ref-backportsfunctoolslrucache-reference.md": "629b2fa8f5f82325",
+    "references/ref-backportstempfile-reference.md": "d412160242407065",
+    "references/ref-backportsweakref-reference.md": "2246a67bac8857a7",
+    "references/ref-bcrypt-reference.md": "19aaca49b7912492",
+    "references/ref-beautifulsoup4-reference.md": "d16a3e402c1d1cb5",
+    "references/ref-binaryornot-reference.md": "586af87c80797f10",
+    "references/ref-bitarray-reference.md": "a0b797bf286a513e",
+    "references/ref-bkcharts-reference.md": "4a6c164a0f8d8319",
+    "references/ref-black-reference.md": "9b69990cc6f25b9b",
+    "references/ref-blas-reference.md": "6712045269e9e5fb",
+    "references/ref-bleach-reference.md": "ec290367a3938469",
+    "references/ref-blosc-reference.md": "5e91b6c421e5e54c",
+    "references/ref-bokeh-reference.md": "dff2f0d5e0e4a5d0",
+    "references/ref-boltons-reference.md": "645a37cd4466b6f1",
+    "references/ref-boost-cpp-reference.md": "be77a0cd7c4b8a01",
+    "references/ref-boto3-reference.md": "d327f8bfa9434241",
+    "references/ref-botocore-reference.md": "087ceeb3d58285c4",
+    "references/ref-bottleneck-reference.md": "cfefb58a171e7a75",
+    "references/ref-branca-reference.md": "a5d75057e153829b",
+    "references/ref-brotli-reference.md": "3ccffbce19757dc2",
+    "references/ref-brotli-bin-reference.md": "abaf67bff5190861",
+    "references/ref-brotlipy-reference.md": "2daa7e205c8f8714",
+    "references/ref-bt-reference.md": "8e5d6bae3159c0b6",
+    "references/ref-bzip2-reference.md": "7662b33ca5a5d3a9",
+    "references/ref-c-ares-reference.md": "fd7fb09c8dff8734",
+    "references/ref-ca-certificates-reference.md": "0b087504291f97fa",
+    "references/ref-certifi-reference.md": "e4ce80c7af3ee8e6",
+    "references/ref-cffi-reference.md": "3434a0de3e0ceced",
+    "references/ref-cfitsio-reference.md": "3f44faa96020389e",
+    "references/ref-chardet-reference.md": "d77a2c45b5ba7462",
+    "references/ref-charls-reference.md": "2f83fee6aa734831",
+    "references/ref-charset-normalizer-reference.md": "370afa2e0ac3ff7e",
+    "references/ref-click-reference.md": "9e96a9c68a0aa56f",
+    "references/ref-click-plugins-reference.md": "58bbbbf3bf857ac9",
+    "references/ref-cligj-reference.md": "a7bd3ba467e498bc",
+    "references/ref-cloudpickle-reference.md": "95a9e76aa46b9adb",
+    "references/ref-clyent-reference.md": "91e1604805ee5db8",
+    "references/ref-colorama-reference.md": "f07f2fe962c244d4",
+    "references/ref-colorcet-reference.md": "1499df9f36a1d16e",
+    "references/ref-comtypes-reference.md": "dff5a17fd586004d",
+    "references/ref-conda-reference.md": "e9c2c1db43077161",
+    "references/ref-conda-build-reference.md": "0b5ce75d0fe70662",
+    "references/ref-conda-content-trust-reference.md": "6749e80655e048c6",
+    "references/ref-conda-env-reference.md": "49225f0496d384ba",
+    "references/ref-conda-pack-reference.md": "f5aaf9fcbfc3563f",
+    "references/ref-conda-package-handling-reference.md": "c9dcef3c7c4c6e07",
+    "references/ref-conda-package-streaming-reference.md": "c92ee62e39e88d68",
+    "references/ref-conda-repo-cli-reference.md": "02999246dd844df0",
+    "references/ref-conda-token-reference.md": "e712e7e7a352ec43",
+    "references/ref-conda-verify-reference.md": "b4895be512800534",
+    "references/ref-config-reference.md": "30942ea6a1d9f702",
+    "references/ref-consoleshortcut-reference.md": "142fbf290e96c22a",
+    "references/ref-constantly-reference.md": "782ed87b09e3d817",
+    "references/ref-cookiecutter-reference.md": "867b1aacc8666912",
+    "references/ref-cryptography-reference.md": "48086fe95b373b68",
+    "references/ref-cssselect-reference.md": "0bad15d239cca012",
+    "references/ref-curl-reference.md": "67d60dfd73f26810",
+    "references/ref-cvxpy-reference.md": "c38be5b41807a167",
+    "references/ref-cycler-reference.md": "4f48b2004c839640",
+    "references/ref-cython-reference.md": "72635a8bee93b7db",
+    "references/ref-cytoolz-reference.md": "3e0c91dc8717e944",
+    "references/ref-daal4py-reference.md": "6a9e3afb752db4a2",
+    "references/ref-dal-reference.md": "84ff217d9cbc16e4",
+    "references/ref-dash-reference.md": "316243a3044e0d8f",
+    "references/ref-dash-core-components-reference.md": "afe8deb74d04c2ba",
+    "references/ref-dash-html-components-reference.md": "8b64600b0e2bc6e2",
+    "references/ref-dash-table-reference.md": "d68f640cbd233eb1",
+    "references/ref-dask-reference.md": "d1fd1622baba0e1e",
+    "references/ref-dask-core-reference.md": "bf898adca05a72a3",
+    "references/ref-dataclasses-reference.md": "b73d15b20756f8d2",
+    "references/ref-datashader-reference.md": "2732cb5e533cda58",
+    "references/ref-datashape-reference.md": "7fd0fc79ecb04110",
+    "references/ref-debugpy-reference.md": "e0c27b85dfb8b221",
+    "references/ref-decorator-reference.md": "6bdb189b526a720c",
+    "references/ref-defusedxml-reference.md": "02cc3bb9c7758a0c",
+    "references/ref-diff-match-patch-reference.md": "5aeaceb9a1c4a2fe",
+    "references/ref-dill-reference.md": "3a5e5fb63084b67e",
+    "references/ref-distributed-reference.md": "012c30f1c944ba20",
+    "references/ref-docutils-reference.md": "02ef81ff654e1710",
+    "references/ref-ecos-reference.md": "9884bf5d1f538ac3",
+    "references/ref-entrypoints-reference.md": "595bff6bf7bc9813",
+    "references/ref-etxmlfile-reference.md": "37a52349f069eaae",
+    "references/ref-expat-reference.md": "2581234305a6b3b8",
+    "references/ref-ffn-reference.md": "17a123ab0339eb88",
+    "references/ref-fftw-reference.md": "5cc77af0e0b25b70",
+    "references/ref-filelock-reference.md": "1bf1a97c3a8dad0c",
+    "references/ref-fiona-reference.md": "b4896517cc9f6ac3",
+    "references/ref-flake8-reference.md": "3e02054a63272884",
+    "references/ref-flask-reference.md": "908d370f85bb7b48",
+    "references/ref-folium-reference.md": "03844082af44ead9",
+    "references/ref-fonttools-reference.md": "07bb6a4660e521e6",
+    "references/ref-freetype-reference.md": "2117b941d586dc88",
+    "references/ref-freexl-reference.md": "a13d8fca0fd8f11e",
+    "references/ref-frozendict-reference.md": "d572a22b6a286734",
+    "references/ref-fsspec-reference.md": "4b4aee8e77f92fbc",
+    "references/ref-future-reference.md": "a962fc1157687ff0",
+    "references/ref-gdal-reference.md": "b2a0dc51b0115dc1",
+    "references/ref-gensim-reference.md": "0c29e8421418aa0d",
+    "references/ref-geographiclib-reference.md": "5b690787f0fa1b6c",
+    "references/ref-geopandas-reference.md": "d753c022a4824007",
+    "references/ref-geopandas-base-reference.md": "fcd98a137259f25a",
+    "references/ref-geopy-reference.md": "b9756315fe2e33d3",
+    "references/ref-geos-reference.md": "a25b85996e1c8972",
+    "references/ref-geotiff-reference.md": "695d0027a07e499c",
+    "references/ref-gflags-reference.md": "309ffb8e4e67d35f",
+    "references/ref-giflib-reference.md": "75a7726a6f34e80a",
+    "references/ref-glob2-reference.md": "6e4296360882599e",
+    "references/ref-glog-reference.md": "1ab2f818a9d63e3a",
+    "references/ref-greenlet-reference.md": "941dc907d1c36944",
+    "references/ref-h5py-reference.md": "34975fb2f01f646f",
+    "references/ref-hdf4-reference.md": "12feab43aad57799",
+    "references/ref-hdf5-reference.md": "308cd6f215444a87",
+    "references/ref-heapdict-reference.md": "5940b4d5790a99e6",
+    "references/ref-holoviews-reference.md": "a0198f41387ec1b3",
+    "references/ref-html5lib-reference.md": "fc805ab3fd8863fa",
+    "references/ref-hvplot-reference.md": "2f0608eb57e276b3",
+    "references/ref-hyperlink-reference.md": "7eb829bc5576a848",
+    "references/ref-iccrt-reference.md": "80f3ab1ece850082",
+    "references/ref-icu-reference.md": "8e2e967f084e63bc",
+    "references/ref-idna-reference.md": "6f7fcd7b930b038d",
+    "references/ref-imagecodecs-reference.md": "12e62b0c50087f25",
+    "references/ref-imageio-reference.md": "252c35a520a2aa70",
+    "references/ref-imagesize-reference.md": "1ee8cda7f3baed01",
+    "references/ref-importlib-metadata-reference.md": "2499c76a6bf3ab13",
+    "references/ref-importlibmetadata-reference.md": "f1f786a687291878",
+    "references/ref-incremental-reference.md": "542f85ad7c00b790",
+    "references/ref-inflection-reference.md": "1657a2e20536dac9",
+    "references/ref-iniconfig-reference.md": "c88e6e7f524d32e1",
+    "references/ref-intake-reference.md": "64bf689efdcf6b4e",
+    "references/ref-intel-openmp-reference.md": "4824802130b95ccb",
+    "references/ref-intervaltree-reference.md": "fee825bcbb504f3f",
+    "references/ref-ipykernel-reference.md": "c19b3702f0b7f2c2",
+    "references/ref-ipython-reference.md": "81656c77e2b54b0b",
+    "references/ref-ipythongenutils-reference.md": "a0a797aec76e7f8c",
+    "references/ref-ipywidgets-reference.md": "234227e14c71c9a2",
+    "references/ref-isort-reference.md": "3635ae2c6e4bddee",
+    "references/ref-itemadapter-reference.md": "927c22c7efa246a8",
+    "references/ref-itemloaders-reference.md": "c4212a18940eb588",
+    "references/ref-itsdangerous-reference.md": "06a02fd60406bfe3",
+    "references/ref-jdcal-reference.md": "8c276415095b4826",
+    "references/ref-jedi-reference.md": "150402240e0fd050",
+    "references/ref-jellyfish-reference.md": "8a2ddd785c0f539a",
+    "references/ref-jinja2-reference.md": "272cab1a90b97d11",
+    "references/ref-jinja2-time-reference.md": "93f1b72dee8693b8",
+    "references/ref-jmespath-reference.md": "0a1b2c879effdb7a",
+    "references/ref-joblib-reference.md": "3745a57637e29dfe",
+    "references/ref-jpeg-reference.md": "2ed4d2d24331591d",
+    "references/ref-jq-reference.md": "bacdf4a09ab8497d",
+    "references/ref-json5-reference.md": "6f0a0cf0ade041c0",
+    "references/ref-jsonpatch-reference.md": "430f4f9435aba594",
+    "references/ref-jsonpointer-reference.md": "3cb45cfce2d7f0f7",
+    "references/ref-jsonschema-reference.md": "4925176888dc5da4",
+    "references/ref-jupyterclient-reference.md": "905794ed10606bb1",
+    "references/ref-jupyterconsole-reference.md": "fc61862457430043",
+    "references/ref-jupytercore-reference.md": "f6d974ce056d84b8",
+    "references/ref-jupyterserver-reference.md": "9a9d8951d6c5ff49",
+    "references/ref-jupyterlab-reference.md": "b669d34730bcbf25",
+    "references/ref-jupyterlabpygments-reference.md": "707fbac3dfc216b9",
+    "references/ref-jupyterlabserver-reference.md": "3496ce4cd2de4602",
+    "references/ref-jupyterlabwidgets-reference.md": "7e32e711b8ec1bed",
+    "references/ref-kealib-reference.md": "c06f34abc3ef9ab9",
+    "references/ref-keyring-reference.md": "7107e2f091a68594",
+    "references/ref-kiwisolver-reference.md": "fb3c8e1c8ebe9261",
+    "references/ref-krb5-reference.md": "7a2cef27a864774c",
+    "references/ref-lazy-object-proxy-reference.md": "a615f65ac49080ea",
+    "references/ref-lcms2-reference.md": "30499a8253b948f7",
+    "references/ref-lerc-reference.md": "ecdaff150fff66b9",
+    "references/ref-libaec-reference.md": "644f88fc18f20e56",
+    "references/ref-libarchive-reference.md": "5aba507fe5456e4c",
+    "references/ref-libboost-reference.md": "dac24b1dd1f5c2f2",
+    "references/ref-libbrotlicommon-reference.md": "67288702b9b6e990",
+    "references/ref-libbrotlidec-reference.md": "6175ad1969d70eb1",
+    "references/ref-libbrotlienc-reference.md": "79de1f7590c03845",
+    "references/ref-libcurl-reference.md": "ab552064d1b93c5c",
+    "references/ref-libdeflate-reference.md": "bda6379a4d0b12c6",
+    "references/ref-libexpat-reference.md": "79062efb69cf404e",
+    "references/ref-libgdal-reference.md": "d6c2448bcab401c1",
+    "references/ref-libiconv-reference.md": "70bfa95bca6cefcd",
+    "references/ref-liblief-reference.md": "ca596a68cd1238da",
+    "references/ref-libnetcdf-reference.md": "1ca70b77da8cb789",
+    "references/ref-libpng-reference.md": "9513525a84c2f2eb",
+    "references/ref-libpq-reference.md": "60599bb260580011",
+    "references/ref-libprotobuf-reference.md": "612953fac907521b",
+    "references/ref-libsodium-reference.md": "a24e86f74fe1e4b9",
+    "references/ref-libspatialindex-reference.md": "f3b0a323165429bd",
+    "references/ref-libspatialite-reference.md": "6b8c6425e2066fb6",
+    "references/ref-libssh2-reference.md": "a39fef426b74b62a",
+    "references/ref-libthrift-reference.md": "44b0f20239953ea6",
+    "references/ref-libtiff-reference.md": "47ad83465ccdfee9",
+    "references/ref-libwebp-reference.md": "9278a0cc05ccc90c",
+    "references/ref-libwebp-base-reference.md": "e6b48d8f3d2c1229",
+    "references/ref-libxml2-reference.md": "fc07a4319f3f53ab",
+    "references/ref-libxslt-reference.md": "4c6400a82ec03812",
+    "references/ref-libzip-reference.md": "8ccb0add021cd495",
+    "references/ref-libzopfli-reference.md": "ccb734198c1ce0e0",
+    "references/ref-llvmlite-reference.md": "be37ea842a8358e8",
+    "references/ref-locket-reference.md": "4af90d44aee7e4ff",
+    "references/ref-lxml-reference.md": "f24723bd0a734498",
+    "references/ref-lz4-reference.md": "e1f882df0cc4aa13",
+    "references/ref-lz4-c-reference.md": "2be4b46a6f1bf3ab",
+    "references/ref-lzo-reference.md": "ff77395287029cf3",
+    "references/ref-m2-msys2-runtime-reference.md": "b7f784c48a28ff6c",
+    "references/ref-m2-patch-reference.md": "212446b463df2c92",
+    "references/ref-m2w64-expat-reference.md": "cc98e509a06f6b29",
+    "references/ref-m2w64-gcc-libgfortran-reference.md": "40ce294258c95a55",
+    "references/ref-m2w64-gcc-libs-reference.md": "ba4e51e974af8cec",
+    "references/ref-m2w64-gcc-libs-core-reference.md": "6b08c433921c385e",
+    "references/ref-m2w64-gettext-reference.md": "98e8269ec3abcc51",
+    "references/ref-m2w64-gmp-reference.md": "35e2e12675770ae6",
+    "references/ref-m2w64-libiconv-reference.md": "3ff67bd0c9f10a02",
+    "references/ref-m2w64-libwinpthread-git-reference.md": "334617b7d140aaf2",
+    "references/ref-m2w64-xz-reference.md": "e940ed15497ff56f",
+    "references/ref-mapclassify-reference.md": "17b733fc6978c3f2",
+    "references/ref-markdown-reference.md": "8709965154abc677",
+    "references/ref-markupsafe-reference.md": "c3619850c39f0b0b",
+    "references/ref-matplotlib-base-reference.md": "9fe2718cf520097f",
+    "references/ref-matplotlib-inline-reference.md": "b993ddfc8c64c361",
+    "references/ref-mccabe-reference.md": "232227ae60ee1412",
+    "references/ref-memoryprofiler-reference.md": "d8fdfd452ae107fa",
+    "references/ref-menuinst-reference.md": "a95c831522c32a27",
+    "references/ref-mistune-reference.md": "425d24dd62a84895",
+    "references/ref-mkl-reference.md": "406c552e5eaef80f",
+    "references/ref-mkl-service-reference.md": "655335e57b891830",
+    "references/ref-mklfft-reference.md": "157741d6e723c1c5",
+    "references/ref-mklrandom-reference.md": "010a3b563f3f0984",
+    "references/ref-mock-reference.md": "8706c21fa79a9dfe",
+    "references/ref-mpmath-reference.md": "e91680d67d9f0c94",
+    "references/ref-msgpack-python-reference.md": "82ff94a69d010a6d",
+    "references/ref-msys2-conda-epoch-reference.md": "f887557843de6cb2",
+    "references/ref-multipledispatch-reference.md": "e9e970d70986760f",
+    "references/ref-multiprocess-reference.md": "8b012994b275d11e",
+    "references/ref-multitasking-reference.md": "2d4100385df8c68f",
+    "references/ref-munch-reference.md": "d015fb0c55a686ae",
+    "references/ref-munkres-reference.md": "014ecba7b9382b4f",
+    "references/ref-mypyextensions-reference.md": "3728c0d657367189",
+    "references/ref-navigator-updater-reference.md": "585d79fc48c8fcad",
+    "references/ref-nbclassic-reference.md": "0804916198ec5059",
+    "references/ref-nbclient-reference.md": "f31f32c0bcae0dab",
+    "references/ref-nbconvert-reference.md": "f12a5a531ddcb65d",
+    "references/ref-nbformat-reference.md": "ecb71d4583e1df95",
+    "references/ref-nest-asyncio-reference.md": "41058c74c198d8f3",
+    "references/ref-networkx-reference.md": "a7344334614bad8f",
+    "references/ref-nltk-reference.md": "9d0631faec61f0fa",
+    "references/ref-nose-reference.md": "3d654bd805616af6",
+    "references/ref-notebook-reference.md": "2bda0219acd2b4d3",
+    "references/ref-numba-reference.md": "3afb3340da8312f1",
+    "references/ref-numdifftools-reference.md": "e41518cd5465f341",
+    "references/ref-numexpr-reference.md": "1b1bb1598e59bb30",
+    "references/ref-numpy-base-reference.md": "0b05c93f2819424d",
+    "references/ref-numpydoc-reference.md": "9b6e64559070da36",
+    "references/ref-olefile-reference.md": "54af467d5836aadf",
+    "references/ref-openjpeg-reference.md": "7717569b630cc71e",
+    "references/ref-openpyxl-reference.md": "a9967eb1ce6b9949",
+    "references/ref-openssl-reference.md": "a6139a466010f820",
+    "references/ref-osqp-reference.md": "5734efc206760b07",
+    "references/ref-packaging-reference.md": "9ca9b705b2917fad",
+    "references/ref-pandocfilters-reference.md": "241316cfbdf82ec1",
+    "references/ref-panel-reference.md": "14dd5fdca7a98f3a",
+    "references/ref-param-reference.md": "6b9d4fade6c20ff1",
+    "references/ref-paramiko-reference.md": "ecf09a15fd60f1b3",
+    "references/ref-parsel-reference.md": "9978d28d7792fc4c",
+    "references/ref-parso-reference.md": "e3311959cdf256a0",
+    "references/ref-partd-reference.md": "f1dde998d62e2d98",
+    "references/ref-pathlib-reference.md": "4590f0fdb9bd5f8e",
+    "references/ref-pathspec-reference.md": "0e7020a58303ddea",
+    "references/ref-patsy-reference.md": "864dd1dfe85bd358",
+    "references/ref-pep8-reference.md": "aee8a1db4e4e5b92",
+    "references/ref-pexpect-reference.md": "03cb457254ae1b28",
+    "references/ref-pickleshare-reference.md": "52d0c834a7217a0c",
+    "references/ref-pillow-reference.md": "4fdc6723ed702b83",
+    "references/ref-pip-reference.md": "85483c99822d9c01",
+    "references/ref-pkce-reference.md": "423fc2aa5d03df51",
+    "references/ref-pkginfo-reference.md": "5aa6143eb1f8b1ff",
+    "references/ref-platformdirs-reference.md": "e2bedc0788f76697",
+    "references/ref-pluggy-reference.md": "ef90b74f4b531d16",
+    "references/ref-powerlaw-reference.md": "838b44ebbc7015a5",
+    "references/ref-powershellshortcut-reference.md": "a33d3d8d0ddd7874",
+    "references/ref-poyo-reference.md": "762f3b4652fbfed5",
+    "references/ref-proj-reference.md": "718a40f118e6c751",
+    "references/ref-prometheusclient-reference.md": "ebb7c12194fe6821",
+    "references/ref-prompt-toolkit-reference.md": "6ed8f52ac7a3c589",
+    "references/ref-prompttoolkit-reference.md": "ec3dc03826852db4",
+    "references/ref-property-cached-reference.md": "2c65c768e4f2ad13",
+    "references/ref-protego-reference.md": "89efcc668a0b8a65",
+    "references/ref-psutil-reference.md": "ee39e5dea343cc8f",
+    "references/ref-psycopg2-reference.md": "92899a3c16524055",
+    "references/ref-ptyprocess-reference.md": "202a6695ceee6533",
+    "references/ref-pulp-reference.md": "b3f4369acd727b8a",
+    "references/ref-py-reference.md": "80a1ccd590ba456a",
+    "references/ref-py-lief-reference.md": "e5c08389619a5edb",
+    "references/ref-pyarrow-reference.md": "9107389118e2736e",
+    "references/ref-pyasn1-reference.md": "5ce3c11ec90626e7",
+    "references/ref-pyasn1-modules-reference.md": "d4d5ef2a2cbeea95",
+    "references/ref-pycodestyle-reference.md": "c78dd75ded7e8a44",
+    "references/ref-pycosat-reference.md": "08d5a22849d5a835",
+    "references/ref-pycparser-reference.md": "8f5cc803820ee376",
+    "references/ref-pyct-reference.md": "5b66383288dcb071",
+    "references/ref-pycurl-reference.md": "c5d38bb8feaefaaf",
+    "references/ref-pydantic-reference.md": "e9b9fd6b86a0e456",
+    "references/ref-pydispatcher-reference.md": "cfa7192f103d17d0",
+    "references/ref-pydocstyle-reference.md": "64d06746978888f5",
+    "references/ref-pyerfa-reference.md": "ed5f386da56135ef",
+    "references/ref-pyflakes-reference.md": "cb2ad8861ddca0e3",
+    "references/ref-pyflux-reference.md": "b6293b14e80f4aec",
+    "references/ref-pygments-reference.md": "18bf15d81d8bedf9",
+    "references/ref-pyhamcrest-reference.md": "8b838ca754d8ca0e",
+    "references/ref-pyjwt-reference.md": "034bcceb705e30b6",
+    "references/ref-pylint-reference.md": "5f799220a03c5616",
+    "references/ref-pyls-spyder-reference.md": "2c0dbca69c0d72ed",
+    "references/ref-pynacl-reference.md": "e0b2cfe1d90ddcd5",
+    "references/ref-pyodbc-reference.md": "5ae59c1e5cebb222",
+    "references/ref-pyogrio-reference.md": "ff7769deef7a88bd",
+    "references/ref-pyopenssl-reference.md": "e624c010c8f37aa2",
+    "references/ref-pyparsing-reference.md": "6c7e0b185e549115",
+    "references/ref-pyprind-reference.md": "394d7444992e4208",
+    "references/ref-pyproj-reference.md": "44b641332ee7b92c",
+    "references/ref-pyqt-reference.md": "b03e0839a0cc5db7",
+    "references/ref-pyrsistent-reference.md": "72909b004a22e64f",
+    "references/ref-pysocks-reference.md": "996337d5ed5674cd",
+    "references/ref-pytables-reference.md": "976c0819433bc400",
+    "references/ref-pytest-reference.md": "db77494aeac21db6",
+    "references/ref-python-reference.md": "0685a165eca84eda",
+    "references/ref-python-dateutil-reference.md": "f591625eb066f172",
+    "references/ref-python-dotenv-reference.md": "18bd6f13f1499a34",
+    "references/ref-python-fastjsonschema-reference.md": "7e54b9eb54bb3a03",
+    "references/ref-python-libarchive-c-reference.md": "5449d695844c35dd",
+    "references/ref-python-lsp-black-reference.md": "37d8337f7acce62d",
+    "references/ref-python-lsp-jsonrpc-reference.md": "0c800b3a681e6bbc",
+    "references/ref-python-lsp-server-reference.md": "075aa10c9ea75a1d",
+    "references/ref-python-slugify-reference.md": "a2035e7fc3bb7181",
+    "references/ref-python-snappy-reference.md": "c37c0848c11ac61b",
+    "references/ref-pythonabi-reference.md": "9ebc8cc22f6410cc",
+    "references/ref-pytz-reference.md": "3c2a1d5c205dc284",
+    "references/ref-pyusda-reference.md": "c27b49cbea8e4afa",
+    "references/ref-pyvizcomms-reference.md": "f96ba559c90e6c11",
+    "references/ref-pywavelets-reference.md": "b9e88b158004a5ac",
+    "references/ref-pywin32-reference.md": "e9f897bb5560b408",
+    "references/ref-pywin32-ctypes-reference.md": "94ff835ec6cd7af7",
+    "references/ref-pywinpty-reference.md": "6af5de17a6feb44a",
+    "references/ref-pyyaml-reference.md": "a8866f5cd83eee0b",
+    "references/ref-pyzmq-reference.md": "fb32f304c968d762",
+    "references/ref-qdarkstyle-reference.md": "734f9580c31f0624",
+    "references/ref-qdldl-reference.md": "19dbd541e42841cc",
+    "references/ref-qstylizer-reference.md": "096806cad0d3a4f2",
+    "references/ref-qt-reference.md": "a4dd86a8977a676f",
+    "references/ref-qtawesome-reference.md": "7371610b06f96676",
+    "references/ref-qtconsole-reference.md": "c29266f37ce89405",
+    "references/ref-qtpy-reference.md": "5987e45f7bd4dd10",
+    "references/ref-queuelib-reference.md": "f1cebf17592910c7",
+    "references/ref-random-dict-reference.md": "3cd17969fd8795b6",
+    "references/ref-randomdict-reference.md": "56534753db24c91f",
+    "references/ref-re2-reference.md": "431bf056f959d91a",
+    "references/ref-regex-reference.md": "26e565188ce2a0ff",
+    "references/ref-requests-reference.md": "a6d501c165ba3052",
+    "references/ref-requests-file-reference.md": "f1f246b4ac841f8f",
+    "references/ref-retrying-reference.md": "d2ea7742250a3a14",
+    "references/ref-rope-reference.md": "389c645d85f6a93a",
+    "references/ref-rtree-reference.md": "6e6f53f094ed025b",
+    "references/ref-ruamelyaml-reference.md": "926c3c95959281d1",
+    "references/ref-ruamelyamlclib-reference.md": "6025553e06b23144",
+    "references/ref-s3transfer-reference.md": "5c55f0f6d10fb458",
+    "references/ref-scikit-image-reference.md": "d72c87db7566a1d6",
+    "references/ref-scikit-learn-reference.md": "299469e9ed83b9b1",
+    "references/ref-scikit-learn-intelex-reference.md": "a44463f58acfc79b",
+    "references/ref-scipy-reference.md": "c44f68b713d657dc",
+    "references/ref-scrapy-reference.md": "68e6ecc1f920de1f",
+    "references/ref-scs-reference.md": "554e7c274687228d",
+    "references/ref-seaborn-reference.md": "04b6593b04d4d5b0",
+    "references/ref-semver-reference.md": "fcfe5c7b0053bd0e",
+    "references/ref-send2trash-reference.md": "62be6153df1340bd",
+    "references/ref-serviceidentity-reference.md": "89368c82d691501d",
+    "references/ref-setuptools-reference.md": "df005873cdb26bd6",
+    "references/ref-shapely-reference.md": "46cadf696c6e0ff1",
+    "references/ref-sip-reference.md": "c6f2ca5dc8854b1f",
+    "references/ref-six-reference.md": "2dba11ffe0b4ae3f",
+    "references/ref-smartopen-reference.md": "a6cac375658ab8d8",
+    "references/ref-snappy-reference.md": "83065f0ca4fd8473",
+    "references/ref-sniffio-reference.md": "ea4a22f1b98a6400",
+    "references/ref-snowballstemmer-reference.md": "af52087045319aaf",
+    "references/ref-sortedcollections-reference.md": "d28c3a485d5a7367",
+    "references/ref-sortedcontainers-reference.md": "7fa835bdb8457115",
+    "references/ref-soupsieve-reference.md": "ce5656fc09edb6d2",
+    "references/ref-sphinx-reference.md": "17fc1904f4baa71a",
+    "references/ref-sphinxcontrib-applehelp-reference.md": "0bf7bd1ff6918c39",
+    "references/ref-sphinxcontrib-devhelp-reference.md": "72f2a2b964fd889e",
+    "references/ref-sphinxcontrib-htmlhelp-reference.md": "20dffdb0c6813344",
+    "references/ref-sphinxcontrib-jsmath-reference.md": "f32f97a85a4d50b8",
+    "references/ref-sphinxcontrib-qthelp-reference.md": "565334f93698e4e4",
+    "references/ref-sphinxcontrib-serializinghtml-reference.md": "f751f9a596d28275",
+    "references/ref-spyder-reference.md": "a56027c2da299048",
+    "references/ref-spyder-kernels-reference.md": "5ec627db4f0879b4",
+    "references/ref-sqlalchemy-reference.md": "c7dd1439256f9777",
+    "references/ref-statsmodels-reference.md": "10307e1cba187ea1",
+    "references/ref-sympy-reference.md": "2354849895277b7a",
+    "references/ref-tabulate-reference.md": "6efabc475517f719",
+    "references/ref-tbb-reference.md": "4d71190ce1220f51",
+    "references/ref-tbb4py-reference.md": "b73db4ef9f7513fc",
+    "references/ref-tblib-reference.md": "73a4c1fe1154560c",
+    "references/ref-tenacity-reference.md": "dddbd8020a8e279e",
+    "references/ref-terminado-reference.md": "9bebad00c17c98d6",
+    "references/ref-testpath-reference.md": "e140aab6a63f9db6",
+    "references/ref-text-unidecode-reference.md": "7cb7326d97ca84be",
+    "references/ref-textdistance-reference.md": "28970ffaaa3299d3",
+    "references/ref-threadpoolctl-reference.md": "95fa19ddcb0b73ea",
+    "references/ref-three-merge-reference.md": "a7bc5d36624772c6",
+    "references/ref-tifffile-reference.md": "687acda684d871f6",
+    "references/ref-tiledb-reference.md": "733ae0af2ec47e1d",
+    "references/ref-tinycss-reference.md": "96d32477c61a122e",
+    "references/ref-tk-reference.md": "c101405d4e55acdd",
+    "references/ref-tldextract-reference.md": "6d5007cd3c0c2d84",
+    "references/ref-toml-reference.md": "1220da1e4fdf434f",
+    "references/ref-tomli-reference.md": "6088e38b00444452",
+    "references/ref-tomlkit-reference.md": "f30904f55f344db3",
+    "references/ref-toolz-reference.md": "0bc7d3615f8fa584",
+    "references/ref-tornado-reference.md": "ad53c7c9f7b5b47c",
+    "references/ref-tqdm-reference.md": "0c90c38493d95630",
+    "references/ref-traitlets-reference.md": "ef55bad4f46d4c79",
+    "references/ref-twisted-reference.md": "f58d49ef208e02b8",
+    "references/ref-twisted-iocpsupport-reference.md": "ce06c9983945bff8",
+    "references/ref-typing-extensions-reference.md": "d8ecc923ec10e86f",
+    "references/ref-typingextensions-reference.md": "e17859cd5be86b17",
+    "references/ref-tzdata-reference.md": "a28c0cc8cf365ec7",
+    "references/ref-ujson-reference.md": "dd8d406491cff0d3",
+    "references/ref-unidecode-reference.md": "d2ef8b77af9de05f",
+    "references/ref-urllib3-reference.md": "377f0272cf83bd2c",
+    "references/ref-utf8proc-reference.md": "116826c3695f2eee",
+    "references/ref-vc-reference.md": "7a961e4f61786e81",
+    "references/ref-vs2015runtime-reference.md": "a8145701d718b87e",
+    "references/ref-w3lib-reference.md": "82fb4aae31a8fbb0",
+    "references/ref-watchdog-reference.md": "1948e2d0123a2d4f",
+    "references/ref-wcwidth-reference.md": "ec48e6ab6fe3c467",
+    "references/ref-webencodings-reference.md": "8f1e95dc46acba46",
+    "references/ref-websocket-client-reference.md": "afe5920b95a55daf",
+    "references/ref-werkzeug-reference.md": "def74e924e3a9e67",
+    "references/ref-wheel-reference.md": "bac8813648853914",
+    "references/ref-widgetsnbextension-reference.md": "dc4c8dd184fdf5f8",
+    "references/ref-wininetpton-reference.md": "94900e70f0c07899",
+    "references/ref-winunicodeconsole-reference.md": "f54538285d1eab65",
+    "references/ref-wincertstore-reference.md": "3ac19e3db0539e84",
+    "references/ref-winpty-reference.md": "05d170340ebb4cc5",
+    "references/ref-wrapt-reference.md": "5c55d050c266258e",
+    "references/ref-xarray-reference.md": "1c8da7c4deec23f3",
+    "references/ref-xerces-c-reference.md": "59e416cac33aaa20",
+    "references/ref-xlrd-reference.md": "5fb1ba0a00c57dda",
+    "references/ref-xlsxwriter-reference.md": "3b7a329b8ef633fc",
+    "references/ref-xlwings-reference.md": "8295672a95c6b2d2",
+    "references/ref-xyzservices-reference.md": "801468cb6a53d810",
+    "references/ref-xz-reference.md": "c78c8abf7276fc14",
+    "references/ref-yaml-reference.md": "99ed2314bfc3dc5c",
+    "references/ref-yapf-reference.md": "b50377167fc2e207",
+    "references/ref-yfinance-reference.md": "cd34eb22dc557f8d",
+    "references/ref-zeromq-reference.md": "687c467201ab5fe2",
+    "references/ref-zfp-reference.md": "3697dd602c96965f",
+    "references/ref-zict-reference.md": "37ce308181128b3b",
+    "references/ref-zipp-reference.md": "33205d41ca830198",
+    "references/ref-zlib-reference.md": "b98dcc4a6570c35b",
+    "references/ref-zope-reference.md": "d82825af88c6cfa2",
+    "references/ref-zopeinterface-reference.md": "b1c59bc8ca68aab7",
+    "references/ref-zstandard-reference.md": "04622a1771af189c",
+    "references/ref-zstd-reference.md": "3234267d5e9386d9",
+    "references/code-hygiene-rules.reference.md": "4c319cfd5c959b42",
+    "references/unix-philosophy-mapping.reference.md": "da34867f57bb237b",
+    "references/security-vulnerability-watch.reference.md": "a147861b34a4a706",
+    "references/security-vulnerability-watch.json": "02aff09841a5a200",
+    "references/security-linux-hardening.reference.md": "a985d3773d4c262a",
+    "references/security-macos-hardening.reference.md": "fcfbdd7863108ee8",
+    "references/security-windows-hardening.reference.md": "44cf4ef929d8ca9c",
+    "references/ai-bad-habits-watch.reference.md": "cba3185c411c10be",
+    "references/framework-watch.reference.md": "66c92f365a74e5ae",
+    "references/adjacent-repos.md": "cb2591c6b3c61a0b",
+    "references/github-workflows-merge.reference.md": "d48a88d0aef17e2c",
+    "references/work-summary-spec.reference.md": "96232231a1f7c6be",
+    "references/work-summary-tooling.reference.md": "f3656972717153a9",
+    "references/work-summary-backfill.reference.md": "3a2274e8064291f4",
+    "references/parallelization.reference.md": "d2321bf5ac1ed2f8",
+    "crisis-credit-allocation-expert.md": "3fa8fb5ef470d6e8",
+    "fed-response-dag-expert.md": "49fd2c32fe835b68",
+    "prairie-prosperity-expert.md": "d57d27ee07662ebb",
+    "sugarscape-expert.md": "35839fd46e6c9d0a",
+    "visualize-energy-data-expert.md": "b93c640188c6fda5",
+    "../CLAUDE.md": "e666deccbe170d7f",
+    "team-builder.md": "eb11e9d5c2d6be1f",
+    "SETUP-REQUIRED.md": "33fcf3b28a95163f",
+    "content-enricher.md": "88ef3ed94c01170d",
+    "references/runtime-handoffs.json": "afe14465d7a9393e",
+    "references/pipeline-graph.md": "16fe278a01f3b307",
+    "references/pipeline-graph.svg": "066d43be049bd299",
+    "references/pipeline-handoffs.svg": "94fe5878e6112ec7"
+  }
+}

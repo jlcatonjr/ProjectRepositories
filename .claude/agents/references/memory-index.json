@@ -1,0 +1,1653 @@
+{
+  "artifact_type": "memory-index",
+  "memory_index_schema_version": "1.3",
+  "index_format_version": "json-bm25-postings-v2",
+  "index_build_id": "213965fcf2309f9a96ca3bd5613e73085a9c88bfdf472ed247fc7a617fbf4a60",
+  "index_write_owner": "agentteams.build_team",
+  "vector_runtime_mode": "sparse-tfidf-cosine",
+  "vector_model_id": null,
+  "vector_dim": null,
+  "fallback_policy": "non-blocking-file-read-then-search",
+  "source_fingerprint": "6af903d1849cdcb8bd694fb0c869803400537a7f182546d6cd6659aaeab8f1a8",
+  "project_name": "ProjectRepositories",
+  "framework": "claude",
+  "built_at": "2026-07-21T04:36:37.854427Z",
+  "source_count": 1,
+  "documents": [
+    {
+      "doc_id": 0,
+      "path": "/private/tmp/claude-501/-Users-jamescaton-githubrepositories-lingoFriend/6a9baa52-8ab8-401f-949c-3e2ad21b6af2/scratchpad/fleet-worktrees/ProjectRepositories-bridge-20260721-003111/references/pipeline-graph.md",
+      "title": "ProjectRepositories \u2014 Agent Team Topology",
+      "length": 4495,
+      "snippet": "> **Auto-generated.** Regenerated on every `build_team.py` run. > Do not edit manually \u2014 changes will be overwritten.",
+      "paragraphs": [
+        "> **Auto-generated.** Regenerated on every `build_team.py` run. > Do not edit manually \u2014 changes will be overwritten.",
+        "```mermaid flowchart LR classDef governance fill:#e8e8ff,stroke:#6666cc,color:#000 classDef domain    fill:#e8ffe8,stroke:#66aa66,color:#000 classDef workstream_expert fill:#fff8e8,stroke:#ccaa44,color:#000 classDef tool_specialist   fill:#ffe8e8,stroke:#cc6666,color:#000 classDef unknown   fill:#f5f5f5,stroke:#999,color:#000 adversarial[\"Adversarial\"] class adversarial governance agent_refactor[\"Agent Refactor\"] class agent_refactor governance agent_updater[\"Agent Updater\"] ",
+        "Save the block below as `pipeline-graph.dot` and run `dot -Tsvg pipeline-graph.dot -o pipeline-graph.svg` to produce an SVG.",
+        "```dot digraph \"ProjectRepositories Agent Team\" { rankdir=LR; node [fontname=\"Helvetica\", fontsize=11, shape=box, style=\"rounded,filled\"]; edge [fontsize=9]; \"adversarial\" [label=\"Adversarial\", fillcolor=\"#e8e8ff\"]; \"agent-refactor\" [label=\"Agent Refactor\", fillcolor=\"#e8e8ff\"]; \"agent-updater\" [label=\"Agent Updater\", fillcolor=\"#e8e8ff\"]; \"cleanup\" [label=\"Cleanup\", fillcolor=\"#e8e8ff\"]; \"code-hygiene\" [label=\"Code Hygiene\", fillcolor=\"#e8e8ff\"]; \"cohesion-repairer\" [label=\"",
+        "```json { \"project_name\": \"ProjectRepositories\", \"nodes\": { \"adversarial\": { \"display_name\": \"Adversarial\", \"agent_type\": \"governance\", \"user_invokable\": true, \"tools\": [ \"read\", \"search\" ] }, \"agent-refactor\": { \"display_name\": \"Agent Refactor\", \"agent_type\": \"governance\", \"user_invokable\": false, \"tools\": [ \"edit\", \"search\", \"agent\" ] }, \"agent-updater\": { \"display_name\": \"Agent Updater\", \"agent_type\": \"governance\", \"user_invokable\": false, \"tools\": [ \"edit\", \"search\", \"exe"
+      ],
+      "source_hash": "a6c054b89304af9be4d2bd08e766d631d8733eccc4d93982ac916a906e1a47ab",
+      "source_mtime": 1784608561.0255969,
+      "vector_norm_sq": 37649.37437770969
+    }
+  ],
+  "postings": {
+    "agentteams": [
+      {
+        "doc_id": 0,
+        "tf": 2
+      }
+    ],
+    "begin": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "content": [
+      {
+        "doc_id": 0,
+        "tf": 8
+      }
+    ],
+    "projectrepositories": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "agent": [
+      {
+        "doc_id": 0,
+        "tf": 56
+      }
+    ],
+    "team": [
+      {
+        "doc_id": 0,
+        "tf": 6
+      }
+    ],
+    "topology": [
+      {
+        "doc_id": 0,
+        "tf": 2
+      }
+    ],
+    "auto-generated": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "regenerated": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "every": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "build_team": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "run": [
+      {
+        "doc_id": 0,
+        "tf": 17
+      }
+    ],
+    "edit": [
+      {
+        "doc_id": 0,
+        "tf": 37
+      }
+    ],
+    "manually": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "changes": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "overwritten": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "graph": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "mermaid": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "flowchart": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "classdef": [
+      {
+        "doc_id": 0,
+        "tf": 5
+      }
+    ],
+    "governance": [
+      {
+        "doc_id": 0,
+        "tf": 41
+      }
+    ],
+    "fill": [
+      {
+        "doc_id": 0,
+        "tf": 9
+      }
+    ],
+    "e8e8ff": [
+      {
+        "doc_id": 0,
+        "tf": 15
+      }
+    ],
+    "stroke": [
+      {
+        "doc_id": 0,
+        "tf": 9
+      }
+    ],
+    "color": [
+      {
+        "doc_id": 0,
+        "tf": 5
+      }
+    ],
+    "domain": [
+      {
+        "doc_id": 0,
+        "tf": 35
+      }
+    ],
+    "e8ffe8": [
+      {
+        "doc_id": 0,
+        "tf": 13
+      }
+    ],
+    "aa66": [
+      {
+        "doc_id": 0,
+        "tf": 2
+      }
+    ],
+    "workstream_expert": [
+      {
+        "doc_id": 0,
+        "tf": 16
+      }
+    ],
+    "fff8e8": [
+      {
+        "doc_id": 0,
+        "tf": 7
+      }
+    ],
+    "ccaa44": [
+      {
+        "doc_id": 0,
+        "tf": 2
+      }
+    ],
+    "tool_specialist": [
+      {
+        "doc_id": 0,
+        "tf": 4
+      }
+    ],
+    "ffe8e8": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "cc6666": [
+      {
+        "doc_id": 0,
+        "tf": 2
+      }
+    ],
+    "unknown": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "f5f5f5": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "adversarial": [
+      {
+        "doc_id": 0,
+        "tf": 73
+      }
+    ],
+    "class": [
+      {
+        "doc_id": 0,
+        "tf": 30
+      }
+    ],
+    "agent_refactor": [
+      {
+        "doc_id": 0,
+        "tf": 10
+      }
+    ],
+    "refactor": [
+      {
+        "doc_id": 0,
+        "tf": 12
+      }
+    ],
+    "agent_updater": [
+      {
+        "doc_id": 0,
+        "tf": 13
+      }
+    ],
+    "updater": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "cleanup": [
+      {
+        "doc_id": 0,
+        "tf": 29
+      }
+    ],
+    "code_hygiene": [
+      {
+        "doc_id": 0,
+        "tf": 9
+      }
+    ],
+    "code": [
+      {
+        "doc_id": 0,
+        "tf": 6
+      }
+    ],
+    "hygiene": [
+      {
+        "doc_id": 0,
+        "tf": 6
+      }
+    ],
+    "cohesion_repairer": [
+      {
+        "doc_id": 0,
+        "tf": 13
+      }
+    ],
+    "cohesion": [
+      {
+        "doc_id": 0,
+        "tf": 12
+      }
+    ],
+    "repairer": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "conflict_auditor": [
+      {
+        "doc_id": 0,
+        "tf": 26
+      }
+    ],
+    "conflict": [
+      {
+        "doc_id": 0,
+        "tf": 36
+      }
+    ],
+    "auditor": [
+      {
+        "doc_id": 0,
+        "tf": 6
+      }
+    ],
+    "conflict_resolution": [
+      {
+        "doc_id": 0,
+        "tf": 9
+      }
+    ],
+    "resolution": [
+      {
+        "doc_id": 0,
+        "tf": 6
+      }
+    ],
+    "content_enricher": [
+      {
+        "doc_id": 0,
+        "tf": 6
+      }
+    ],
+    "enricher": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "crisis_credit_allocation_expert": [
+      {
+        "doc_id": 0,
+        "tf": 10
+      }
+    ],
+    "crisis": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "credit": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "allocation": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "expert": [
+      {
+        "doc_id": 0,
+        "tf": 13
+      }
+    ],
+    "fed_response_dag_expert": [
+      {
+        "doc_id": 0,
+        "tf": 10
+      }
+    ],
+    "federal": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "reserve": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "response": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "function": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "dag": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "analysis": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "format_converter": [
+      {
+        "doc_id": 0,
+        "tf": 13
+      }
+    ],
+    "format": [
+      {
+        "doc_id": 0,
+        "tf": 6
+      }
+    ],
+    "converter": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "git_operations": [
+      {
+        "doc_id": 0,
+        "tf": 6
+      }
+    ],
+    "git": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "operations": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "navigator": [
+      {
+        "doc_id": 0,
+        "tf": 21
+      }
+    ],
+    "orchestrator": [
+      {
+        "doc_id": 0,
+        "tf": 366
+      }
+    ],
+    "output_compiler": [
+      {
+        "doc_id": 0,
+        "tf": 11
+      }
+    ],
+    "output": [
+      {
+        "doc_id": 0,
+        "tf": 15
+      }
+    ],
+    "compiler": [
+      {
+        "doc_id": 0,
+        "tf": 6
+      }
+    ],
+    "prairie_prosperity_expert": [
+      {
+        "doc_id": 0,
+        "tf": 10
+      }
+    ],
+    "more": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "prairie": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "prosperity": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "primary_producer": [
+      {
+        "doc_id": 0,
+        "tf": 30
+      }
+    ],
+    "primary": [
+      {
+        "doc_id": 0,
+        "tf": 24
+      }
+    ],
+    "producer": [
+      {
+        "doc_id": 0,
+        "tf": 24
+      }
+    ],
+    "quality_auditor": [
+      {
+        "doc_id": 0,
+        "tf": 19
+      }
+    ],
+    "quality": [
+      {
+        "doc_id": 0,
+        "tf": 18
+      }
+    ],
+    "reference_manager": [
+      {
+        "doc_id": 0,
+        "tf": 19
+      }
+    ],
+    "reference": [
+      {
+        "doc_id": 0,
+        "tf": 6
+      }
+    ],
+    "manager": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "repo_liaison": [
+      {
+        "doc_id": 0,
+        "tf": 5
+      }
+    ],
+    "repo": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "liaison": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "security": [
+      {
+        "doc_id": 0,
+        "tf": 58
+      }
+    ],
+    "style_guardian": [
+      {
+        "doc_id": 0,
+        "tf": 13
+      }
+    ],
+    "style": [
+      {
+        "doc_id": 0,
+        "tf": 130
+      }
+    ],
+    "guardian": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "sugarscape_expert": [
+      {
+        "doc_id": 0,
+        "tf": 10
+      }
+    ],
+    "sugarscape": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "agent-based": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "model": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "team_builder": [
+      {
+        "doc_id": 0,
+        "tf": 2
+      }
+    ],
+    "builder": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "technical_validator": [
+      {
+        "doc_id": 0,
+        "tf": 21
+      }
+    ],
+    "technical": [
+      {
+        "doc_id": 0,
+        "tf": 9
+      }
+    ],
+    "validator": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "tool_sqlite": [
+      {
+        "doc_id": 0,
+        "tf": 8
+      }
+    ],
+    "database": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "specialist": [
+      {
+        "doc_id": 0,
+        "tf": 4
+      }
+    ],
+    "visual_designer": [
+      {
+        "doc_id": 0,
+        "tf": 9
+      }
+    ],
+    "visual": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "designer": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "visualize_energy_data_expert": [
+      {
+        "doc_id": 0,
+        "tf": 10
+      }
+    ],
+    "visualize": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "energy": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "data": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "work_summarizer": [
+      {
+        "doc_id": 0,
+        "tf": 9
+      }
+    ],
+    "work": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "summarizer": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "audit": [
+      {
+        "doc_id": 0,
+        "tf": 45
+      }
+    ],
+    "conflicts": [
+      {
+        "doc_id": 0,
+        "tf": 9
+      }
+    ],
+    "return": [
+      {
+        "doc_id": 0,
+        "tf": 84
+      }
+    ],
+    "docs": [
+      {
+        "doc_id": 0,
+        "tf": 18
+      }
+    ],
+    "structural": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "violations": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "log": [
+      {
+        "doc_id": 0,
+        "tf": 6
+      }
+    ],
+    "clearance": [
+      {
+        "doc_id": 0,
+        "tf": 6
+      }
+    ],
+    "deletions": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "re-check": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "after": [
+      {
+        "doc_id": 0,
+        "tf": 9
+      }
+    ],
+    "repairs": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "update": [
+      {
+        "doc_id": 0,
+        "tf": 12
+      }
+    ],
+    "resolve": [
+      {
+        "doc_id": 0,
+        "tf": 6
+      }
+    ],
+    "verify": [
+      {
+        "doc_id": 0,
+        "tf": 21
+      }
+    ],
+    "source": [
+      {
+        "doc_id": 0,
+        "tf": 180
+      }
+    ],
+    "drift": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "validate": [
+      {
+        "doc_id": 0,
+        "tf": 12
+      }
+    ],
+    "enriched": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "vet": [
+      {
+        "doc_id": 0,
+        "tf": 15
+      }
+    ],
+    "brief": [
+      {
+        "doc_id": 0,
+        "tf": 15
+      }
+    ],
+    "before": [
+      {
+        "doc_id": 0,
+        "tf": 15
+      }
+    ],
+    "drafting": [
+      {
+        "doc_id": 0,
+        "tf": 15
+      }
+    ],
+    "send": [
+      {
+        "doc_id": 0,
+        "tf": 15
+      }
+    ],
+    "citations": [
+      {
+        "doc_id": 0,
+        "tf": 15
+      }
+    ],
+    "pass": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "check": [
+      {
+        "doc_id": 0,
+        "tf": 6
+      }
+    ],
+    "conversion": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "review": [
+      {
+        "doc_id": 0,
+        "tf": 12
+      }
+    ],
+    "clean": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "artifacts": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "repair": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "convert": [
+      {
+        "doc_id": 0,
+        "tf": 9
+      }
+    ],
+    "transform": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "navigate": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "project": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "compile": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "final": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "produce": [
+      {
+        "doc_id": 0,
+        "tf": 4
+      }
+    ],
+    "revise": [
+      {
+        "doc_id": 0,
+        "tf": 6
+      }
+    ],
+    "deliverable": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "manage": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "references": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "dependencies": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "enforce": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "standards": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "accuracy": [
+      {
+        "doc_id": 0,
+        "tf": 9
+      }
+    ],
+    "generate": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "diagram": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "missing": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "components": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "route": [
+      {
+        "doc_id": 0,
+        "tf": 18
+      }
+    ],
+    "failures": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "corrections": [
+      {
+        "doc_id": 0,
+        "tf": 9
+      }
+    ],
+    "issues": [
+      {
+        "doc_id": 0,
+        "tf": 6
+      }
+    ],
+    "cross-repo": [
+      {
+        "doc_id": 0,
+        "tf": 6
+      }
+    ],
+    "change": [
+      {
+        "doc_id": 0,
+        "tf": 6
+      }
+    ],
+    "write": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "schema": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "query": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "figure": [
+      {
+        "doc_id": 0,
+        "tf": 6
+      }
+    ],
+    "summary": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "node": [
+      {
+        "doc_id": 0,
+        "tf": 2
+      }
+    ],
+    "legend": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "colour": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "type": [
+      {
+        "doc_id": 0,
+        "tf": 2
+      }
+    ],
+    "svg": [
+      {
+        "doc_id": 0,
+        "tf": 10
+      }
+    ],
+    "width": [
+      {
+        "doc_id": 0,
+        "tf": 8
+      }
+    ],
+    "height": [
+      {
+        "doc_id": 0,
+        "tf": 8
+      }
+    ],
+    "rect": [
+      {
+        "doc_id": 0,
+        "tf": 4
+      }
+    ],
+    "blue-lavender": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "green": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "yellow": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "workstream": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "red-pink": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "tool": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "roster": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "user-invokable": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "tools": [
+      {
+        "doc_id": 0,
+        "tf": 31
+      }
+    ],
+    "yes": [
+      {
+        "doc_id": 0,
+        "tf": 6
+      }
+    ],
+    "read": [
+      {
+        "doc_id": 0,
+        "tf": 54
+      }
+    ],
+    "search": [
+      {
+        "doc_id": 0,
+        "tf": 54
+      }
+    ],
+    "agent-refactor": [
+      {
+        "doc_id": 0,
+        "tf": 26
+      }
+    ],
+    "agent-updater": [
+      {
+        "doc_id": 0,
+        "tf": 34
+      }
+    ],
+    "execute": [
+      {
+        "doc_id": 0,
+        "tf": 26
+      }
+    ],
+    "code-hygiene": [
+      {
+        "doc_id": 0,
+        "tf": 25
+      }
+    ],
+    "cohesion-repairer": [
+      {
+        "doc_id": 0,
+        "tf": 31
+      }
+    ],
+    "conflict-auditor": [
+      {
+        "doc_id": 0,
+        "tf": 67
+      }
+    ],
+    "conflict-resolution": [
+      {
+        "doc_id": 0,
+        "tf": 25
+      }
+    ],
+    "content-enricher": [
+      {
+        "doc_id": 0,
+        "tf": 15
+      }
+    ],
+    "crisis-credit-allocation-expert": [
+      {
+        "doc_id": 0,
+        "tf": 24
+      }
+    ],
+    "fed-response-dag-expert": [
+      {
+        "doc_id": 0,
+        "tf": 24
+      }
+    ],
+    "format-converter": [
+      {
+        "doc_id": 0,
+        "tf": 31
+      }
+    ],
+    "git-operations": [
+      {
+        "doc_id": 0,
+        "tf": 17
+      }
+    ],
+    "todo": [
+      {
+        "doc_id": 0,
+        "tf": 4
+      }
+    ],
+    "output-compiler": [
+      {
+        "doc_id": 0,
+        "tf": 26
+      }
+    ],
+    "prairie-prosperity-expert": [
+      {
+        "doc_id": 0,
+        "tf": 24
+      }
+    ],
+    "primary-producer": [
+      {
+        "doc_id": 0,
+        "tf": 73
+      }
+    ],
+    "quality-auditor": [
+      {
+        "doc_id": 0,
+        "tf": 45
+      }
+    ],
+    "reference-manager": [
+      {
+        "doc_id": 0,
+        "tf": 47
+      }
+    ],
+    "repo-liaison": [
+      {
+        "doc_id": 0,
+        "tf": 14
+      }
+    ],
+    "style-guardian": [
+      {
+        "doc_id": 0,
+        "tf": 32
+      }
+    ],
+    "sugarscape-expert": [
+      {
+        "doc_id": 0,
+        "tf": 24
+      }
+    ],
+    "team-builder": [
+      {
+        "doc_id": 0,
+        "tf": 5
+      }
+    ],
+    "technical-validator": [
+      {
+        "doc_id": 0,
+        "tf": 50
+      }
+    ],
+    "tool-sqlite": [
+      {
+        "doc_id": 0,
+        "tf": 20
+      }
+    ],
+    "visual-designer": [
+      {
+        "doc_id": 0,
+        "tf": 21
+      }
+    ],
+    "visualize-energy-data-expert": [
+      {
+        "doc_id": 0,
+        "tf": 24
+      }
+    ],
+    "work-summarizer": [
+      {
+        "doc_id": 0,
+        "tf": 20
+      }
+    ],
+    "adjacency": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "list": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "receives": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "hands": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "off": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "dot": [
+      {
+        "doc_id": 0,
+        "tf": 5
+      }
+    ],
+    "save": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "block": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "below": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "pipeline-graph": [
+      {
+        "doc_id": 0,
+        "tf": 3
+      }
+    ],
+    "tsvg": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "digraph": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "rankdir": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "fontname": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "helvetica": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "fontsize": [
+      {
+        "doc_id": 0,
+        "tf": 2
+      }
+    ],
+    "shape": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "box": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "rounded": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "filled": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "edge": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "label": [
+      {
+        "doc_id": 0,
+        "tf": 310
+      }
+    ],
+    "fillcolor": [
+      {
+        "doc_id": 0,
+        "tf": 30
+      }
+    ],
+    "solid": [
+      {
+        "doc_id": 0,
+        "tf": 104
+      }
+    ],
+    "dashed": [
+      {
+        "doc_id": 0,
+        "tf": 7
+      }
+    ],
+    "json": [
+      {
+        "doc_id": 0,
+        "tf": 2
+      }
+    ],
+    "project_name": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "nodes": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "display_name": [
+      {
+        "doc_id": 0,
+        "tf": 30
+      }
+    ],
+    "agent_type": [
+      {
+        "doc_id": 0,
+        "tf": 30
+      }
+    ],
+    "user_invokable": [
+      {
+        "doc_id": 0,
+        "tf": 30
+      }
+    ],
+    "true": [
+      {
+        "doc_id": 0,
+        "tf": 6
+      }
+    ],
+    "false": [
+      {
+        "doc_id": 0,
+        "tf": 24
+      }
+    ],
+    "edges": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ],
+    "target": [
+      {
+        "doc_id": 0,
+        "tf": 176
+      }
+    ],
+    "edge_type": [
+      {
+        "doc_id": 0,
+        "tf": 176
+      }
+    ],
+    "handoff": [
+      {
+        "doc_id": 0,
+        "tf": 104
+      }
+    ],
+    "agents-list": [
+      {
+        "doc_id": 0,
+        "tf": 72
+      }
+    ],
+    "null": [
+      {
+        "doc_id": 0,
+        "tf": 72
+      }
+    ],
+    "end": [
+      {
+        "doc_id": 0,
+        "tf": 1
+      }
+    ]
+  },
+  "avgdl": 4495.0,
+  "N": 1
+}
