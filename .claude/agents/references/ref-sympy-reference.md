@@ -16,7 +16,7 @@
 
 ## Official Documentation
 
-{MANUAL:TOOL_DOCS_URL}
+https://docs.sympy.org/latest/reference/
 
 ## Key API Surface
 

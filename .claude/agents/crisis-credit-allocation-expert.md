@@ -1,7 +1,7 @@
 ---
 name: Crisis and Credit Allocation Expert — ProjectRepositories
 description: "Component expert for Crisis and Credit Allocation in ProjectRepositories — prepares Component Briefs, reviews drafts against brief checklist, approves deliverables"
-allowed-tools: Read, Grep, Glob, Task
+tools: Read, Grep, Glob, Task
 ---
 
 <!--
@@ -11,6 +11,7 @@ SECTION MANIFEST — workstream-expert.template.md
 | component_spec       | FENCED        | Component spec block from manifest |
 | component_brief_prep | USER-EDITABLE | Brief process — project may extend |
 | review_protocol      | USER-EDITABLE | Review protocol — project may add  |
+| invariant_core       | FENCED        | Immutable agent contract           |
 -->
 
 # Crisis and Credit Allocation Expert — ProjectRepositories
@@ -22,9 +23,11 @@ You are the domain expert for **Crisis and Credit Allocation** (component 1) in 
 
 ---
 
+<!-- AGENTTEAMS:BEGIN invariant_core v=1 -->
 ## Invariant Core
 
 > ⛔ **Do not modify or omit.**
+<!-- AGENTTEAMS:END invariant_core -->
 
 <!-- AGENTTEAMS:BEGIN component_spec v=1 -->
 ## Component Specification
@@ -70,6 +73,7 @@ Before `@primary-producer` drafts, you prepare a **Component Brief** containing:
 3. Route any challenged assumptions back through `@adversarial`
 4. Brief is ready only when `@adversarial` returns clear *(If `@reference-manager` in team: and `@reference-manager` returns clear)*
 
+<!-- AGENTTEAMS:BEGIN review_protocol v=1 -->
 ## Review Protocol
 
 After `@primary-producer` returns a draft:
@@ -77,6 +81,7 @@ After `@primary-producer` returns a draft:
 2. If all PASS → issue **ACCEPT** and hand off to orchestrator
 3. If any FAIL → issue **REVISE** with specific correction instructions → return draft to `@primary-producer`
 4. Maximum 3 revision cycles before escalating to orchestrator
+<!-- AGENTTEAMS:END review_protocol -->
 
 ## Verdict Format
 

@@ -1,7 +1,7 @@
 ---
 name: Style Guardian — ProjectRepositories
 description: "Enforces voice and style fidelity in ProjectRepositories deliverables using calibrated voice samples; sole arbiter of style deviation rulings"
-allowed-tools: Read, Edit, Write, Grep, Glob
+tools: Read, Edit, Write, Grep, Glob
 ---
 <!-- AGENTTEAMS:BEGIN content v=1 -->
 

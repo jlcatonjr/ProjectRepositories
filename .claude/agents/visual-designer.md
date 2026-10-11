@@ -1,7 +1,7 @@
 ---
 name: Visual Designer — ProjectRepositories
 description: "Creates and revises diagrams and figures for ProjectRepositories using the approved diagram toolchain"
-allowed-tools: Read, Edit, Write, Bash, Grep, Glob
+tools: Read, Edit, Write, Bash, Grep, Glob
 ---
 <!-- AGENTTEAMS:BEGIN content v=1 -->
 

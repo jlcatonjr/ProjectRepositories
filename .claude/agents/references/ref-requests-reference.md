@@ -16,7 +16,7 @@
 
 ## Official Documentation
 
-{MANUAL:TOOL_DOCS_URL}
+https://requests.readthedocs.io/en/latest/api/
 
 ## Key API Surface
 

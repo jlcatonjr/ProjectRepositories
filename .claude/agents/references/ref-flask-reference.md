@@ -16,7 +16,7 @@
 
 ## Official Documentation
 
-{MANUAL:TOOL_DOCS_URL}
+https://flask.palletsprojects.com/en/latest/api/
 
 ## Key API Surface
 

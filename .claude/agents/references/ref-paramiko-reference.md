@@ -20,13 +20,13 @@ https://docs.paramiko.org/en/stable/api/
 
 ## Key API Surface
 
-SSHClient.connect/exec_command/invoke_shell/open_sftp, Transport.request_port_forward, SFTPClient.get/put, RSAKey/Ed25519Key.from_private_key_file
+SSHClient — connect(), exec_command(), invoke_shell(), open_sftp(); Transport — request_port_forward(), open_channel(); SFTPClient — get(), put(), listdir(), stat(); RSAKey / Ed25519Key — from_private_key_file(); AuthenticationException, SSHException for error handling
 
 <!-- Document the primary classes, functions, or APIs that project code depends on from paramiko. -->
 
 ## Common Patterns & Pitfalls
 
-Use AutoAddPolicy only in trusted environments; prefer RejectPolicy in production. Always close connections. Set timeout= on connect() to avoid hangs on unreachable hosts.
+Use SSHClient with AutoAddPolicy only in trusted environments; prefer RejectPolicy and known_hosts in production. Always close connections with client.close() or use context manager. For port forwarding, use transport.request_port_forward() and handle incoming channels in a thread. Pitfall: exec_command() stdout is blocking — read stdout before stderr to avoid deadlocks. Pitfall: set timeout= on connect() to avoid hanging on unreachable hosts.
 
 <!-- Document common usage patterns, best practices, and known issues for paramiko 2.8.1. -->
 
