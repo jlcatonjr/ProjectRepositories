@@ -50,5 +50,6 @@
     {"slug": "prairie-prosperity", "name": "More Prairie Prosperity - Fiscal and Economic Policy in North Dakota"},
     {"slug": "sugarscape", "name": "Sugarscape Agent-Based Model"},
     {"slug": "visualize-energy-data", "name": "Visualize Energy Data"}
-  ]
+  ],
+  "enforce_decision_signing": false
 }

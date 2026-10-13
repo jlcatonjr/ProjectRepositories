@@ -43,14 +43,20 @@ SECTION MANIFEST — copilot-instructions.template.md
 | `.github/agents/references/project-references.bib` | Reference/bibliography database |
 | `.github/agents/` | Agent definition files |
 | `.github/agents/references/` | Shared reference data |
+
+Where this differs from the project's real layout, the **Project Layout** section below is authoritative.
 <!-- AGENTTEAMS:END directory_structure -->
+
+## Project Layout
+
+> ⚙️ **USER-EDITABLE** — this project's real layout where it differs from the generated Directory Structure and Output Conventions (for example, deliverables under `Projects/*/` rather than one output folder). Where the two disagree, this section is authoritative. `--update` never overwrites it.
 
 ---
 
 <!-- AGENTTEAMS:BEGIN output_conventions v=1 -->
 ## Output Conventions
 
-- All primary deliverables are authored in `*/outputs/` as `Jupyter notebooks, interactive HTML visualizations, Python analysis modules and research whitepapers`
+- All primary deliverables are authored in `*/outputs/` as `Jupyter notebooks, interactive HTML visualizations, Python analysis modules and research whitepapers` (or where the **Project Layout** section says, when it differs)
 - Compiled output lives in `*/Whitepaper/` and is **never edited directly**
 - Figures are generated from source files in `*/outputs/` — source files are authoritative
 - Every deliverable must correspond to a Component Spec defined by a workstream expert
