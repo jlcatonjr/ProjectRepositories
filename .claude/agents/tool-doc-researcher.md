@@ -1,7 +1,7 @@
 ---
 name: Tool Documentation Researcher — ProjectRepositories
 description: "Locates and verifies official documentation, API surfaces, and usage patterns for tools in ProjectRepositories that are missing metadata"
-tools: Read, Grep, Glob, Bash(python -m agentteams.research:*)
+tools: Read, Grep, Glob, Bash(python -m agentteams.research search:*), Bash(python -m agentteams.research fetch:*), Bash(python -m agentteams.research scholar:*)
 ---
 
 <!--

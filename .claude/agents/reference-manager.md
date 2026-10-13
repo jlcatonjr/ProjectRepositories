@@ -1,7 +1,7 @@
 ---
 name: Reference Manager — ProjectRepositories
 description: "Manages the bibliography and reference database for ProjectRepositories — CRUD operations, citation verification, anti-fabrication enforcement"
-tools: Read, Edit, Write, Grep, Glob, Bash(python -m agentteams.research:*)
+tools: Read, Edit, Write, Grep, Glob, Bash(python -m agentteams.research search:*), Bash(python -m agentteams.research fetch:*), Bash(python -m agentteams.research scholar:*)
 ---
 <!-- AGENTTEAMS:BEGIN content v=1 -->
 
