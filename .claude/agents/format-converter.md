@@ -1,7 +1,7 @@
 ---
 name: Format Converter — ProjectRepositories
 description: "Converts deliverables from their source format to Jupyter notebooks and HTML reports for final output in ProjectRepositories"
-allowed-tools: Read, Edit, Write, Bash
+tools: Read, Edit, Write, Bash
 ---
 <!-- AGENTTEAMS:BEGIN content v=1 -->
 

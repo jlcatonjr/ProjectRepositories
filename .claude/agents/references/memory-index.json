@@ -2,21 +2,21 @@
   "artifact_type": "memory-index",
   "memory_index_schema_version": "1.3",
   "index_format_version": "json-bm25-postings-v2",
-  "index_build_id": "213965fcf2309f9a96ca3bd5613e73085a9c88bfdf472ed247fc7a617fbf4a60",
+  "index_build_id": "2f1eab4b941031abe5ec9704605b9db2626f18733030173e38a33fabc3419e27",
   "index_write_owner": "agentteams.build_team",
   "vector_runtime_mode": "sparse-tfidf-cosine",
   "vector_model_id": null,
   "vector_dim": null,
   "fallback_policy": "non-blocking-file-read-then-search",
-  "source_fingerprint": "6af903d1849cdcb8bd694fb0c869803400537a7f182546d6cd6659aaeab8f1a8",
+  "source_fingerprint": "93f281baa406afc0e183bbc2b15d11e2d7fcacf4813448cd615fa74e33ca3518",
   "project_name": "ProjectRepositories",
   "framework": "claude",
-  "built_at": "2026-07-21T04:36:37.854427Z",
+  "built_at": "2026-10-13T00:37:26.692371Z",
   "source_count": 1,
   "documents": [
     {
       "doc_id": 0,
-      "path": "/private/tmp/claude-501/-Users-jamescaton-githubrepositories-lingoFriend/6a9baa52-8ab8-401f-949c-3e2ad21b6af2/scratchpad/fleet-worktrees/ProjectRepositories-bridge-20260721-003111/references/pipeline-graph.md",
+      "path": "references/pipeline-graph.md",
       "title": "ProjectRepositories \u2014 Agent Team Topology",
       "length": 4495,
       "snippet": "> **Auto-generated.** Regenerated on every `build_team.py` run. > Do not edit manually \u2014 changes will be overwritten.",
@@ -28,7 +28,7 @@
         "```json { \"project_name\": \"ProjectRepositories\", \"nodes\": { \"adversarial\": { \"display_name\": \"Adversarial\", \"agent_type\": \"governance\", \"user_invokable\": true, \"tools\": [ \"read\", \"search\" ] }, \"agent-refactor\": { \"display_name\": \"Agent Refactor\", \"agent_type\": \"governance\", \"user_invokable\": false, \"tools\": [ \"edit\", \"search\", \"agent\" ] }, \"agent-updater\": { \"display_name\": \"Agent Updater\", \"agent_type\": \"governance\", \"user_invokable\": false, \"tools\": [ \"edit\", \"search\", \"exe"
       ],
       "source_hash": "a6c054b89304af9be4d2bd08e766d631d8733eccc4d93982ac916a906e1a47ab",
-      "source_mtime": 1784608561.0255969,
+      "source_mtime": 1791832070.665163,
       "vector_norm_sq": 37649.37437770969
     }
   ],

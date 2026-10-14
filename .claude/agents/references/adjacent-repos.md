@@ -1,9 +1,20 @@
-<!-- AGENTTEAMS:BEGIN registry_header v=1 -->
+<!--
+SECTION MANIFEST
+| section_id      | designation  |
+|-----------------|--------------|
+| registry_header | FENCED       |
+| cross_orchestrator_coordination_log| FENCED       |
+| retired_entries | FENCED       |
+-->
+
+<!-- AGENTTEAMS:BEGIN registry_header v=2 -->
 # Adjacent Repository Registry — ProjectRepositories
 
 This file is the authoritative registry of repositories adjacent to **ProjectRepositories** whose agent infrastructure may be affected by — or may affect — activity in this project.
 
 Maintained by `@repo-liaison`. Every cross-repository update must be recorded here.
+
+> **Path notation:** record repository paths with tilde (`~/`) notation (e.g. `~/repos/foo`), never absolute home-directory paths. The `@security` OPSEC rule flags home-directory prefixes in committed files, so an absolute path here becomes a standing scan finding.
 
 > **Merge-safe:** This file uses AGENTTEAMS fencing on the header only. All content below the header (Active Entries, Coordination Log, Retired Entries) is user-authored and is preserved automatically on `--merge` runs.
 <!-- AGENTTEAMS:END registry_header -->
@@ -18,7 +29,7 @@ Maintained by `@repo-liaison`. Every cross-repository update must be recorded he
 
 | Field                | Value |
 |----------------------|-------|
-| **Local path**       | `{MANUAL:ADJACENT_REPO_PATH}` |
+| **Local path**       | `{MANUAL:ADJACENT_REPO_PATH}` (use `~/` notation, not an absolute home path) |
 | **Agent infra path** | `{MANUAL:ADJACENT_REPO_AGENTS_PATH}` |
 | **Relationship**     | Brief description of why this project interacts with it |
 | **Registered**       | YYYY-MM-DD |
@@ -35,6 +46,7 @@ Maintained by `@repo-liaison`. Every cross-repository update must be recorded he
 
 ---
 
+<!-- AGENTTEAMS:BEGIN cross_orchestrator_coordination_log v=1 -->
 ## Cross-Orchestrator Coordination Log
 
 Coordination requests exchanged with adjacent orchestrators are saved as individual artifacts in `references/cross-orchestrator-requests/`.
@@ -43,9 +55,13 @@ If you maintain a tabular log, store it in `adjacent-repos-coordination-log.csv`
 Append one row per coordination: `date,adjacent_repo,direction,outcome`
 
 ---
+<!-- AGENTTEAMS:END cross_orchestrator_coordination_log -->
 
+<!-- AGENTTEAMS:BEGIN retired_entries v=1 -->
 ## Retired Entries
 
 Entries for repositories whose agent infrastructure no longer exists at the registered path, or whose relationship to this project has ended.
 
 *No retired entries.*
+<!-- AGENTTEAMS:END retired_entries -->
+

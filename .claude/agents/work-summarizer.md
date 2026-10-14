@@ -1,7 +1,7 @@
 ---
 name: Work Summarizer — ProjectRepositories
 description: "Synthesizes daily, weekly, and monthly work summaries from canonical plan artifacts and git evidence for ProjectRepositories; supports append-first daily capture, legacy tmp/ fallback, and required adversarial/conflict audits"
-allowed-tools: Read, Grep, Glob, Bash, Edit, Write, Task
+tools: Read, Grep, Glob, Bash, Edit, Write, Task
 ---
 <!-- AGENTTEAMS:BEGIN content v=1 -->
 
@@ -21,6 +21,26 @@ Mode precedence:
 - explicit user instruction
 - orchestrator completion-capture requirement (`append`)
 - default `create` behavior when the target file is absent
+
+### `append` idempotency — required
+
+`append` is the mode that actually runs on a repeat firing, and it is the one where duplicates
+accumulate. Before appending, **fingerprint the block you are about to write** — its heading plus
+the set of evidence items it cites (commits, PR numbers, plan slugs, file paths). Then:
+
+- **No new evidence since the last block of the same kind** → do not append. Update that block in
+  place (refresh its timestamp, extend its evidence list) or do nothing and say so.
+- **New evidence** → append normally.
+
+A "session" is **not** a reliable bound for this path and must not be used as one. The
+once-per-session guard documented under Workflow D is scoped to that workflow's automatic backfill
+sweep only; completion-capture can fire several times within one conversation, and does. Bound the
+decision on *evidence*, which is observable in the file, rather than on session identity, which is
+not.
+
+This exists because it was measured: one `workSummaries/daily/` file accumulated twenty
+`Session Stop` / `Workflow D` headings across 1,594 lines, with "No Gaps Detected" repeated
+verbatim three times and no new evidence between the repeats.
 
 ## Invariant Core
 
@@ -80,6 +100,7 @@ Boundary rules:
 - Plan artifacts are authoritative for intended sequence and declared statuses.
 - If they disagree, record the mismatch in a **Discrepancies** section.
 - Never fabricate plan slugs, commit hashes, file paths, or step numbers.
+- Before writing or trusting any claim that a plan is complete, read that plan's own steps CSV and confirm every row shows `done`, and confirm any deliverable file the completion claim would cite actually exists on disk — write the claim only once both checks pass, not from a plan's stated exit criteria or from another document's prose alone.
 - Treat `tmp/by-week/YYYY-Www/` as canonical when present; use legacy `tmp/` only as fallback or for undated carry-over plans.
 - Exclude `.github/agents/.agentteams-backups/` from git-activity collection and discrepancy summaries unless the request is explicitly forensic.
 
@@ -94,6 +115,14 @@ Each summary type must include these machine-parseable fields:
   - `Commits Count`
   - `Plans Touched Count`
   - `Files Changed Count`
+
+**`Commits Count` evidence rule:** the count must be read from `git log --oneline
+--since=midnight` output you actually ran in this session, not restated from a
+prompt, an earlier block, or memory; quote at least the latest short hash alongside
+the count so the claim is checkable (precedent: 2026-08-12, ~20 blocks asserted "0
+commits, confirmed via git log" while 5 commits existed — the count had been
+inherited from a stale prompt, and no block could prove otherwise).
+
 2. Weekly:
   - `ISO Week`
   - `Daily Summaries Consumed`
@@ -122,6 +151,35 @@ Trigger examples: "Summarize today's work", "Daily summary for YYYY-MM-DD"
 4. Correlate plan steps with commits when evidence exists.
 5. Draft and write `workSummaries/daily/YYYY-MM-DD.md` using `create`, `append`, or `replace` mode.
 6. Run audits in order: `@technical-validator`, `@adversarial`, `@conflict-auditor`.
+
+#### Synthesized daily body — the `## Plans Implemented` marker
+
+A **synthesized** daily summary (one that records completed/committed work, not just raw
+breadcrumbs) uses a single top-level `## Plans Implemented` section as its primary body, with this
+exact header. Use it consistently: it is the **durable, machine-detectable marker that the day is
+synthesized**, and any session-close automation that keys on such a marker (for example this
+project's own work-summary Stop hook, when present) relies on it to decide *skip* — the day is
+already synthesized and current — versus *re-synthesize*. **Where such automation exists, this
+exact header is required** for it to recognise the day; where no such tooling is deployed the
+header is still the recommended body heading but nothing depends on it, so treat the `MUST` as a
+contract with the automation, not a universal mandate.
+
+The failure this prevents (measured 2026-09-07): a commit-bearing daily that has **no**
+`## Plans Implemented` reads as "unsynthesized (breadcrumbs only)", so hash-blind automation
+re-processes it on *every* firing — one daily reached 54 addendum blocks / 858 lines because the
+header was absent and a Stop hook re-invoked ~200× in a day. Emitting the header **bounds**
+re-firing: a hash-aware guard then skips a synthesized day and re-fires only when a genuinely new
+commit lands after the last synthesis — it does not eliminate re-firing on a still-active day, but
+it ends the header-absent runaway.
+
+On a commit-bearing day therefore:
+- Produce (or maintain) exactly one `## Plans Implemented` section synthesizing the day's work.
+- **Fold-and-clear:** the incremental/Tier-1 capture channel writes raw breadcrumbs under a
+  `## Incremental Capture (unsynthesized — Tier-1)` section (an *unsynthesized* holding area, not a
+  synthesized body). When that section is present, merge its breadcrumbs into `## Plans Implemented`
+  (de-duplicated against commits already covered), then REMOVE the Tier-1 section.
+- Per the `append` idempotency rule above, when no new evidence exists since the last synthesis,
+  do **not** add a fresh addendum — update the `## Plans Implemented` body in place (or no-op).
 
 ### Weekly Summary
 

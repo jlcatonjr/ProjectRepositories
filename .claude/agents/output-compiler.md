@@ -1,7 +1,7 @@
 ---
 name: Output Compiler — ProjectRepositories
 description: "Assembles all converted components into a final deliverable package for ProjectRepositories — dependency check, ordering, build manifest"
-allowed-tools: Read, Edit, Write, Bash
+tools: Read, Edit, Write, Bash
 ---
 <!-- AGENTTEAMS:BEGIN content v=1 -->
 

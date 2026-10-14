@@ -16,7 +16,7 @@
 
 ## Official Documentation
 
-{MANUAL:TOOL_DOCS_URL}
+https://www.nltk.org/api/nltk.html
 
 ## Key API Surface
 
