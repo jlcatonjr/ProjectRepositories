@@ -1,13 +1,13 @@
 {
   "schema_version": "1.5",
-  "agentteams_version": "1.0.0rc9",
+  "agentteams_version": "1.0.0",
   "agentteams_source": {
     "kind": "vcs-pin",
-    "commit": "2375a1026daf54667c52930f96c5585e52fc7a17",
+    "commit": "cc5b8c9ec4efdcb479939e0c1246a0ac11913259",
     "branch": null,
     "dirty": false
   },
-  "generated_at": "2026-10-13T00:37:26.436277+00:00",
+  "generated_at": "2026-10-20T16:32:18.616409+00:00",
   "project_name": "ProjectRepositories",
   "framework": "claude",
   "project_type": "software",
@@ -30,18 +30,21 @@
     "sugarscape",
     "visualize-energy-data"
   ],
-  "files_written": [],
+  "files_written": [
+    ".claude/hooks/agentteams-python",
+    ".claude/hooks/.gitignore"
+  ],
   "manual_required": 1463,
   "template_hashes": {
-    "universal/orchestrator.template.md": "780ed1da0963210f",
+    "universal/orchestrator.template.md": "171d8c2a2a8ec0ad",
     "universal/navigator.template.md": "3d28148430bddfdf",
-    "universal/security.template.md": "59429a1480354b77",
+    "universal/security.template.md": "3b9958a26d342746",
     "universal/code-hygiene.template.md": "8c53882027a0aa40",
     "universal/adversarial.template.md": "0c7b7cb909b089a0",
     "universal/conflict-auditor.template.md": "a6199323e4d1add3",
     "universal/conflict-resolution.template.md": "4542fdba8f977079",
     "universal/cleanup.template.md": "6a404be5ad0bfbe9",
-    "universal/agent-updater.template.md": "9c141092104f6e5b",
+    "universal/agent-updater.template.md": "fceaeaa65379ff06",
     "universal/agent-refactor.template.md": "b1417e2f09b84022",
     "universal/repo-liaison.template.md": "70331bea47521df8",
     "universal/git-operations.template.md": "04ede882f19cbfa2",
@@ -75,15 +78,15 @@
     "universal/work-summary-tooling.reference.template.md": "62e643b1a9711af6",
     "universal/work-summary-backfill.reference.template.md": "5730bac043dc2874",
     "universal/parallelization.reference.template.md": "e31593ccbba4a7ff",
-    "universal/instruction-authority.reference.template.md": "855e46066d9c2258",
-    "universal/orchestrator-spawn-authority.reference.template.md": "f7b044748645b289",
+    "universal/instruction-authority.reference.template.md": "a73a355a8da0c15f",
+    "universal/orchestrator-spawn-authority.reference.template.md": "221ebb904e4f4e48",
     "universal/redteam-methodology.reference.template.md": "a0443337a9796294",
     "universal/retrospective-remediation.reference.template.md": "1965ac5f52cf72f0",
     "universal/cli-tool-discovery.reference.template.md": "203004e771c8b2fd",
-    "universal/skill-generation.reference.template.md": "5293714b0f5ada9c",
+    "universal/skill-generation.reference.template.md": "df8ffe189f09e491",
     "universal/external-retrieval-quality-gate.reference.template.md": "3922b0a2e99e75a3",
     "workstream-expert.template.md": "19e099ff5eaf447b",
-    "copilot-instructions.template.md": "3c45f973b05f3d24",
+    "copilot-instructions.template.md": "d3fcc564166c5285",
     "builder/team-builder-claude.template.md": "d6158978f4955fc1",
     "domain/content-enricher.template.md": "25b7c467ae7a8978"
   },
@@ -3980,24 +3983,31 @@
     "repo-liaison",
     "git-operations"
   ],
-  "manifest_fingerprint": "74e9cc0cbba81cca",
+  "manifest_fingerprint": "41440cb36fe8f585",
   "fingerprint_algo_version": 1,
   "file_hashes": {
-    "references/security-vulnerability-watch.reference.md": "9a1baf4946626609",
-    "references/security-vulnerability-watch.json": "95174e0e1e6341ff",
-    "../CLAUDE.md": "bdce73d78cd6631f",
-    "security.md": "ba46387c068271b4",
+    "../hooks/agentteams-python": "5372ac42ca6b2d41",
+    "../hooks/.gitignore": "a75840d1f75cc75d",
+    "references/security-vulnerability-watch.reference.md": "230f216f5c248faa",
+    "references/security-vulnerability-watch.json": "31c7bfe505b085bd",
+    "references/instruction-authority.reference.md": "aa28e1036e0d3a6e",
+    "references/orchestrator-spawn-authority.reference.md": "cf61e70f28018d77",
+    "references/skill-generation.reference.md": "f1591e7276fe954f",
+    "../CLAUDE.md": "4753b67063999b76",
+    "orchestrator.md": "3e9b6e06d6d17fa9",
+    "security.md": "5955389e4c11b120",
+    "agent-updater.md": "b835f8a4cbd2fdc5",
+    "../hooks/constitutional-gate.py": "e03a2a4b0254714f",
+    "../settings.hooks.example.json": "33a8602dacdcc616",
     "references/framework-watch.reference.md": "23c0017b0066a6f1",
     "references/github-workflows-merge.reference.md": "5c80d26945ca1115",
     "references/runtime-handoffs.json": "afe14465d7a9393e",
-    "orchestrator.md": "c1f22f46c065d81d",
     "navigator.md": "481e535789420727",
     "code-hygiene.md": "20b6f3d4bc5204e7",
     "adversarial.md": "d7441a1608280b2e",
     "conflict-auditor.md": "d0e6e905bd6dc4c8",
     "conflict-resolution.md": "e58a32ff78b79751",
     "cleanup.md": "c5fea1aee9c68a81",
-    "agent-updater.md": "d1a8a99a1f397c50",
     "agent-refactor.md": "3b85aa7230ea4d1c",
     "repo-liaison.md": "d14aa21dffc90b30",
     "git-operations.md": "e97474b089c6ace1",
@@ -4008,10 +4018,10 @@
     "style-guardian.md": "fa4147a264fd0e03",
     "technical-validator.md": "3d43539257d73da8",
     "format-converter.md": "27ccdcdcdfa1245e",
-    "reference-manager.md": "1afa22e6cb345506",
+    "reference-manager.md": "1728751d9aa33f95",
     "output-compiler.md": "c85cbfadb27f3d1c",
     "visual-designer.md": "7108123936306967",
-    "tool-doc-researcher.md": "294078f820bc2c73",
+    "tool-doc-researcher.md": "0bcd5f829c871238",
     "references/ref-jupyter-reference.md": "5cab38c1cad24581",
     "references/ref-pandas-reference.md": "3e6510fe0c578531",
     "references/ref-numpy-reference.md": "14a24bb274527bae",
@@ -4514,10 +4524,8 @@
     "references/work-summary-tooling.reference.md": "f3656972717153a9",
     "references/work-summary-backfill.reference.md": "3a2274e8064291f4",
     "references/parallelization.reference.md": "e25040ccfbdae337",
-    "references/instruction-authority.reference.md": "e1069e2123c5857e",
     "references/retrospective-remediation.reference.md": "dcb68dfbd83385eb",
     "references/cli-tool-discovery.reference.md": "3b27e28cf9d3b6a0",
-    "references/skill-generation.reference.md": "bfddac5b2caa61d2",
     "references/external-retrieval-quality-gate.reference.md": "76e55aa020eb01ff",
     "crisis-credit-allocation-expert.md": "de548797506b8268",
     "fed-response-dag-expert.md": "896a8b71235a6e91",
@@ -4531,15 +4539,20 @@
     "references/pipeline-graph.md": "16fe278a01f3b307"
   },
   "front_matter_baseline": {
+    "orchestrator.md": {
+      "name": "Orchestrator \u2014 ProjectRepositories",
+      "description": "\"Coordinates all agent operations for ProjectRepositories: routes work to domain agents, enforces constitutional rules, and closes every multi-file session with a consistency check.\"",
+      "tools": "Read, Edit, Write, Grep, Glob, Bash, TodoWrite, Task"
+    },
     "security.md": {
       "name": "Security \u2014 ProjectRepositories",
       "description": "\"Top-priority security sentinel: reviews actions for credential exposure, destructive operations, sensitive content leakage, and reference integrity before any sensitive action proceeds\"",
       "tools": "Read, Grep, Glob"
     },
-    "orchestrator.md": {
-      "name": "Orchestrator \u2014 ProjectRepositories",
-      "description": "\"Coordinates all agent operations for ProjectRepositories: routes work to domain agents, enforces constitutional rules, and closes every multi-file session with a consistency check.\"",
-      "tools": "Read, Edit, Write, Grep, Glob, Bash, TodoWrite, Task"
+    "agent-updater.md": {
+      "name": "Agent Updater \u2014 ProjectRepositories",
+      "description": "\"Synchronizes agent documentation after project structure, deliverable, or reference changes in ProjectRepositories\"",
+      "tools": "Edit, Write, Grep, Glob, Bash, Task"
     },
     "navigator.md": {
       "name": "Navigator \u2014 ProjectRepositories",
@@ -4570,11 +4583,6 @@
       "name": "Cleanup \u2014 ProjectRepositories",
       "description": "\"Removes stale drafts, build artifacts, and orphaned files from ProjectRepositories with mandatory safety checks\"",
       "tools": "Edit, Write, Grep, Glob, Bash"
-    },
-    "agent-updater.md": {
-      "name": "Agent Updater \u2014 ProjectRepositories",
-      "description": "\"Synchronizes agent documentation after project structure, deliverable, or reference changes in ProjectRepositories\"",
-      "tools": "Edit, Write, Grep, Glob, Bash, Task"
     },
     "agent-refactor.md": {
       "name": "Agent Refactor \u2014 ProjectRepositories",
@@ -4690,7 +4698,7 @@
       "agent_team": "bf36f168664695355d850b044dd9094a0950e87b534bcd3f01cd21b7bbeceba0",
       "tone_and_style": "d0b42a0c3d2c045dbbe4e980eb42023b1b31915d93e219545a8f78de1dcece24",
       "authority_hierarchy": "b3adf32a620ab1e71d5564b3af8ba8b054b68f5825e5c262230bc8a7af9e6a80",
-      "constitutional_core": "42c4ffd29ed450ae96e0ef2e4f68d504568c3e1922bc4c10d1a7c0e9c054d7b3",
+      "constitutional_core": "98565878445aea43e27456f8cb1384afc511b17016cada4de5b28fb756937289",
       "source_repositories": "84916180df87eae911e86add2df7a36ec182689472f8ba576e9bb5a6c9d716c5"
     },
     ".claude/agents/SETUP-REQUIRED.md": {
@@ -4703,7 +4711,7 @@
       "content": "e79d35cf42a4f0cef120ff153c425afd36c3007eca7051f05cb64798400bc616"
     },
     ".claude/agents/agent-updater.md": {
-      "content": "878e9a02357a279a68e14e1a3c961dba3138c4047ea0202f72b95b606c151d95"
+      "content": "e726097e420719350a53b93e547650a798b13ef136f22957175f6dec96d56748"
     },
     ".claude/agents/cleanup.md": {
       "content": "60b89d098a87d0b6c1f3e5be1365d8e3ee91bd42abef526c8177eae21f421fa3"
@@ -4755,7 +4763,7 @@
       "code_index_consultation": "560588e20a4a7fccd2004323c8aa94422d41e8aa7ebf8ff48ab7dcbc5142ff41"
     },
     ".claude/agents/orchestrator.md": {
-      "constitutional_core": "e447f730dbfb55d33f01bac40e940edc40d6ddbb58725a99f59e7d30adab7c84",
+      "constitutional_core": "f05ead693f33d316cc83453eb195d232f5ac76cd36d8cce45b3605e14747def4",
       "authority_hierarchy": "607ff1b43a0e420c30dd2e2c02a721e5488a08acf09fa18916a7cf36a5c5e38b",
       "routing_table_rows": "b4abfc5e9321482de3bdb0103cdc65ae35c2f16d687fcf1e6bc01f26d510bd60",
       "update_compatibility_source_pack": "24662ea1c046bf2831dfa898b937114683aa5e9ca695b243aaf3241ca6ab34ea",
@@ -4792,8 +4800,8 @@
     ".claude/agents/security.md": {
       "security_authority": "acc067be4945262d10fba0365a96dd3514f993f8d25d6a5a12b284a92e6a5492",
       "invariant_core": "ff22ac3ecdf1e94935ebec4ef2960946be13a0362b416ada020c97065d6e8f87",
-      "security_rules_invariant": "ba5e07be8fbe57acb3dee535007839326e78652746937c7e043859976111e2a9",
-      "threat_intelligence": "de85eec126623693f352c1ad3402f1e6b7e55ee774e2f73deeb3efdb2baf1122",
+      "security_rules_invariant": "8bd67a40239bf37f836d7ad8fa7497d3fefe759048e2242f6d04f3555fd048c6",
+      "threat_intelligence": "a892b74ac093c45384f208a4d03b6cfe40e6ef7ef78ed3a889e1a59957b0f6db",
       "security_verdict_contract": "e17bc133696fef7e7aaa86af1023b9ad979f3f6cd87d853af62c8e019efff501"
     },
     ".claude/agents/style-guardian.md": {
