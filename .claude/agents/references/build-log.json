@@ -1,13 +1,13 @@
 {
   "schema_version": "1.5",
-  "agentteams_version": "1.0.0",
+  "agentteams_version": "1.1.0rc12",
   "agentteams_source": {
     "kind": "vcs-pin",
-    "commit": "cc5b8c9ec4efdcb479939e0c1246a0ac11913259",
+    "commit": "ac93628a9b875cf1049100795291f2bd5f537a4d",
     "branch": null,
     "dirty": false
   },
-  "generated_at": "2026-10-20T16:32:18.616409+00:00",
+  "generated_at": "2026-10-31T11:18:48.557215+00:00",
   "project_name": "ProjectRepositories",
   "framework": "claude",
   "project_type": "software",
@@ -31,14 +31,13 @@
     "visualize-energy-data"
   ],
   "files_written": [
-    ".claude/hooks/agentteams-python",
-    ".claude/hooks/.gitignore"
+    ".claude/agents/references/sandbox-handoff.reference.md"
   ],
   "manual_required": 1463,
   "template_hashes": {
-    "universal/orchestrator.template.md": "171d8c2a2a8ec0ad",
+    "universal/orchestrator.template.md": "1a69f80133e36dda",
     "universal/navigator.template.md": "3d28148430bddfdf",
-    "universal/security.template.md": "3b9958a26d342746",
+    "universal/security.template.md": "12f027791fe214d2",
     "universal/code-hygiene.template.md": "8c53882027a0aa40",
     "universal/adversarial.template.md": "0c7b7cb909b089a0",
     "universal/conflict-auditor.template.md": "a6199323e4d1add3",
@@ -47,7 +46,7 @@
     "universal/agent-updater.template.md": "fceaeaa65379ff06",
     "universal/agent-refactor.template.md": "b1417e2f09b84022",
     "universal/repo-liaison.template.md": "70331bea47521df8",
-    "universal/git-operations.template.md": "04ede882f19cbfa2",
+    "universal/git-operations.template.md": "9f3fcbd9167a8833",
     "domain/work-summarizer.template.md": "4124536ef03c333d",
     "domain/primary-producer.template.md": "278ed220891ba707",
     "domain/quality-auditor.template.md": "3dd911ae905e8b28",
@@ -72,12 +71,13 @@
     "universal/ai-bad-habits-watch.reference.template.md": "3265a4ef0b7e5f7a",
     "universal/framework-watch.reference.template.md": "ca23bcc73afc2e2a",
     "universal/adjacent-repos.reference.template.md": "e66157a91f72492a",
-    "universal/github-workflows-merge.reference.template.md": "cfb434aeaa6fbae0",
+    "universal/github-workflows-merge.reference.template.md": "aa26e7db5d333f1f",
     "universal/branch-lifecycle.reference.template.md": "8f199043003804b3",
     "universal/work-summary-spec.reference.template.md": "d29ca7e680ad715d",
     "universal/work-summary-tooling.reference.template.md": "62e643b1a9711af6",
     "universal/work-summary-backfill.reference.template.md": "5730bac043dc2874",
-    "universal/parallelization.reference.template.md": "e31593ccbba4a7ff",
+    "universal/parallelization.reference.template.md": "12111b7bb9a9aa10",
+    "universal/sandbox-handoff.reference.template.md": "fe27b3ca2d7de60d",
     "universal/instruction-authority.reference.template.md": "a73a355a8da0c15f",
     "universal/orchestrator-spawn-authority.reference.template.md": "221ebb904e4f4e48",
     "universal/redteam-methodology.reference.template.md": "a0443337a9796294",
@@ -87,7 +87,7 @@
     "universal/external-retrieval-quality-gate.reference.template.md": "3922b0a2e99e75a3",
     "workstream-expert.template.md": "19e099ff5eaf447b",
     "copilot-instructions.template.md": "d3fcc564166c5285",
-    "builder/team-builder-claude.template.md": "d6158978f4955fc1",
+    "builder/team-builder-claude.template.md": "f18ed3516005d223",
     "domain/content-enricher.template.md": "25b7c467ae7a8978"
   },
   "output_files_map": [
@@ -3826,6 +3826,12 @@
       "component_slug": null
     },
     {
+      "path": "references/sandbox-handoff.reference.md",
+      "template": "universal/sandbox-handoff.reference.template.md",
+      "type": "reference",
+      "component_slug": null
+    },
+    {
       "path": "references/instruction-authority.reference.md",
       "template": "universal/instruction-authority.reference.template.md",
       "type": "reference",
@@ -3983,22 +3989,17 @@
     "repo-liaison",
     "git-operations"
   ],
-  "manifest_fingerprint": "41440cb36fe8f585",
+  "manifest_fingerprint": "aec1194abe716def",
   "fingerprint_algo_version": 1,
   "file_hashes": {
-    "../hooks/agentteams-python": "5372ac42ca6b2d41",
-    "../hooks/.gitignore": "a75840d1f75cc75d",
-    "references/security-vulnerability-watch.reference.md": "230f216f5c248faa",
-    "references/security-vulnerability-watch.json": "31c7bfe505b085bd",
-    "references/instruction-authority.reference.md": "aa28e1036e0d3a6e",
-    "references/orchestrator-spawn-authority.reference.md": "cf61e70f28018d77",
-    "references/skill-generation.reference.md": "f1591e7276fe954f",
-    "../CLAUDE.md": "4753b67063999b76",
-    "orchestrator.md": "3e9b6e06d6d17fa9",
-    "security.md": "5955389e4c11b120",
-    "agent-updater.md": "b835f8a4cbd2fdc5",
-    "../hooks/constitutional-gate.py": "e03a2a4b0254714f",
-    "../settings.hooks.example.json": "33a8602dacdcc616",
+    "references/sandbox-handoff.reference.md": "f4e669c459d1c12c",
+    "references/security-vulnerability-watch.reference.md": "aec17baf02101887",
+    "references/security-vulnerability-watch.json": "308c4b1c4bb0e929",
+    "references/parallelization.reference.md": "fbd84bddbf5f6c13",
+    "orchestrator.md": "4cffeb24abd320f8",
+    "security.md": "f5e6df6363c7b578",
+    "team-builder.md": "a08de1825902b8ae",
+    "../settings.hooks.example.json": "301ecb997d210c05",
     "references/framework-watch.reference.md": "23c0017b0066a6f1",
     "references/github-workflows-merge.reference.md": "5c80d26945ca1115",
     "references/runtime-handoffs.json": "afe14465d7a9393e",
@@ -4008,6 +4009,7 @@
     "conflict-auditor.md": "d0e6e905bd6dc4c8",
     "conflict-resolution.md": "e58a32ff78b79751",
     "cleanup.md": "c5fea1aee9c68a81",
+    "agent-updater.md": "b835f8a4cbd2fdc5",
     "agent-refactor.md": "3b85aa7230ea4d1c",
     "repo-liaison.md": "d14aa21dffc90b30",
     "git-operations.md": "e97474b089c6ace1",
@@ -4523,16 +4525,17 @@
     "references/work-summary-spec.reference.md": "96232231a1f7c6be",
     "references/work-summary-tooling.reference.md": "f3656972717153a9",
     "references/work-summary-backfill.reference.md": "3a2274e8064291f4",
-    "references/parallelization.reference.md": "e25040ccfbdae337",
+    "references/instruction-authority.reference.md": "aa28e1036e0d3a6e",
     "references/retrospective-remediation.reference.md": "dcb68dfbd83385eb",
     "references/cli-tool-discovery.reference.md": "3b27e28cf9d3b6a0",
+    "references/skill-generation.reference.md": "f1591e7276fe954f",
     "references/external-retrieval-quality-gate.reference.md": "76e55aa020eb01ff",
     "crisis-credit-allocation-expert.md": "de548797506b8268",
     "fed-response-dag-expert.md": "896a8b71235a6e91",
     "prairie-prosperity-expert.md": "ebbe73b19bc86fc5",
     "sugarscape-expert.md": "aaced01cccb90ea7",
     "visualize-energy-data-expert.md": "b853f9ff80c4d3f5",
-    "team-builder.md": "c32b2401a7de353a",
+    "../CLAUDE.md": "4753b67063999b76",
     "SETUP-REQUIRED.md": "37fa5035aa102f80",
     "content-enricher.md": "9f08288628f04faf",
     "references/authorized-verify-keys/README.md": "badf32b421079acf",
@@ -4549,10 +4552,9 @@
       "description": "\"Top-priority security sentinel: reviews actions for credential exposure, destructive operations, sensitive content leakage, and reference integrity before any sensitive action proceeds\"",
       "tools": "Read, Grep, Glob"
     },
-    "agent-updater.md": {
-      "name": "Agent Updater \u2014 ProjectRepositories",
-      "description": "\"Synchronizes agent documentation after project structure, deliverable, or reference changes in ProjectRepositories\"",
-      "tools": "Edit, Write, Grep, Glob, Bash, Task"
+    "team-builder.md": {
+      "name": "Team Builder \u2014 Agent Teams Module",
+      "description": "\"Interactively constructs a complete agent team for a new or existing Claude project by conducting an intake interview and invoking the build_team pipeline\""
     },
     "navigator.md": {
       "name": "Navigator \u2014 ProjectRepositories",
@@ -4583,6 +4585,11 @@
       "name": "Cleanup \u2014 ProjectRepositories",
       "description": "\"Removes stale drafts, build artifacts, and orphaned files from ProjectRepositories with mandatory safety checks\"",
       "tools": "Edit, Write, Grep, Glob, Bash"
+    },
+    "agent-updater.md": {
+      "name": "Agent Updater \u2014 ProjectRepositories",
+      "description": "\"Synchronizes agent documentation after project structure, deliverable, or reference changes in ProjectRepositories\"",
+      "tools": "Edit, Write, Grep, Glob, Bash, Task"
     },
     "agent-refactor.md": {
       "name": "Agent Refactor \u2014 ProjectRepositories",
@@ -4679,10 +4686,6 @@
       "description": "\"Component expert for Visualize Energy Data in ProjectRepositories \u2014 prepares Component Briefs, reviews drafts against brief checklist, approves deliverables\"",
       "tools": "Read, Grep, Glob, Task"
     },
-    "team-builder.md": {
-      "name": "Team Builder \u2014 Agent Teams Module",
-      "description": "\"Interactively constructs a complete agent team for a new or existing Claude project by conducting an intake interview and invoking the build_team pipeline\""
-    },
     "content-enricher.md": {
       "name": "Content Enricher \u2014 ProjectRepositories",
       "description": "\"Fills in default template placeholders and underdeveloped sections in generated agent files for ProjectRepositories using the project's source materials\"",
@@ -4767,7 +4770,7 @@
       "authority_hierarchy": "607ff1b43a0e420c30dd2e2c02a721e5488a08acf09fa18916a7cf36a5c5e38b",
       "routing_table_rows": "b4abfc5e9321482de3bdb0103cdc65ae35c2f16d687fcf1e6bc01f26d510bd60",
       "update_compatibility_source_pack": "24662ea1c046bf2831dfa898b937114683aa5e9ca695b243aaf3241ca6ab34ea",
-      "available_workflows": "7c6a7b7663aeec8aaa6dc1b39d4acbe7012459193580b4f1a7256d6fa19421eb"
+      "available_workflows": "2bc9478e04b346134869777913ea5840cff168f98a0d3ef23a6096b36084823b"
     },
     ".claude/agents/output-compiler.md": {
       "content": "7c694392550e9ee991f9ebe4e7cf5964fa81ad6992ca2812cb807fceea89088c"
@@ -4800,8 +4803,8 @@
     ".claude/agents/security.md": {
       "security_authority": "acc067be4945262d10fba0365a96dd3514f993f8d25d6a5a12b284a92e6a5492",
       "invariant_core": "ff22ac3ecdf1e94935ebec4ef2960946be13a0362b416ada020c97065d6e8f87",
-      "security_rules_invariant": "8bd67a40239bf37f836d7ad8fa7497d3fefe759048e2242f6d04f3555fd048c6",
-      "threat_intelligence": "a892b74ac093c45384f208a4d03b6cfe40e6ef7ef78ed3a889e1a59957b0f6db",
+      "security_rules_invariant": "98fd5921a96f09c4a0864c5c2a65c1126824da09a2ac76430f25f72962ae1161",
+      "threat_intelligence": "5e75ab7e90d4a2cd4d8546e452bfb32b05404c4b2a130a243ebf2e32894c51f3",
       "security_verdict_contract": "e17bc133696fef7e7aaa86af1023b9ad979f3f6cd87d853af62c8e019efff501"
     },
     ".claude/agents/style-guardian.md": {
@@ -4813,7 +4816,7 @@
       "review_protocol": "02cf50fba478fcc6202c2ffde432fbb02b7506c9784246ad66dbd71459959caf"
     },
     ".claude/agents/team-builder.md": {
-      "content": "189e9501238848df75b13d8dd379bf84702336e3e49138524f258e4784d41701"
+      "content": "c27102b4733fec03f938178c18522b7ee6e6bbe2f424b5a1a194e24eb23ae222"
     },
     ".claude/agents/technical-validator.md": {
       "authority_sources_list": "9aa49fc612b59b57888f8c78375a1c5e655024bb604641fbee9580ca36f4e12c",

@@ -1,8 +1,8 @@
 {
 "artifact_type":"memory-index",
 "memory_index_schema_version":"1.3",
-"index_format_version":"json-bm25-postings-v2",
-"index_build_id":"32ff7d63dc34bf33a231df49cf4c845c07cfdfe770cb8f02f5571c1f7f2f6917",
+"index_format_version":"json-bm25-postings-v3",
+"index_build_id":"b0223f75c47a1ac8399135a35db05b12e6827a911f768a0fad2acbf8785e35ac",
 "index_write_owner":"agentteams.build_team",
 "vector_runtime_mode":"sparse-tfidf-cosine",
 "vector_model_id":null,
@@ -11,7 +11,7 @@
 "source_fingerprint":"93f281baa406afc0e183bbc2b15d11e2d7fcacf4813448cd615fa74e33ca3518",
 "project_name":"ProjectRepositories",
 "framework":"claude",
-"built_at":"2026-10-20T16:32:18.690492Z",
+"built_at":"2026-10-31T11:18:48.632437Z",
 "source_count":1,
 "documents":[
 {"doc_id":0,"path":"references/pipeline-graph.md","title":"ProjectRepositories \u2014 Agent Team Topology","length":4495,"snippet":"> **Auto-generated.** Regenerated on every `build_team.py` run. > Do not edit manually \u2014 changes will be overwritten.","paragraphs":[
@@ -20,7 +20,7 @@
 "Save the block below as `pipeline-graph.dot` and run `dot -Tsvg pipeline-graph.dot -o pipeline-graph.svg` to produce an SVG.",
 "```dot digraph \"ProjectRepositories Agent Team\" { rankdir=LR; node [fontname=\"Helvetica\", fontsize=11, shape=box, style=\"rounded,filled\"]; edge [fontsize=9]; \"adversarial\" [label=\"Adversarial\", fillcolor=\"#e8e8ff\"]; \"agent-refactor\" [label=\"Agent Refactor\", fillcolor=\"#e8e8ff\"]; \"agent-updater\" [label=\"Agent Updater\", fillcolor=\"#e8e8ff\"]; \"cleanup\" [label=\"Cleanup\", fillcolor=\"#e8e8ff\"]; \"code-hygiene\" [label=\"Code Hygiene\", fillcolor=\"#e8e8ff\"]; \"cohesion-repairer\" [label=\"",
 "```json { \"project_name\": \"ProjectRepositories\", \"nodes\": { \"adversarial\": { \"display_name\": \"Adversarial\", \"agent_type\": \"governance\", \"user_invokable\": true, \"tools\": [ \"read\", \"search\" ] }, \"agent-refactor\": { \"display_name\": \"Agent Refactor\", \"agent_type\": \"governance\", \"user_invokable\": false, \"tools\": [ \"edit\", \"search\", \"agent\" ] }, \"agent-updater\": { \"display_name\": \"Agent Updater\", \"agent_type\": \"governance\", \"user_invokable\": false, \"tools\": [ \"edit\", \"search\", \"exe"
-],"source_hash":"a6c054b89304af9be4d2bd08e766d631d8733eccc4d93982ac916a906e1a47ab","source_mtime":1792509289.0070019,"vector_norm_sq":37649.37437770969}
+],"source_hash":"a6c054b89304af9be4d2bd08e766d631d8733eccc4d93982ac916a906e1a47ab","source_mtime":1793445069.1485305,"vector_norm_sq":37649.37437770969}
 ],
 "postings":{
 "agentteams":[{"doc_id":0,"tf":2}],
