@@ -1,4 +1,5 @@
 {
+  "authorized_managers": ["infrastructure-management"],
   "project_name": "ProjectRepositories",
   "project_goal": "A collection of empirical economics and data science research projects analyzing monetary policy, fiscal dynamics, agent-based economic models, and energy policy using Python, Jupyter notebooks, statistical modeling, and interactive visualization. Each sub-project produces research-grade analysis paired with interactive HTML charts or data-driven whitepapers.",
   "deliverables": [
